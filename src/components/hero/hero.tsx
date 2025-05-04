@@ -34,7 +34,7 @@ export const HeroBanner: React.FC<Props> = ({}) => {
         quality={80}
         loading="lazy"
       />
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full px-6 sm:px-11 lg:px-20 flex justify-center items-center">
         <div className="relative h-full z-10 py-8 sm:py-14 flex flex-col justify-between gap-8 sm:gap-12 w-full max-w-7xl">
           <div className="flex justify-center">
             <h1 className="text-center font-semibold text-[32px] sm:text-[40px] text-background text-balance">
