@@ -25,22 +25,24 @@ const offers: { price: number; street: string; area: number; rooms: number }[] =
 
 export const HotOffers: React.FC<Props> = ({}) => {
   return (
-    <section className="px-6 sm:px-11 lg:px-20 w-full flex flex-col gap-8 pt-12 sm:pt-20">
-      <h1 className="text-center font-bold text-2xl sm:text-4xl text-foreground">
-        Oferte Hot
-      </h1>
-      <OffersCarousel className="w-full">
-        <CarouselContent className="w-full">
-          {offers.map((offer, _) => (
-            <CarouselItem
-              key={_}
-              className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 w-full"
-            >
-              <OfferCard product={offer} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </OffersCarousel>
+    <section className="px-6 sm:px-11 lg:px-20 w-full flex justify-center">
+      <div className="w-full max-w-7xl flex flex-col gap-8 pt-12 sm:pt-20">
+        <h1 className="text-center font-bold text-2xl sm:text-4xl text-foreground">
+          Oferte Hot
+        </h1>
+        <OffersCarousel className="w-full">
+          <CarouselContent className="w-full">
+            {offers.map((offer, _) => (
+              <CarouselItem
+                key={_}
+                className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 w-full"
+              >
+                <OfferCard product={offer} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </OffersCarousel>
+      </div>
     </section>
   );
 };

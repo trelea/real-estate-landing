@@ -25,7 +25,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={onest.className}>
         <NextIntlClientProvider>
-          <main className="w-screen min-h-screen">
+          <main className="min-h-screen w-screen">
             <Navbar />
             {children}
           </main>
