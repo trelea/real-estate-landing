@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import { HeroCard } from "./hero-card";
+import { LandingHeroCard } from "./landing-hero-card";
 
 interface Props {}
 
-export const HeroBanner: React.FC<Props> = ({}) => {
+export const LandingHero: React.FC<Props> = ({}) => {
   return (
     <section className="relative pt-14 sm:pt-20 h-fit w-full">
       {/* PHONE VERSION IMAGE */}
@@ -45,7 +45,7 @@ export const HeroBanner: React.FC<Props> = ({}) => {
           </div>
 
           <div className="grid grid-cols-6 lg:flex gap-2 sm:gap-4">
-            <HeroCard
+            <LandingHeroCard
               clasName="col-span-3 w-full"
               title="Apartamente"
               img={{
@@ -54,7 +54,7 @@ export const HeroBanner: React.FC<Props> = ({}) => {
               }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="col-span-3 sm:hidden"
               title="Spații comerciale"
               img={{
@@ -63,19 +63,19 @@ export const HeroBanner: React.FC<Props> = ({}) => {
               }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="col-span-2 sm:hidden"
               title="Case"
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="sm:col-span-3 sm:block hidden"
               title="Case"
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="sm:col-span-2 sm:block hidden"
               title="Spații comerciale"
               img={{
@@ -84,13 +84,13 @@ export const HeroBanner: React.FC<Props> = ({}) => {
               }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="col-span-2"
               title="Terenuri"
               img={{ src: "/assets/lands.png", alt: "Lands Category" }}
             />
 
-            <HeroCard
+            <LandingHeroCard
               clasName="col-span-2"
               title="Investiții"
               img={{
