@@ -1,3 +1,4 @@
+import React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import { OfferCard } from "./offer-card";
 import { OffersCarousel } from "./offers-carousel";
@@ -23,9 +24,9 @@ const offers: { price: number; street: string; area: number; rooms: number }[] =
     { price: 120000, street: "Strada Alexandru cel Bun", area: 102, rooms: 4 },
   ];
 
-export const HotOffers: React.FC<Props> = ({}) => {
+export const HotSection: React.FC<Props> = ({}) => {
   return (
-    <section className="px-6 sm:px-11 lg:px-20 w-full flex flex-col gap-8 pt-12 sm:pt-20">
+    <article className="w-full flex flex-col gap-8">
       <h1 className="text-center font-bold text-2xl sm:text-4xl text-foreground">
         Oferte Hot
       </h1>
@@ -41,6 +42,6 @@ export const HotOffers: React.FC<Props> = ({}) => {
           ))}
         </CarouselContent>
       </OffersCarousel>
-    </section>
+    </article>
   );
 };

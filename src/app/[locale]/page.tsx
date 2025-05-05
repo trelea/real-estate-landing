@@ -1,6 +1,9 @@
-import { AboutUs } from "@/components/about-us/about-us";
-import { HeroBanner } from "@/components/hero/hero";
-import { HotOffers } from "@/components/hot/hot";
+import { AboutUsSection } from "@/components/about-us/about-us";
+import { HotSection } from "@/components/hot/hot";
+import { LandingHero } from "@/components/landing-hero";
+import { LandingSections } from "@/components/landing-sections";
+import { ServicesSection } from "@/components/services/services";
+import { TeamSection } from "@/components/team/team";
 import React from "react";
 
 interface Props {}
@@ -8,9 +11,13 @@ interface Props {}
 const Home: React.FC<Props> = ({}) => {
   return (
     <React.Fragment>
-      <HeroBanner />
-      <HotOffers />
-      <AboutUs />
+      <LandingHero />
+      <LandingSections>
+        <HotSection />
+        <AboutUsSection />
+        <ServicesSection />
+        <TeamSection />
+      </LandingSections>
     </React.Fragment>
   );
 };

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   clasName?: React.HTMLAttributes<HTMLElement>["className"];
 }
 
-export const HeroCard: React.FC<Props> = ({
+export const LandingHeroCard: React.FC<Props> = ({
   title,
   img: { alt, src },
   href,
@@ -21,7 +21,7 @@ export const HeroCard: React.FC<Props> = ({
   return (
     <Card
       className={cn(
-        "border-2 rounded-xl sm:rounded-2xl border-background bg-white/80 m-0 p-0 w-full hover:bg-white/90 relative h-32 sm:h-52 2xl:h-64",
+        "border-2 rounded-xl sm:rounded-2xl border-background bg-white/80 m-0 p-0 w-full hover:bg-white/90 relative h-32 sm:h-52 xl:h-56",
         clasName
       )}
     >

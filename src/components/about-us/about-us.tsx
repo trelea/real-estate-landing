@@ -10,18 +10,18 @@ import Image from "next/image";
 
 interface Props {}
 
-export const AboutUs: React.FC<Props> = ({}) => {
+export const AboutUsSection: React.FC<Props> = () => {
   return (
-    <section className="px-6 sm:px-11 lg:px-20 w-full pt-20 sm:pt-24 xl:pt-36 xl:flex xl:gap-14">
+    <article className="w-full xl:flex xl:gap-14">
       <Image
         src={"/assets/aboutus.png"}
         alt="About Us"
         width={1000}
         height={1000}
         loading="lazy"
-        className="hidden xl:block flex-1 shadow-lg rounded-3xl max-h-[500px]"
+        className="hidden xl:block flex-1 object-contain shadow-lg rounded-3xl max-h-[500px]"
       />
-      <Card className="p-6 sm:p-0 m-0 shadow border/50 rounded-2xl sm:border-none sm:shadow-none xl:flex-1">
+      <Card className="p-6 sm:p-0 m-0 shadow border/75 rounded-2xl sm:border-none sm:shadow-none xl:flex-1">
         <CardHeader className="m-0 p-0">
           <CardTitle className="font-bold text-2xl sm:text-4xl">
             Despre noi
@@ -52,6 +52,6 @@ export const AboutUs: React.FC<Props> = ({}) => {
           </ul>
         </CardContent>
       </Card>
-    </section>
+    </article>
   );
 };

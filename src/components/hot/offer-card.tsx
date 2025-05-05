@@ -2,21 +2,20 @@ import React from "react";
 import { Card, CardDescription } from "../ui/card";
 import { Bed, Map, Scaling } from "lucide-react";
 import Image from "next/image";
-import { Avatar, AvatarFallback } from "../ui/avatar";
 
 interface Props {
   product: { price: number; street: string; area: number; rooms: number };
 }
 export const OfferCard: React.FC<Props> = ({ product }) => {
   return (
-    <Card className="m-0 p-0 shadow w-full relative rounded-2xl">
+    <Card className="m-0 p-0 shadow w-full h-fit gap-0 relative rounded-2xl">
       <Image
         src={"/assets/logo-blue.png"}
-        height={500}
+        height={200}
         width={500}
         alt="Dialog"
         loading="lazy"
-        className="h-[200px] object-contain object-center p-20 shadow rounded-2xl"
+        className="h-[200px] object-contain p-20 shadow rounded-t-2xl border-b"
       />
       <CardDescription className="m-0 p-0 py-4 px-2 flex flex-col gap-4 w-full">
         <div className="flex justify-between items-center">
