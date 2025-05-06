@@ -26,7 +26,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={onest.className}>
         <NextIntlClientProvider>
-          <main className="min-h-screen w-screen bg-background">
+          <main className="min-h-screen w-screen bg-foreground/[2.5%]">
             {/* navbar */}
             <Navbar />
             {/* children */}
