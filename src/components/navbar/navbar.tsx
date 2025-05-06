@@ -51,7 +51,7 @@ const Navbar: React.FC<Props> = ({}) => {
           <Link href={"#"}>
             <Image
               src={"/assets/logo-blue.png"}
-              alt="dialog imobil blue logo"
+              alt="Dialog Imobil blue logo"
               width={120}
               height={42}
             />

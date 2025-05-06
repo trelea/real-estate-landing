@@ -21,7 +21,7 @@ export const AboutUsSection: React.FC<Props> = () => {
         loading="lazy"
         className="hidden xl:block flex-1 object-contain shadow-lg rounded-3xl max-h-[500px]"
       />
-      <Card className="p-6 sm:p-0 m-0 shadow border/75 rounded-2xl sm:border-none sm:shadow-none xl:flex-1">
+      <Card className="p-6 sm:p-0 m-0 shadow border/75 rounded-2xl sm:border-none sm:shadow-none xl:flex-1 bg-background/[0.5%] sm:bg-transparent">
         <CardHeader className="m-0 p-0">
           <CardTitle className="font-bold text-2xl sm:text-4xl">
             Despre noi
