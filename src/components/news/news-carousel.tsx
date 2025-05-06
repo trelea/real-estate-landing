@@ -9,7 +9,7 @@ interface Props {
   className?: React.HTMLAttributes<HTMLElement>["className"];
 }
 
-export const TeamCarousel: React.FC<Props> = ({ children, className }) => {
+export const NewsCarousel: React.FC<Props> = ({ children, className }) => {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
