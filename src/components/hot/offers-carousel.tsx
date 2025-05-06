@@ -10,7 +10,9 @@ interface Props {
 }
 
 export const OffersCarousel: React.FC<Props> = ({ children, className }) => {
-  const plugin = React.useRef(Autoplay({ delay: 3000 }));
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  );
   return (
     <Carousel plugins={[plugin.current]} className={className}>
       {children}
