@@ -118,7 +118,7 @@ const Navbar: React.FC<Props> = ({}) => {
         </div>
         {/* locale switcher ans contact */}
         <div className="space-x-4 flex h-fit justify-end shrink w-fit items-center">
-          <Button className="hidden sm:block text-sm rounded-lg w-fit py-2.5 px-4">
+          <Button className="hidden sm:block text-sm rounded-lg w-fit h-fit py-2.5 px-4">
             Consultare expert
           </Button>
 

@@ -25,7 +25,7 @@ export const PartnersSection: React.FC<Props> = ({}) => {
                   alt={partner}
                   width={500}
                   height={500}
-                  className="h-full w-full object-contain p-4 sm:p-10 lg:p-16 grayscale hover:grayscale-0 transition duration-500 hover:scale-125"
+                  className="h-full w-full object-center object-contain p-4 sm:p-10 lg:p-16 grayscale hover:grayscale-0 transition duration-500 hover:scale-125"
                 />
               </CarouselItem>
             )
