@@ -6,9 +6,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
   NavigationMenuLink,
-  navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
-import { Link } from "@/i18n/navigation";
 import { UrlObject } from "url";
 
 interface Props {
@@ -21,11 +19,7 @@ interface Props {
   width?: number;
 }
 
-export const NavigationGroup: React.FC<Props> = ({
-  label,
-  items,
-  width = "sm",
-}) => {
+export const NavigationGroup: React.FC<Props> = ({ label, items, width }) => {
   return (
     <NavigationMenu suppressHydrationWarning>
       <NavigationMenuList>
@@ -34,7 +28,10 @@ export const NavigationGroup: React.FC<Props> = ({
             {label}
           </NavigationMenuTrigger>
           <NavigationMenuContent suppressHydrationWarning>
-            <ul className={width ? `w-[${width}px]` : "w-fit"}>
+            <ul
+              // className={typeof width === "number" ? `w-[${width}px]` : "w-fit"}
+              className="w-[150px]"
+            >
               {items.map(({ href, label, icon }) => (
                 <li key={label}>
                   {/* <Link href={href}> */}
