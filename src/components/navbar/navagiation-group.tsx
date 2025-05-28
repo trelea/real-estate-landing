@@ -32,8 +32,8 @@ export const NavigationGroup: React.FC<Props> = ({ label, items, width }) => {
               // className={typeof width === "number" ? `w-[${width}px]` : "w-fit"}
               className="w-[150px]"
             >
-              {items.map(({ href, label, icon }) => (
-                <li key={label}>
+              {items.map(({ href, label, icon }, _) => (
+                <li key={_}>
                   {/* <Link href={href}> */}
                   <NavigationMenuLink
                     href={href.pathname as string}
@@ -42,7 +42,7 @@ export const NavigationGroup: React.FC<Props> = ({ label, items, width }) => {
                   >
                     {icon && icon}
                     {label}
-                  </NavigationMenuLink>{" "}
+                  </NavigationMenuLink>
                   {/* </Link> */}
                 </li>
               ))}

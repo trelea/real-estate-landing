@@ -6,6 +6,11 @@ import { Button } from "../ui/button";
 import { NavigationGroup } from "./navagiation-group";
 import { LocaleSelect } from "./locale-select";
 import { MobileNavigation } from "./mibile-navigation";
+
+import { ContentType } from "@/types";
+import { getServices } from "@/features/services/api";
+import { LocaleType } from "@/i18n/routing";
+
 // import {
 //   PiHouseLine,
 //   PiBankLight,
@@ -14,9 +19,13 @@ import { MobileNavigation } from "./mibile-navigation";
 //   PiShoppingBagOpenLight,
 // } from "react-icons/pi";
 
-interface Props {}
+interface Props {
+  locale: LocaleType;
+}
 
-const Navbar: React.FC<Props> = ({}) => {
+const Navbar: React.FC<Props> = async ({ locale }) => {
+  const services = await getServices();
+
   return (
     <header className="fixed z-50 w-full shadow">
       <section className="py-2 px-6 sm:px-11 lg:px-20 hidden sm:flex w-full relative text-white h-fit justify-between z-50">
@@ -48,7 +57,7 @@ const Navbar: React.FC<Props> = ({}) => {
       <nav className="py-2 px-6 sm:px-11 lg:px-20 shadow flex items-center justify-between relative z-50 bg-background">
         {/* logo */}
         <div className="shrink w-fit">
-          <Link href={"#"}>
+          <Link href={"/"}>
             <Image
               src={"/assets/logo-blue.png"}
               alt="Dialog Imobil blue logo"
@@ -95,23 +104,28 @@ const Navbar: React.FC<Props> = ({}) => {
               />
             </li>
             <li>
-              <Link href={"#"} className="hover:text-primary">
-                Servicii
-              </Link>
+              <NavigationGroup
+                width={200}
+                label="Servicii"
+                items={services.map(({ content, id }) => ({
+                  label: content[`title_${locale}` as keyof ContentType],
+                  href: { pathname: `/services/${id}` },
+                }))}
+              />
             </li>
             <li>
-              <Link href={"#"} className="hover:text-primary">
+              <Link href={"/about-us"} className="hover:text-primary">
                 Despre Noi
               </Link>
             </li>
             <li>
-              <Link href={"#"} className="hover:text-primary">
+              <Link href={"/blogs"} className="hover:text-primary">
                 Știri imobiliare
               </Link>
             </li>
             <li>
-              <Link href={"#"} className="hover:text-primary">
-                Contacte
+              <Link href={"#contacts"} className="hover:text-primary">
+                Contacts
               </Link>
             </li>
           </ul>
@@ -127,7 +141,7 @@ const Navbar: React.FC<Props> = ({}) => {
           </div>
 
           <div className="xl:hidden">
-            <MobileNavigation />
+            <MobileNavigation services={services} locale={locale} />
           </div>
         </div>
       </nav>
