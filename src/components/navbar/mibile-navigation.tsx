@@ -15,10 +15,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import { ServiceType } from "@/types";
+import { LocaleType } from "@/i18n/routing";
 
-interface Props {}
+interface Props {
+  services: ServiceType[];
+  locale: LocaleType;
+}
 
-export const MobileNavigation: React.FC<Props> = ({}) => {
+export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild className="p-0 m-0">
@@ -28,7 +33,7 @@ export const MobileNavigation: React.FC<Props> = ({}) => {
         <DrawerHeader className="py-10">
           <DrawerTitle className="sr-only"></DrawerTitle>
           <DrawerDescription>
-            <Link href={"#"}>
+            <Link href={"/"}>
               <Image
                 src={"/assets/logo-blue.png"}
                 alt="dialog imobil blue logo"
@@ -41,8 +46,12 @@ export const MobileNavigation: React.FC<Props> = ({}) => {
 
         <ul className="flex flex-col items-start gap-8 text-base font-normal">
           <li>
-            <Accordion type="single" collapsible className="p-0 m-0">
-              <AccordionItem value="estate" className="m-0 p-0">
+            <Accordion
+              type="single"
+              collapsible
+              className="p-0 m-0 flex flex-col items-start gap-8 text-base font-normal"
+            >
+              <AccordionItem value="estate" className="m-0 p-0 border-none">
                 <AccordionTrigger className="m-0 p-0 text-base font-normal hover:no-underline">
                   Imobiliare
                 </AccordionTrigger>
@@ -76,25 +85,46 @@ export const MobileNavigation: React.FC<Props> = ({}) => {
                   </ul>
                 </AccordionContent>
               </AccordionItem>
+              <AccordionItem value="services" className="m-0 p-0 border-none">
+                <AccordionTrigger className="m-0 p-0 text-base font-normal hover:no-underline">
+                  Servicii
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="flex flex-col items-start gap-6 text-sm font-normal pl-6 pt-8">
+                    {services.map(({ id, content }) => (
+                      <li key={id}>
+                        <Link
+                          href={`/services/${id}`}
+                          className="hover:text-primary"
+                        >
+                          {content[`title_${locale}`]}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </li>
+
           <li>
-            <Link href={"#"} className="hover:text-primary">
-              Servicii
-            </Link>
-          </li>
-          <li>
-            <Link href={"#"} className="hover:text-primary">
+            <Link href={"/about-us"} className="hover:text-primary">
               Despre Noi
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="hover:text-primary">
+            <Link href={"/blogs"} className="hover:text-primary">
               Știri imobiliare
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="hover:text-primary">
+            <Link
+              href={{
+                hash: "#contacts",
+                search: "asdasd",
+              }}
+              className="hover:text-primary"
+            >
               Contacte
             </Link>
           </li>

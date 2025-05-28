@@ -11,7 +11,7 @@ export const Footer: React.FC<Props> = ({}) => {
     <footer className="px-6 sm:px-11 lg:px-20 py-12 w-full bg-[#163259] flex flex-col gap-12 text-white">
       <div className="flex flex-col gap-14 xl:gap-0 xl:flex-row">
         <div className="flex-1 flex flex-col gap-8">
-          <Link href={"#"}>
+          <Link href={"/"}>
             <Image
               src={"/assets/logo-white.png"}
               alt="Dialog Imobil white logo"
@@ -30,7 +30,7 @@ export const Footer: React.FC<Props> = ({}) => {
             <h1 className="font-bold text-xl">Dialog Imobil</h1>
             <ul className="text-base flex flex-col gap-6">
               <li>
-                <Link href={"#"}>Despre noi</Link>
+                <Link href={"/about-us"}>Despre noi</Link>
               </li>
               <li>
                 <Link href={"#"}>Știri imobiliare</Link>
@@ -39,7 +39,7 @@ export const Footer: React.FC<Props> = ({}) => {
                 <Link href={"#"}>Politica de confidențialitate</Link>
               </li>
               <li>
-                <Link href={"#"}>Codul de etică</Link>
+                <Link href={"/privacy-policy"}>Codul de etică</Link>
               </li>
             </ul>
           </nav>
@@ -88,10 +88,10 @@ export const Footer: React.FC<Props> = ({}) => {
       <div className="text-base flex justify-center lg:justify-between items-center">
         <ul className="hidden lg:flex gap-8">
           <li className="hover:cursor-pointer hover:underline">
-            Politica de confidențialitate
+            <Link href={"/privacy-policy"}> Politica de confidențialitate</Link>
           </li>
           <li className="hover:cursor-pointer hover:underline">
-            Termenii și Condițiile
+            <Link href={"/terms-and-conditions"}>Termenii și Condițiile</Link>
           </li>
         </ul>
 

@@ -45,7 +45,7 @@ s0.parentNode.insertBefore(s1,s0);
         <NextIntlClientProvider>
           <main className="min-h-screen w-screen bg-foreground/[2.5%]">
             {/* navbar */}
-            <Navbar />
+            <Navbar locale={locale} />
             {/* children */}
             {children}
             {/* footer */}
