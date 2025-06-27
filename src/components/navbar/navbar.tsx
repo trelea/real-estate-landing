@@ -76,23 +76,23 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
                 items={[
                   {
                     label: "Apartamente",
-                    href: { pathname: "" },
+                    href: { pathname: "/apartments" },
                     // icon: <TbBuildingSkyscraper />,
                     // icon: <PiBuildingOfficeLight />,
                   },
                   {
                     label: "Case",
-                    href: { pathname: "" },
+                    href: { pathname: "/houses" },
                     // icon: <PiHouseLine />,
                   },
                   {
                     label: "Spații comerciale",
-                    href: { pathname: "" },
+                    href: { pathname: "/commercials" },
                     // icon: <PiShoppingBagOpenLight />,
                   },
                   {
                     label: "Terenuri",
-                    href: { pathname: "" },
+                    href: { pathname: "/terrains" },
                     //  icon: <PiPlantLight />
                   },
                   {
@@ -124,7 +124,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
               </Link>
             </li>
             <li>
-              <Link href={"#contacts"} className="hover:text-primary">
+              <Link href={"/contacts"} className="hover:text-primary">
                 Contacts
               </Link>
             </li>

@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { MoveUpRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 interface Props {
   title: string;
@@ -55,12 +56,14 @@ export const ServiceCard: React.FC<Props> = ({
         {/* button */}
         {button && (
           <CardFooter className="m-0 p-0 w-full h-fit">
-            <Button className="m-0 p-0 w-fit h-fit flex items-center gap-1 py-3 px-4">
-              <h6 className="font-medium text-sm sm:text-base">
-                {button.label}
-              </h6>
-              <MoveUpRight className="size-5 p-1 sm:size-6" />
-            </Button>
+            <Link href={button.href as string}>
+              <Button className="m-0 p-0 w-fit h-fit flex items-center gap-1 py-3 px-4">
+                <h6 className="font-medium text-sm sm:text-base">
+                  {button.label}
+                </h6>
+                <MoveUpRight className="size-5 p-1 sm:size-6" />
+              </Button>
+            </Link>
           </CardFooter>
         )}
       </div>
@@ -68,11 +71,11 @@ export const ServiceCard: React.FC<Props> = ({
       {/* image */}
       {img && (
         <Image
-          src={img?.src as string}
+          src={img.src || "/assets/logo-blue.png"}
           alt={img?.alt as string}
           height={500}
           width={500}
-          className="w-full h-full xl:max-w-[280px] max-h-52 sm:max-h-56 xl:max-h-80 object-cover rounded-xl shadow"
+          className="w-full xl:max-w-[280px] h-[200px] sm:h-[230px] xl:h-[320px] object-cover rounded-xl shadow"
         />
       )}
     </Card>

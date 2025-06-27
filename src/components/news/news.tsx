@@ -4,36 +4,14 @@ import { MoveUpRight } from "lucide-react";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import { NewsCarousel } from "./news-carousel";
 import { NewsCard } from "./news-card";
+import { getBlogsLanding } from "@/features/blogs/api";
 
 interface Props {}
 
-const news: {
-  src: string;
-  title: string;
-  date: string;
-  href: string;
-}[] = [
-  {
-    src: "/assets/logo-blue.png",
-    title: "Housing Market Trends Show Steady Growth in 2025",
-    date: "2025-05-06",
-    href: "#",
-  },
-  {
-    src: "/assets/logo-blue.png",
-    title: "Top 5 Cities for Real Estate Investment This Year",
-    date: "2025-04-28",
-    href: "#",
-  },
-  {
-    src: "/assets/logo-blue.png",
-    title: "New Regulations Impacting Residential Developments",
-    date: "2025-04-15",
-    href: "#",
-  },
-];
+export const NewsSection: React.FC<Props> = async ({}) => {
+  const blogs = await getBlogsLanding();
+  if (blogs.length === 0) return null;
 
-export const NewsSection: React.FC<Props> = ({}) => {
   return (
     <article className="w-full flex flex-col gap-8">
       <div className="flex justify-between items-center">
@@ -48,9 +26,12 @@ export const NewsSection: React.FC<Props> = ({}) => {
 
       <NewsCarousel>
         <CarouselContent className="w-full">
-          {news.map((_new, _) => (
-            <CarouselItem key={_} className="sm:basis-1/2 lg:basis-1/3 w-full">
-              <NewsCard new={_new} />
+          {blogs.map((blog) => (
+            <CarouselItem
+              key={blog.id}
+              className="sm:basis-1/2 lg:basis-1/3 w-full"
+            >
+              <NewsCard blog={blog} />
             </CarouselItem>
           ))}
         </CarouselContent>

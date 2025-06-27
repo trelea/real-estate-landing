@@ -58,22 +58,25 @@ export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
                 <AccordionContent>
                   <ul className="flex flex-col items-start gap-6 text-sm font-normal pl-6 pt-8">
                     <li>
-                      <Link href={"#"} className="hover:text-primary">
+                      <Link href={"/apartments"} className="hover:text-primary">
                         Apartamente
                       </Link>
                     </li>
                     <li>
-                      <Link href={"#"} className="hover:text-primary">
+                      <Link href={"/houses"} className="hover:text-primary">
                         Case
                       </Link>
                     </li>
                     <li>
-                      <Link href={"#"} className="hover:text-primary">
+                      <Link
+                        href={"/commercials"}
+                        className="hover:text-primary"
+                      >
                         Spații comerciale
                       </Link>
                     </li>
                     <li>
-                      <Link href={"#"} className="hover:text-primary">
+                      <Link href={"/terrains"} className="hover:text-primary">
                         Terenuri
                       </Link>
                     </li>
@@ -118,13 +121,7 @@ export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
             </Link>
           </li>
           <li>
-            <Link
-              href={{
-                hash: "#contacts",
-                search: "asdasd",
-              }}
-              className="hover:text-primary"
-            >
+            <Link href={"/contacts"} className="hover:text-primary">
               Contacte
             </Link>
           </li>
