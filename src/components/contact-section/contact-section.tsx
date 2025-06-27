@@ -56,10 +56,7 @@ export const ContactSection: React.FC<Props> = ({}) => {
       </ul>
 
       {/* form */}
-      <div
-        className="w-full lg:flex lg:justify-end lg:row-span-2 lg:col-start-2 lg:row-start-1"
-        id="contacts"
-      >
+      <div className="w-full lg:flex lg:justify-end lg:row-span-2 lg:col-start-2 lg:row-start-1">
         <Card className="gap-3 w-full lg:max-w-sm h-fit rounded-2xl shadow-lg">
           <CardHeader>
             <CardTitle className="text-lg font-semibold text-foreground m-0 p-0">

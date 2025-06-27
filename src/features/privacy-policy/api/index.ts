@@ -8,7 +8,7 @@ export const getPrivacyPolicyContent = async ({
 }: {
   locale: Partial<LocaleType>;
 }) => {
-  "use cache";
+  // "use cache";
   const { data } = await axiosInstance.get<
     unknown,
     AxiosResponse<PrivacyPolicyType>

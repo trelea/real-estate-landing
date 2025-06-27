@@ -8,11 +8,11 @@ export const getTermsAndConditionsContent = async ({
 }: {
   locale: Partial<LocaleType>;
 }) => {
-  "use cache";
-  const { data } = await axiosInstance.get<
+  // "use cache";
+  const data = await axiosInstance.get<
     unknown,
     AxiosResponse<TermsAndConditionsType>
   >("/terms-and-conditions");
 
-  return data[`content_${locale}`];
+  return data.data[`content_${locale}`];
 };

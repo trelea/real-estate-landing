@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import { ContactsPopover } from "@/components/navbar/contacts-popover";
 import Script from "next/script";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -25,10 +26,11 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+    <html lang={locale} className="scroll-smooth">
+      {process.env.NODE_ENV === "production" && (
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -39,20 +41,24 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 `,
-        }}
-      />
+          }}
+        />
+      )}
+
       <body className={onest.className}>
-        <NextIntlClientProvider>
-          <main className="min-h-screen w-screen bg-foreground/[2.5%]">
-            {/* navbar */}
-            <Navbar locale={locale} />
-            {/* children */}
-            {children}
-            {/* footer */}
-            <Footer />
-            <ContactsPopover />
-          </main>
-        </NextIntlClientProvider>
+        <NuqsAdapter>
+          <NextIntlClientProvider>
+            <main className="min-h-screen w-screen bg-foreground/[2.5%]">
+              {/* navbar */}
+              <Navbar locale={locale} />
+              {/* children */}
+              {children}
+              {/* footer */}
+              <Footer />
+              <ContactsPopover />
+            </main>
+          </NextIntlClientProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );

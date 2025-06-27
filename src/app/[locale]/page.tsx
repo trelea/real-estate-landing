@@ -1,5 +1,4 @@
 import { AboutUsSection } from "@/components/about-us/about-us";
-import { ContactSection } from "@/components/contact-section/contact-section";
 import { HotSection } from "@/components/hot/hot";
 import { LandingHero } from "@/components/landing-hero";
 import { LandingSections } from "@/components/landing-sections";
@@ -22,7 +21,6 @@ const Home: React.FC<Props> = ({}) => {
         <TeamSection />
         <PartnersSection />
         <NewsSection />
-        <ContactSection />
       </LandingSections>
     </React.Fragment>
   );

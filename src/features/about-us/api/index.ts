@@ -8,10 +8,10 @@ export const getAboutUsContent = async ({
 }: {
   locale: Partial<LocaleType>;
 }) => {
-  "use cache";
-  const { data } = await axiosInstance.get<unknown, AxiosResponse<AboutUsType>>(
-    "/about-us"
-  );
+  // "use cache";
+  const data = (
+    await axiosInstance.get<unknown, AxiosResponse<AboutUsType>>("/about-us")
+  ).data;
 
   return data[`content_${locale}`];
 };
