@@ -113,6 +113,7 @@ export default async function Apartments({
         >
           <OffertsGrid
             offerts={[...apartmentsHotOfferts, ...apartmentsOfferts]}
+            type="apartments"
           />
         </ApartmentsFilter>
         <HotSection />

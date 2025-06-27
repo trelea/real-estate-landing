@@ -11,15 +11,17 @@ import {
 import { Link } from "@/i18n/navigation";
 
 interface Props {
-  offert: (Apartment | House | Commercial | Terrain) & {
-    type: "APARTMENT" | "HOUSE" | "COMMERCIAL" | "TERRAIN";
-  };
+  offert: (Apartment | House | Commercial | Terrain) &
+    Partial<{
+      type: "APARTMENT" | "HOUSE" | "COMMERCIAL" | "TERRAIN";
+    }>;
+  type?: Partial<"apartments" | "houses" | "commercials" | "terrains">;
 }
-export const OfferCard: React.FC<Props> = ({ offert }) => {
+export const OfferCard: React.FC<Props> = ({ offert, type }) => {
   return (
     <Card className="m-0 p-0 shadow w-full h-fit gap-0 rounded-2xl relative">
       <Link
-        href={`/${offert?.type?.toLowerCase()}/${offert.id}`}
+        href={`${type ?? offert?.type?.toLowerCase()}/${offert.id}`}
         className="w-full h-full absolute top-0 left-0 z-10"
       ></Link>
       <div className="w-full h-full relative overflow-hidden">

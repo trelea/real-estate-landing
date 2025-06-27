@@ -58,7 +58,10 @@ export default async function Houses({
           housingConditions={housingConditions}
           houseFeatures={houseFeatures}
         >
-          <OffertsGrid offerts={[...housesHotOfferts, ...housesOfferts]} />
+          <OffertsGrid
+            offerts={[...housesHotOfferts, ...housesOfferts]}
+            type="houses"
+          />
         </HousesFilter>
 
         <HotSection />

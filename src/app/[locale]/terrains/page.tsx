@@ -51,7 +51,10 @@ export default async function Terrains({
           usabilities={usabilities}
           features={features}
         >
-          <OffertsGrid offerts={[...terrainsHotOfferts, ...terrainsOfferts]} />
+          <OffertsGrid
+            offerts={[...terrainsHotOfferts, ...terrainsOfferts]}
+            type="terrains"
+          />
         </TerrainsFilter>
         <HotSection />
       </div>

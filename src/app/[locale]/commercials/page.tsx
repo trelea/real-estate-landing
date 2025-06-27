@@ -67,6 +67,7 @@ export default async function Commercials({
         >
           <OffertsGrid
             offerts={[...commercialsHotOfferts, ...commercialsOfferts]}
+            type="commercials"
           />
         </CommercialsFilter>
         <HotSection />

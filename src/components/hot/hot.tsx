@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { CarouselContent, CarouselItem } from "../ui/carousel";
 import { OfferCard } from "./offer-card";
 import { OffersCarousel } from "./offers-carousel";
 import { getHotOfferts } from "@/features/offerts/api";
@@ -22,7 +22,7 @@ export const HotSection: React.FC<Props> = async ({}) => {
               key={offert.id}
               className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 w-full"
             >
-              <OfferCard offert={offert} />
+              <OfferCard offert={offert as any} />
             </CarouselItem>
           ))}
         </CarouselContent>
