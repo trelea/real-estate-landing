@@ -35,6 +35,8 @@ import {
 } from "@/components/ui/sheet";
 import { SlidersHorizontal } from "lucide-react";
 import PaginationOfferts from "@/components/pagination/pagination";
+import { useTranslations } from "next-intl";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const FilterComponent = ({
   query,
@@ -43,6 +45,7 @@ export const FilterComponent = ({
   housingStocks,
   housingConditions,
   apartmentFeatures,
+  locale,
 }: {
   query: any;
   setQuery: (query: any) => void;
@@ -50,13 +53,15 @@ export const FilterComponent = ({
   housingStocks: HousingStock[];
   housingConditions: HousingCondition[];
   apartmentFeatures: ApartmentFeature[];
+  locale: string;
 }) => {
+  const t = useTranslations("filters");
   return (
     <Accordion type="multiple" className="m-0 p-0 w-full">
       {/* offert */}
       <AccordionItem value="OFFERT">
         <AccordionTrigger className="font-semibold text-base">
-          Offert
+          {t("offert")}
         </AccordionTrigger>
         <AccordionContent>
           <div className="flex items-center gap-2">
@@ -70,7 +75,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>Sale</span>
+            <span>{t("sale")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -83,14 +88,14 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>Rent</span>
+            <span>{t("rent")}</span>
           </div>
         </AccordionContent>
       </AccordionItem>
       {/* location */}
       <AccordionItem value="LOCATION">
         <AccordionTrigger className="font-semibold text-base">
-          Location
+          {t("location")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           {locationCategories.map((category) => (
@@ -130,7 +135,8 @@ export const FilterComponent = ({
                         }
                       }}
                     />
-                    <span>{category.ro}</span>
+                    {/* @ts-ignore */}
+                    <span>{category[locale]}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="m-0 p-0 flex flex-col gap-1">
@@ -156,7 +162,8 @@ export const FilterComponent = ({
                           })
                         }
                       />
-                      <span>{subcategory.ro}</span>
+                      {/* @ts-ignore */}
+                      <span>{subcategory[locale]}</span>
                     </div>
                   ))}
                 </AccordionContent>
@@ -168,7 +175,7 @@ export const FilterComponent = ({
       {/* rooms */}
       <AccordionItem value="ROOMS">
         <AccordionTrigger className="font-semibold text-base">
-          Rooms
+          {t("rooms")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
@@ -182,7 +189,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>1 room</span>
+            <span>{t("1_room")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -195,7 +202,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>2 rooms</span>
+            <span>{t("2_rooms")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -208,7 +215,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>3 rooms</span>
+            <span>{t("3_rooms")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -221,14 +228,14 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>4+ rooms</span>
+            <span>{t("4_rooms")}</span>
           </div>
         </AccordionContent>
       </AccordionItem>
       {/* sanitaries */}
       <AccordionItem value="SANITARIES">
         <AccordionTrigger className="font-semibold text-base">
-          Sanitaries
+          {t("sanitaries")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
@@ -242,7 +249,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>1 sanitary</span>
+            <span>{t("1_sanitary")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -255,7 +262,7 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>2 sanitaries</span>
+            <span>{t("2_sanitaries")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -268,22 +275,22 @@ export const FilterComponent = ({
                 })
               }
             />
-            <span>3+ sanitaries</span>
+            <span>{t("3_sanitaries")}</span>
           </div>
         </AccordionContent>
       </AccordionItem>
       {/* price */}
       <AccordionItem value="PRICE">
         <AccordionTrigger className="font-semibold text-base">
-          Price
+          {t("price")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.price_from ?? ""}
                 onChange={(e) =>
                   // if 0 then set to null
@@ -297,10 +304,10 @@ export const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.price_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -318,15 +325,15 @@ export const FilterComponent = ({
       {/* price square */}
       <AccordionItem value="PRICE_SQUARE">
         <AccordionTrigger className="font-semibold text-base">
-          Price square
+          {t("price_square")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.price_square_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -339,10 +346,10 @@ export const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.price_square_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -360,15 +367,15 @@ export const FilterComponent = ({
       {/* surface */}
       <AccordionItem value="SURFACE">
         <AccordionTrigger className="font-semibold text-base">
-          Surface
+          {t("surface")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.surface_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -381,10 +388,10 @@ export const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.surface_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -402,15 +409,15 @@ export const FilterComponent = ({
       {/* floor */}
       <AccordionItem value="FLOOR">
         <AccordionTrigger className="font-semibold text-base">
-          Floor
+          {t("floor")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.floor_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -423,10 +430,10 @@ export const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.floor_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -444,7 +451,7 @@ export const FilterComponent = ({
       {/* housing stock */}
       <AccordionItem value="HOUSING_STOCK">
         <AccordionTrigger className="font-semibold text-base">
-          Housing stock
+          {t("housing_stock")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           {housingStocks.map((stock) => (
@@ -461,7 +468,8 @@ export const FilterComponent = ({
                   })
                 }
               />
-              <span>{stock.ro}</span>
+              {/* @ts-ignore */}
+              <span>{stock[locale]}</span>
             </div>
           ))}
         </AccordionContent>
@@ -469,7 +477,7 @@ export const FilterComponent = ({
       {/* housing conditions */}
       <AccordionItem value="HOUSING_CONDITIONS">
         <AccordionTrigger className="font-semibold text-base">
-          Housing conditions
+          {t("housing_conditions")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           {housingConditions.map((condition) => (
@@ -486,7 +494,8 @@ export const FilterComponent = ({
                   })
                 }
               />
-              <span>{condition.ro}</span>
+              {/* @ts-ignore */}
+              <span>{condition[locale]}</span>
             </div>
           ))}
         </AccordionContent>
@@ -494,7 +503,7 @@ export const FilterComponent = ({
       {/* features */}
       <AccordionItem value="FEATURES">
         <AccordionTrigger className="font-semibold text-base">
-          Features
+          {t("features")}
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-1">
           {apartmentFeatures.map((feature) => (
@@ -509,7 +518,8 @@ export const FilterComponent = ({
                   })
                 }
               />
-              <span>{feature.ro}</span>
+              {/* @ts-ignore */}
+              <span>{feature[locale]}</span>
             </div>
           ))}
         </AccordionContent>
@@ -525,6 +535,7 @@ export default function ApartmentsFilter({
   housingConditions,
   apartmentFeatures,
   meta,
+  locale,
 }: {
   children: React.ReactNode;
   locationCategories: LocationCategory[];
@@ -532,7 +543,9 @@ export default function ApartmentsFilter({
   housingConditions: HousingCondition[];
   apartmentFeatures: ApartmentFeature[];
   meta: { page: number; limit: number; total: number; last_page: number };
+  locale: string;
 }) {
+  const t = useTranslations("filters");
   const [query, setQuery] = useQueryStates(
     {
       page: parseAsInteger.withDefault(1),
@@ -563,14 +576,16 @@ export default function ApartmentsFilter({
       <div className="w-full flex flex-col gap-6">
         <div className="w-full flex flex-col gap-2 xl:flex-row xl:justify-between">
           <div className="flex items-center gap-6">
-            <h1 className="text-2xl md:text-3xl font-bold">Apartments</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              {t("apartments")}
+            </h1>
             <span className="text-xs md:text-sm text-muted-foreground">
-              Found <strong>{meta.total}</strong> apartments
+              {t("found")} <strong>{meta.total}</strong> {t("apartments")}
             </span>
           </div>
 
           <div className="flex items-center gap-2 justify-between">
-            <h1 className="text-base font-medium hidden">Sort by</h1>
+            <h1 className="text-base font-medium hidden">{t("sort_by")}</h1>
 
             <Select
               onValueChange={(value) =>
@@ -579,15 +594,23 @@ export default function ApartmentsFilter({
               defaultValue={query.sort ?? undefined}
             >
               <SelectTrigger className="w-52 text-base">
-                <SelectValue placeholder="Sort by" />
+                <SelectValue placeholder={t("sort_by")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="default">Default</SelectItem>
+                <SelectItem value="default">{t("default")}</SelectItem>
 
-                <SelectItem value="price_asc">Price: Low to High</SelectItem>
-                <SelectItem value="price_desc">Price: High to Low</SelectItem>
-                <SelectItem value="area_asc">Area: Low to High</SelectItem>
-                <SelectItem value="area_desc">Area: High to Low</SelectItem>
+                <SelectItem value="price_asc">
+                  {t("price")}: {t("low_to_high")}
+                </SelectItem>
+                <SelectItem value="price_desc">
+                  {t("price")}: {t("high_to_low")}
+                </SelectItem>
+                <SelectItem value="area_asc">
+                  {t("area")}: {t("low_to_high")}
+                </SelectItem>
+                <SelectItem value="area_desc">
+                  {t("area")}: {t("high_to_low")}
+                </SelectItem>
               </SelectContent>
             </Select>
 
@@ -596,23 +619,26 @@ export default function ApartmentsFilter({
                 <SheetTrigger asChild>
                   <Button className="gap-2">
                     <SlidersHorizontal className="w-4 h-4" />
-                    <span>Filters</span>
+                    <span>{t("title")}</span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent>
                   <SheetHeader>
-                    <SheetTitle>Filters</SheetTitle>
+                    <SheetTitle>{t("title")}</SheetTitle>
                   </SheetHeader>
-                  <div className="p-6">
-                    <FilterComponent
-                      query={query}
-                      setQuery={setQuery}
-                      locationCategories={locationCategories}
-                      housingStocks={housingStocks}
-                      housingConditions={housingConditions}
-                      apartmentFeatures={apartmentFeatures}
-                    />
-                  </div>
+                  <ScrollArea className="h-[calc(100vh-100px)]">
+                    <div className="p-6">
+                      <FilterComponent
+                        locale={locale}
+                        query={query}
+                        setQuery={setQuery}
+                        locationCategories={locationCategories}
+                        housingStocks={housingStocks}
+                        housingConditions={housingConditions}
+                        apartmentFeatures={apartmentFeatures}
+                      />
+                    </div>
+                  </ScrollArea>
                 </SheetContent>
               </Sheet>
             </div>
@@ -634,12 +660,37 @@ export default function ApartmentsFilter({
 
       <div className=" flex-col gap-6 w-72 hidden xl:flex">
         <div className="w-full flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Filters</h1>
-          <Button variant={"ghost"}>Clear</Button>
+          <h1 className="text-3xl font-bold">{t("title")}</h1>
+          <Button
+            variant={"ghost"}
+            onClick={() =>
+              setQuery({
+                offert: [],
+                location_category: [],
+                location_subcategory: [],
+                rooms: [],
+                sanitaries: [],
+                price_from: null,
+                price_to: null,
+                price_square_from: null,
+                price_square_to: null,
+                surface_from: null,
+                surface_to: null,
+                floor_from: null,
+                floor_to: null,
+                housing_stocks: [],
+                housing_conditions: [],
+                features: [],
+              })
+            }
+          >
+            {t("clear")}
+          </Button>
         </div>
         <Card className="p-0 m-0 w-72">
           <CardContent className="w-full">
             <FilterComponent
+              locale={locale}
               query={query}
               setQuery={setQuery}
               locationCategories={locationCategories}

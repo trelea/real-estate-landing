@@ -5,10 +5,12 @@ import { CarouselContent, CarouselItem } from "../ui/carousel";
 import { NewsCarousel } from "./news-carousel";
 import { NewsCard } from "./news-card";
 import { getBlogsLanding } from "@/features/blogs/api";
+import { getTranslations } from "next-intl/server";
 
 interface Props {}
 
 export const NewsSection: React.FC<Props> = async ({}) => {
+  const t = await getTranslations("news");
   const blogs = await getBlogsLanding();
   if (blogs.length === 0) return null;
 
@@ -16,10 +18,10 @@ export const NewsSection: React.FC<Props> = async ({}) => {
     <article className="w-full flex flex-col gap-8">
       <div className="flex justify-between items-center">
         <h1 className="font-bold text-2xl sm:text-4xl text-foreground">
-          Știri imobiliare
+          {t("news")}
         </h1>
         <Button className="m-0 p-0 flex flex-row items-center gap-1.5 sm:gap-2 text-sm sm:text-base py-3 px-4 h-fit w-fit">
-          <span>Vezi toate</span>
+          <span> {t("more")}</span>
           <MoveUpRight className="size-5 p-1 sm:size-6" />
         </Button>
       </div>

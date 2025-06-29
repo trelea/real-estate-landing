@@ -12,6 +12,7 @@ import { parseArrayParam, parseParam } from "@/utils/parser";
 
 export default async function Houses({
   searchParams,
+  params,
 }: {
   searchParams: Promise<
     Partial<{
@@ -35,51 +36,53 @@ export default async function Houses({
       features: number[];
     }>
   >;
+  params: Promise<{ locale: string }>;
 }) {
-  const params = await searchParams;
+  const _params = await searchParams;
+  const { locale } = await params;
 
   const parsedParams = {
-    page: parseParam(params.page as unknown as string, "number"),
-    sort: params.sort,
-    offert: parseArrayParam(params.offert as unknown as string, "string") as (
+    page: parseParam(_params.page as unknown as string, "number"),
+    sort: _params.sort,
+    offert: parseArrayParam(_params.offert as unknown as string, "string") as (
       | "SALE"
       | "RENT"
     )[],
     location_category: parseArrayParam(
-      params.location_category as unknown as string,
+      _params.location_category as unknown as string,
       "number"
     ),
     location_subcategory: parseArrayParam(
-      params.location_subcategory as unknown as string,
+      _params.location_subcategory as unknown as string,
       "number"
     ),
-    floors: parseArrayParam(params.floors as unknown as string, "number"),
-    price_from: parseParam(params.price_from as unknown as string, "number"),
-    price_to: parseParam(params.price_to as unknown as string, "number"),
+    floors: parseArrayParam(_params.floors as unknown as string, "number"),
+    price_from: parseParam(_params.price_from as unknown as string, "number"),
+    price_to: parseParam(_params.price_to as unknown as string, "number"),
     price_square_from: parseParam(
-      params.price_square_from as unknown as string,
+      _params.price_square_from as unknown as string,
       "number"
     ),
     price_square_to: parseParam(
-      params.price_square_to as unknown as string,
+      _params.price_square_to as unknown as string,
       "number"
     ),
     surface_from: parseParam(
-      params.surface_from as unknown as string,
+      _params.surface_from as unknown as string,
       "number"
     ),
-    surface_to: parseParam(params.surface_to as unknown as string, "number"),
-    floor_from: parseParam(params.floor_from as unknown as string, "number"),
-    floor_to: parseParam(params.floor_to as unknown as string, "number"),
+    surface_to: parseParam(_params.surface_to as unknown as string, "number"),
+    floor_from: parseParam(_params.floor_from as unknown as string, "number"),
+    floor_to: parseParam(_params.floor_to as unknown as string, "number"),
     housing_stocks: parseArrayParam(
-      params.housing_stocks as unknown as string,
+      _params.housing_stocks as unknown as string,
       "number"
     ),
     housing_conditions: parseArrayParam(
-      params.housing_conditions as unknown as string,
+      _params.housing_conditions as unknown as string,
       "number"
     ),
-    features: parseArrayParam(params.features as unknown as string, "number"),
+    features: parseArrayParam(_params.features as unknown as string, "number"),
   };
   const housesHotOfferts = await getHousesHotOfferts({
     limit: 3,
@@ -97,6 +100,7 @@ export default async function Houses({
     <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl py-10 md:py-14">
         <HousesFilter
+          locale={locale}
           meta={meta}
           locationCategories={locationCategories}
           housingStocks={housingStocks}

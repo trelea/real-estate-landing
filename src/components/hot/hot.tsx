@@ -4,17 +4,19 @@ import { OfferCard } from "./offer-card";
 import { OffersCarousel } from "./offers-carousel";
 import { getHotOfferts } from "@/features/offerts/api";
 import { randomUUID } from "node:crypto";
+import { getTranslations } from "next-intl/server";
 
 interface Props {}
 
 export const HotSection: React.FC<Props> = async ({}) => {
+  const t = await getTranslations("hot");
   const hotOfferts = await getHotOfferts({ limit: 20 });
   if (!hotOfferts.length) return null;
 
   return (
     <article className="w-full flex flex-col gap-8">
       <h1 className="text-center font-bold text-2xl sm:text-4xl text-foreground">
-        Oferte Hot
+        {t("hot")}
       </h1>
       <OffersCarousel className="w-full">
         <CarouselContent className="w-full">

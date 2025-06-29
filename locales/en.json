@@ -1,1 +1,160 @@
-{}
+{
+  "navbar": {
+    "real_estate": "Real Estate",
+    "apartments": "Apartments",
+    "houses": "Houses",
+    "commercial_spaces": "Commercial Spaces",
+    "lands": "Lands",
+    "investments": "Investments",
+    "services": "Services",
+    "about_us": "About Us",
+    "real_estate_news": "Real Estate News",
+    "contacts": "Contacts",
+    "consult_expert": "Consult an Expert"
+  },
+  "banner": {
+    "title": "The right home.",
+    "subtitle": "The right agency.",
+    "apartments": "Apartments",
+    "houses": "Houses",
+    "commercial_spaces": "Commercial spaces",
+    "lands": "Lands",
+    "investments": "Investments"
+  },
+  "hot": {
+    "hot": "Hot Offers"
+  },
+  "about": {
+    "title": "About Us",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in rem mollitia delectus totam commodi aperiam quaerat eius magnam qui illum recusandae cupiditate reprehenderit nesciunt, illo, tempore architecto earum sed ipsum quidem lure labore vitae! Est eveniet amet esse veniam! Non expedita dolores neque facilis sint quis totam suscipit itaque!",
+    "one": "Client Satisfaction",
+    "two": "Years of Experience",
+    "three": "Properties Sold"
+  },
+  "services": {
+    "our_services": "Our Services",
+    "more": "View more"
+  },
+  "team": {
+    "title": "Our Team",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue, ac posuere nunc mattis eget."
+  },
+  "partners": {
+    "partners": "Our Partners"
+  },
+  "news": {
+    "news": "Real Estate News",
+    "more": "Read more"
+  },
+  "contacts": {
+    "form": {
+      "title": "Complete the fields",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+1 234 567 890"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@example.com"
+      },
+      "btn": "Send"
+    },
+    "title": "Need a consultation?",
+    "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "address": "Str. Stefan cel Mare 1/6",
+    "days": "Monday - Friday"
+  },
+  "filters": {
+    "title": "Filters",
+    "clear": "Clear",
+    "offert": "Offert",
+    "location": "Location",
+    "rooms": "Rooms",
+    "sanitaries": "Sanitaries",
+    "price": "Price",
+    "price_square": "Price per square",
+    "surface": "Surface",
+    "floor": "Floor",
+    "housing_stock": "Housing stock",
+    "housing_conditions": "Housing conditions",
+    "features": "Features",
+    "floors": "Floors",
+    "first_line": "First line",
+    "destinations": "Destinations",
+    "placeings": "Placements",
+    "usabilities": "Usabilities",
+    "found": "Found",
+    "apartments": "apartments",
+    "sort_by": "Sort by",
+    "default": "Default",
+    "low_to_high": "Low to High",
+    "high_to_low": "High to Low",
+    "area": "Area",
+    "commercials": "Commercials",
+    "houses": "Houses",
+    "terrains": "Terrains",
+    "lands": "Lands",
+    "investments": "Investments",
+    "sale": "Sale",
+    "rent": "Rent",
+    "1_room": "1 room",
+    "2_rooms": "2 rooms",
+    "3_rooms": "3 rooms",
+    "4_rooms": "4+ rooms",
+    "1_sanitary": "1 sanitary",
+    "2_sanitaries": "2 sanitaries",
+    "3_sanitaries": "3+ sanitaries",
+    "1_floor": "1 floor",
+    "2_floors": "2 floors",
+    "3_floors": "3+ floors",
+    "from": "From",
+    "to": "To"
+  },
+  "common": {
+    "square_meter": "m²",
+    "rooms": "rooms",
+    "on_map": "On map",
+    "previous": "Previous",
+    "next": "Next",
+    "offert_type": "Offert Type",
+    "category": "Category",
+    "location": "Location",
+    "total_surface": "Total Surface",
+    "floors": "Floors",
+    "bath_rooms": "Bath Rooms",
+    "property_condition": "Property Condition",
+    "housing_stock": "Housing Stock",
+    "address": "Address",
+    "object_destination": "Object Destination",
+    "commercial_spaces": "Commercial Spaces",
+    "houses": "Houses",
+    "lands": "Lands",
+    "investments": "Investments",
+    "terrains": "Terrains",
+    "terrain_destinations": "Terrain Destinations",
+    "caracteristics": "Caracteristics",
+    "description": "Description",
+    "contacts": "Contacts",
+    "property_id": "Property ID"
+  },
+  "footer": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue.",
+    "about_us": "About Us",
+    "real_estate_news": "Real Estate News",
+    "privacy_policy": "Privacy Policy",
+    "ethics_code": "Ethics Code",
+    "services": "Services",
+    "social_media": "Social Media",
+    "terms_and_conditions": "Terms and Conditions",
+    "all_rights_reserved": "All rights reserved",
+    "apartments": "Apartments",
+    "houses": "Houses",
+    "commercial_spaces": "Commercial Spaces",
+    "lands": "Lands",
+    "investments": "Investments"
+  }
+}

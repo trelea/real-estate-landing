@@ -1,45 +1,55 @@
 import { HotSection } from "@/components/hot/hot";
 import { getTerrain } from "@/features/offerts/api";
 import OffertPage from "@/features/offerts/components/offert-page";
+import { getTranslations } from "next-intl/server";
 
 export default async function TerrainPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const terrain = await getTerrain({ id: parseInt(id) });
+  const t = await getTranslations("common");
   return (
     <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl py-10 md:py-14">
         <OffertPage
+          locale={locale}
           offert={terrain}
           table={[
             {
-              label: "Offert Type",
+              label: t("offert_type"),
               value: terrain.offert,
             },
             {
-              label: "Category",
-              value: "Apartments",
+              label: t("category"),
+              value: t("terrains"),
             },
             {
-              label: "Location",
+              label: t("location"),
               value: (
                 <>
-                  {terrain.location.location_category.ro}
+                  {/* @ts-ignore */}
+                  {terrain.location.location_category[locale]}
                   {", "}
-                  {terrain.location.location_subcategory.ro}
+                  {/* @ts-ignore */}
+                  {terrain.location.location_subcategory[locale]}
                 </>
               ),
             },
-            { label: "Addres", value: terrain.location.street_ro },
             {
-              label: "Terrain Destinations",
+              label: t("address"),
+              // @ts-ignore
+              value: terrain.location[`street_${locale}`],
+            },
+            {
+              label: t("terrain_destinations"),
               value: (
                 <ul>
                   {terrain.usability.map((c) => (
-                    <li key={c.id}>{c.ro}</li>
+                    // @ts-ignore
+                    <li key={c.id}>{c[locale]}</li>
                   ))}
                 </ul>
               ),

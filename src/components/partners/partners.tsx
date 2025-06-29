@@ -2,14 +2,16 @@ import React from "react";
 import { PartnersCarousel } from "./partners-carousel";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
 interface Props {}
 
-export const PartnersSection: React.FC<Props> = ({}) => {
+export const PartnersSection: React.FC<Props> = async ({}) => {
+  const t = await getTranslations("partners");
   return (
     <article className="w-full flex flex-col gap-8">
       <h1 className="text-center font-bold text-2xl sm:text-4xl text-foreground">
-        Partenerii noștri
+        {t("partners")}
       </h1>
 
       <PartnersCarousel>

@@ -1,1 +1,160 @@
-{}
+{
+  "navbar": {
+    "real_estate": "Недвижимость",
+    "apartments": "Квартиры",
+    "houses": "Дома",
+    "commercial_spaces": "Коммерческие помещения",
+    "lands": "Участки",
+    "investments": "Инвестиции",
+    "services": "Услуги",
+    "about_us": "О нас",
+    "real_estate_news": "Новости недвижимости",
+    "contacts": "Контакты",
+    "consult_expert": "Консультация эксперта"
+  },
+  "banner": {
+    "title": "Подходящее жильё.",
+    "subtitle": "Подходящее агентство.",
+    "apartments": "Квартиры",
+    "houses": "Дома",
+    "commercial_spaces": "Коммерческие помещения",
+    "lands": "Земельные участки",
+    "investments": "Инвестиции"
+  },
+  "hot": {
+    "hot": "Горячие предложения"
+  },
+  "about": {
+    "title": "О нас",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in rem mollitia delectus totam commodi aperiam quaerat eius magnam qui illum recusandae cupiditate reprehenderit nesciunt, illo, tempore architecto earum sed ipsum quidem lure labore vitae! Est eveniet amet esse veniam! Non expedita dolores neque facilis sint quis totam suscipit itaque!",
+    "one": "Удовлетворенность клиентов",
+    "two": "Лет опыта",
+    "three": "Проданных объектов"
+  },
+  "services": {
+    "our_services": "Наши услуги",
+    "more": "больше"
+  },
+  "team": {
+    "title": "Наша команда",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue, ac posuere nunc mattis eget."
+  },
+  "partners": {
+    "partners": "Наши партнеры"
+  },
+  "news": {
+    "news": "Новости недвижимости",
+    "more": "Подробнее"
+  },
+  "contacts": {
+    "form": {
+      "title": "Заполните поля",
+      "name": {
+        "label": "Имя",
+        "placeholder": "Ваше имя"
+      },
+      "phone": {
+        "label": "Телефон",
+        "placeholder": "+7 123 456 7890"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@example.com"
+      },
+      "btn": "Отправить"
+    },
+    "title": "Нужна консультация?",
+    "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "address": "Str. Stefan cel Mare 1/6",
+    "days": "Понедельник - Пятница"
+  },
+  "filters": {
+    "title": "Фильтры",
+    "clear": "Сбросить",
+    "offert": "Предложение",
+    "location": "Местоположение",
+    "rooms": "Комнаты",
+    "sanitaries": "Санузлы",
+    "price": "Цена",
+    "price_square": "Цена за квадратный метр",
+    "surface": "Площадь",
+    "floor": "Этаж",
+    "housing_stock": "Жилищный фонд",
+    "housing_conditions": "Жилищные условия",
+    "features": "Особенности",
+    "floors": "Этажность",
+    "first_line": "Первая линия",
+    "destinations": "Назначения",
+    "placeings": "Расположения",
+    "usabilities": "Возможности использования",
+    "found": "Найдено",
+    "apartments": "квартиры",
+    "sort_by": "Сортировка по",
+    "default": "По умолчанию",
+    "low_to_high": "От меньшего к большему",
+    "high_to_low": "От большего к меньшему",
+    "area": "Площадь",
+    "commercials": "Коммерческие помещения",
+    "houses": "Дома",
+    "terrains": "Территории",
+    "lands": "Земельные участки",
+    "investments": "Инвестиции",
+    "sale": "Продажа",
+    "rent": "Аренда",
+    "1_room": "1 комната",
+    "2_rooms": "2 комнаты",
+    "3_rooms": "3 комнаты",
+    "4_rooms": "4+ комнат",
+    "1_sanitary": "1 санузел",
+    "2_sanitaries": "2 санузла",
+    "3_sanitaries": "3+ санузлов",
+    "1_floor": "1 этаж",
+    "2_floors": "2 этажа",
+    "3_floors": "3+ этажей",
+    "from": "От",
+    "to": "До"
+  },
+  "common": {
+    "square_meter": "м²",
+    "rooms": "комнат",
+    "on_map": "На карте",
+    "previous": "Предыдущая",
+    "next": "Следующая",
+    "offert_type": "Тип предложения",
+    "category": "Категория",
+    "location": "Местоположение",
+    "total_surface": "Общая площадь",
+    "floors": "Этажи",
+    "bath_rooms": "Санузлы",
+    "property_condition": "Состояние недвижимости",
+    "housing_stock": "Жилищный фонд",
+    "address": "Адрес",
+    "object_destination": "Назначение объекта",
+    "commercial_spaces": "Коммерческие помещения",
+    "houses": "Дома",
+    "lands": "Земельные участки",
+    "investments": "Инвестиции",
+    "terrains": "Территории",
+    "terrain_destinations": "Назначения территории",
+    "caracteristics": "Характеристики",
+    "description": "Описание",
+    "contacts": "Контакты",
+    "property_id": "ID объекта"
+  },
+  "footer": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue.",
+    "about_us": "О нас",
+    "real_estate_news": "Новости недвижимости",
+    "privacy_policy": "Политика конфиденциальности",
+    "ethics_code": "Кодекс этики",
+    "services": "Услуги",
+    "social_media": "Социальные сети",
+    "terms_and_conditions": "Условия и положения",
+    "all_rights_reserved": "Все права защищены",
+    "apartments": "Квартиры",
+    "houses": "Дома",
+    "commercial_spaces": "Коммерческие помещения",
+    "lands": "Земельные участки",
+    "investments": "Инвестиции"
+  }
+}

@@ -14,25 +14,29 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaTelegram, FaViber, FaWhatsapp } from "react-icons/fa";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Link } from "@/i18n/navigation";
-import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import OffertMap from "./offert-map";
+import { getTranslations } from "next-intl/server";
 
-export default function OffertPage({
+export default async function OffertPage({
   offert,
   table,
+  locale,
 }: {
   offert: Apartment | House | Commercial | Terrain;
   table?: { label: string; value: React.ReactNode }[];
+  locale: string;
 }) {
+  const t = await getTranslations("common");
   return (
     <article className="flex flex-col gap-4 pb-10">
       <div className="flex flex-col gap-2">
         <h1 className="text-xl md:text-2xl font-bold">
-          {offert.location.street_ro}
+          {/* @ts-ignore */}
+          {offert.location[`street_${locale}`]}
         </h1>
         <div className="flex gap-4 items-center h-4">
           <span className="text-xs md:text-sm text-gray-500">
-            Property ID: <strong>{offert.id}</strong>
+            {t("property_id")}: <strong>{offert.id}</strong>
           </span>
           <Separator orientation="vertical" className="h-4 w-2 bg-gray-300" />
           <span className="text-xs lg:text-sm text-gray-500 flex items-center gap-2">
@@ -48,14 +52,17 @@ export default function OffertPage({
 
           {offert.features.length > 0 && (
             <div className="flex flex-col gap-4">
-              <h1 className="text-xl md:text-2xl font-bold">Caracteristics</h1>
+              <h1 className="text-xl md:text-2xl font-bold">
+                {t("caracteristics")}
+              </h1>
               <ul className="grid grid-cols-3 gap-4">
                 {offert.features.map((feature) => (
                   <li key={feature.id}>
                     <div className="flex items-center gap-2">
                       <CircleCheckBig className="w-6 h-6 stroke-primary" />
                       <span className="text-base font-medium">
-                        {feature.ro}
+                        {/* @ts-ignore */}
+                        {feature[locale]}
                       </span>
                     </div>
                   </li>
@@ -68,8 +75,14 @@ export default function OffertPage({
 
           {offert.desc_ro && (
             <div className="flex flex-col gap-4 items-start">
-              <h1 className="text-xl md:text-2xl font-bold">Description</h1>
-              <OffertDesc desc={offert.desc_ro} maxLength={500} />
+              <h1 className="text-xl md:text-2xl font-bold">
+                {t("description")}
+              </h1>
+              <OffertDesc
+                // @ts-ignore
+                desc={offert[`desc_${locale}`]}
+                maxLength={500}
+              />
             </div>
           )}
         </div>
@@ -106,7 +119,7 @@ export default function OffertPage({
           <Card className="h-full w-full m-0 p-4 py-6">
             <CardHeader className="flex items-center gap-6 m-0 p-0">
               <CardTitle className="text-sm md:text-base font-semibold">
-                Contacts
+                {t("contacts")}
               </CardTitle>
               <CardDescription>
                 <ul className="flex items-center gap-3">

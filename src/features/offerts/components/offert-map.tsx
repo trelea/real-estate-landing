@@ -18,8 +18,6 @@ export default function OffertMap({
         defaultCenter={{ lat, lng }}
         defaultZoom={15}
         style={{ borderRadius: "20px" }}
-        // gestureHandling={"greedy"}
-        // disableDefaultUI={true}
       >
         <Marker position={{ lat, lng }} />
       </Map>

@@ -9,6 +9,7 @@ import {
   Terrain,
 } from "@/features/offerts/types";
 import { Link } from "@/i18n/navigation";
+import { getLocale, getTranslations } from "next-intl/server";
 
 interface Props {
   offert: (Apartment | House | Commercial | Terrain) &
@@ -17,7 +18,10 @@ interface Props {
     }>;
   type?: Partial<"apartments" | "houses" | "commercials" | "terrains">;
 }
-export const OfferCard: React.FC<Props> = ({ offert, type }) => {
+export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
+  const locale = await getLocale();
+
+  const t = await getTranslations("common");
   const thumb = offert.media
     .sort(
       (a, b) =>
@@ -62,27 +66,35 @@ export const OfferCard: React.FC<Props> = ({ offert, type }) => {
           </h1>
           <label className="flex items-center gap-1">
             <Map className="size-3 text-primary" />
-            <h6 className="text-xs">Pe harta</h6>
+            <h6 className="text-xs">{t("on_map")}</h6>
           </label>
         </div>
         <p className="text-balance font-semibold text-base text-foreground">
-          {offert.location.street_ro.slice(0, 30)}
-          {offert.location.street_ro.length > 25 && "..."}
+          {/* @ts-ignore */}
+          {offert.location[`street_${locale}`].slice(0, 30)}
+          {/* @ts-ignore */}
+          {offert.location[`street_${locale}`].length > 25 && "..."}
         </p>
 
         <ul className="flex items-center font-medium text-xs gap-4">
           <li className="flex items-center gap-1">
             <Scaling className="size-3.5" />
-            {/* @ts-ignore */}
-            <p>{offert?.surface || offert?.area || 0}mp</p>
+
+            <p>
+              {/* @ts-ignore */}
+              {offert?.surface || offert?.area || 0} {t("square_meter")}
+            </p>
           </li>
           <li className="flex items-center gap-1">
             {/* @ts-ignore */}
             {offert?.rooms && (
               <>
                 <Bed className="size-3.5" />
-                {/* @ts-ignore */}
-                <p>{offert?.rooms} camere</p>
+
+                <p>
+                  {/* @ts-ignore */}
+                  {offert?.rooms} {t("rooms")}
+                </p>
               </>
             )}
           </li>

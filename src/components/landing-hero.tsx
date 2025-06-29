@@ -1,10 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { LandingHeroCard } from "./landing-hero-card";
+import { getTranslations } from "next-intl/server";
 
 interface Props {}
 
-export const LandingHero: React.FC<Props> = ({}) => {
+export const LandingHero: React.FC<Props> = async ({}) => {
+  const t = await getTranslations("banner");
   return (
     <section className="relative pt-14 sm:pt-20 h-fit w-full">
       {/* PHONE VERSION IMAGE */}
@@ -38,16 +40,16 @@ export const LandingHero: React.FC<Props> = ({}) => {
         <div className="relative h-full z-10 py-8 sm:py-14 flex flex-col justify-between gap-8 sm:gap-12 w-full max-w-7xl">
           <div className="flex justify-center">
             <h1 className="text-center font-semibold text-[32px] sm:text-[40px] text-background text-balance">
-              Locuința potrivită.
+              {t("title")}
               <br />
-              Agenția potrivită.
+              {t("subtitle")}
             </h1>
           </div>
 
           <div className="grid grid-cols-6 lg:flex gap-2 sm:gap-4">
             <LandingHeroCard
               clasName="col-span-3 w-full"
-              title="Apartamente"
+              title={t("apartments")}
               href={{ pathname: "/apartments" }}
               img={{
                 src: "/assets/apartments.png",
@@ -57,7 +59,7 @@ export const LandingHero: React.FC<Props> = ({}) => {
 
             <LandingHeroCard
               clasName="col-span-3 sm:hidden"
-              title="Spații comerciale"
+              title={t("commercial_spaces")}
               href={{ pathname: "/commercials" }}
               img={{
                 src: "/assets/offices.png",
@@ -67,21 +69,21 @@ export const LandingHero: React.FC<Props> = ({}) => {
 
             <LandingHeroCard
               clasName="col-span-2 sm:hidden"
-              title="Case"
+              title={t("houses")}
               href={{ pathname: "/houses" }}
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
             <LandingHeroCard
               clasName="sm:col-span-3 sm:block hidden"
-              title="Case"
+              title={t("houses")}
               href={{ pathname: "/houses" }}
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
             <LandingHeroCard
               clasName="sm:col-span-2 sm:block hidden"
-              title="Spații comerciale"
+              title={t("commercial_spaces")}
               href={{ pathname: "/commercials" }}
               img={{
                 src: "/assets/offices.png",
@@ -91,14 +93,14 @@ export const LandingHero: React.FC<Props> = ({}) => {
 
             <LandingHeroCard
               clasName="col-span-2"
-              title="Terenuri"
+              title={t("lands")}
               href={{ pathname: "/terrains" }}
               img={{ src: "/assets/lands.png", alt: "Lands Category" }}
             />
 
             <LandingHeroCard
               clasName="col-span-2"
-              title="Investiții"
+              title={t("investments")}
               img={{
                 src: "/assets/investments.png",
                 alt: "Investments Category",

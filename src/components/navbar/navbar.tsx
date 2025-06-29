@@ -2,28 +2,20 @@ import { Link } from "@/i18n/navigation";
 import { AtSign, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
-// import { TbBuildingSkyscraper } from "react-icons/tb";
 import { NavigationGroup } from "./navagiation-group";
 import { LocaleSelect } from "./locale-select";
 import { MobileNavigation } from "./mibile-navigation";
-
 import { ContentType } from "@/types";
 import { getServices } from "@/features/services/api";
 import { LocaleType } from "@/i18n/routing";
-
-// import {
-//   PiHouseLine,
-//   PiBankLight,
-//   PiPlantLight,
-//   PiBuildingOfficeLight,
-//   PiShoppingBagOpenLight,
-// } from "react-icons/pi";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
   locale: LocaleType;
 }
 
 const Navbar: React.FC<Props> = async ({ locale }) => {
+  const t = await getTranslations("navbar");
   const services = await getServices();
 
   return (
@@ -47,7 +39,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
           </li>
         </ul>
 
-        <ul className="flex items-center GiGreenhousegap-8 z-50">
+        <ul className="flex items-center gap-8 z-50">
           <li className="flex gap-0.5 items-center hover:cursor-pointer">
             <AtSign className="size-4" />
             <h6 className="text-xs font-light">dialog@imobil.md</h6>
@@ -66,39 +58,33 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
             />
           </Link>
         </div>
-        {/* bavigation */}
+        {/* navigation */}
         <div className="hidden xl:block xl:flex-none">
           <ul className="flex items-center gap-8 text-sm font-normal">
             <li>
               <NavigationGroup
                 width={200}
-                label="Imobiliare"
+                label={t("real_estate")}
                 items={[
                   {
-                    label: "Apartamente",
+                    label: t("apartments"),
                     href: { pathname: "/apartments" },
-                    // icon: <TbBuildingSkyscraper />,
-                    // icon: <PiBuildingOfficeLight />,
                   },
                   {
-                    label: "Case",
+                    label: t("houses"),
                     href: { pathname: "/houses" },
-                    // icon: <PiHouseLine />,
                   },
                   {
-                    label: "Spații comerciale",
+                    label: t("commercial_spaces"),
                     href: { pathname: "/commercials" },
-                    // icon: <PiShoppingBagOpenLight />,
                   },
                   {
-                    label: "Terenuri",
+                    label: t("lands"),
                     href: { pathname: "/terrains" },
-                    //  icon: <PiPlantLight />
                   },
                   {
-                    label: "Investiții",
+                    label: t("investments"),
                     href: { pathname: "" },
-                    // icon: <PiBankLight />
                   },
                 ]}
               />
@@ -106,7 +92,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
             <li>
               <NavigationGroup
                 width={200}
-                label="Servicii"
+                label={t("services")}
                 items={services.map(({ content, id }) => ({
                   label: content[`title_${locale}` as keyof ContentType],
                   href: { pathname: `/services/${id}` },
@@ -115,25 +101,25 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
             </li>
             <li>
               <Link href={"/about-us"} className="hover:text-primary">
-                Despre Noi
+                {t("about_us")}
               </Link>
             </li>
             <li>
               <Link href={"/blogs"} className="hover:text-primary">
-                Știri imobiliare
+                {t("real_estate_news")}
               </Link>
             </li>
             <li>
               <Link href={"/contacts"} className="hover:text-primary">
-                Contacts
+                {t("contacts")}
               </Link>
             </li>
           </ul>
         </div>
-        {/* locale switcher ans contact */}
+        {/* locale switcher and contact */}
         <div className="space-x-4 flex h-fit justify-end shrink w-fit items-center">
           <Button className="hidden sm:block text-sm rounded-lg w-fit h-fit py-2.5 px-4">
-            Consultare expert
+            {t("consult_expert")}
           </Button>
 
           <div className="pl-4 sm:border-l">

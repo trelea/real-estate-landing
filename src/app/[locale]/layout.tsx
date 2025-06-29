@@ -48,7 +48,7 @@ s0.parentNode.insertBefore(s1,s0);
       <body className={onest.className}>
         <NuqsAdapter>
           <NextIntlClientProvider>
-            <main className="min-h-screen w-screen bg-foreground/[2.5%]">
+            <main className="min-h-screen w-screen bg-foreground/[2.5%] overflow-x-hidden">
               {/* navbar */}
               <Navbar locale={locale} />
               {/* children */}

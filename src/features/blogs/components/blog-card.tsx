@@ -10,6 +10,7 @@ import { Link } from "@/i18n/navigation";
 import { LocaleType } from "@/i18n/routing";
 import { BlogType } from "@/types";
 import { CircleChevronRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import React from "react";
 
@@ -18,7 +19,8 @@ interface Props {
   locale: LocaleType;
 }
 
-export const BlogCard: React.FC<Props> = ({ blog, locale }) => {
+export const BlogCard: React.FC<Props> = async ({ blog, locale }) => {
+  const t = await getTranslations("news");
   return (
     <Card className="rounded-2xl m-0 p-3 flex flex-col gap-8">
       <Link href={`/blogs/${blog.id}`} className="flex flex-col-reverse gap-4">
@@ -51,7 +53,7 @@ export const BlogCard: React.FC<Props> = ({ blog, locale }) => {
       </Link>
       <CardFooter className="m-0 p-0 flex justify-end">
         <Link href={`/blogs/${blog.id}`} className="flex items-center gap-2">
-          <span className="text-base text-primary">More</span>
+          <span className="text-base text-primary">{t("more")}</span>
           <CircleChevronRight className="size-5 text-primary" />
         </Link>
       </CardFooter>

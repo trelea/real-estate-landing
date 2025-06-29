@@ -1,72 +1,83 @@
 import { HotSection } from "@/components/hot/hot";
 import { getApartment } from "@/features/offerts/api";
 import OffertPage from "@/features/offerts/components/offert-page";
+import { getTranslations } from "next-intl/server";
 
 export default async function ApartmentPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const apartment = await getApartment({ id: parseInt(id) });
+  const t = await getTranslations("common");
 
   return (
     <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl py-10 md:py-14">
         <OffertPage
+          locale={locale}
           offert={apartment}
           table={[
             {
-              label: "Offert Type",
+              label: t("offert_type"),
               value: apartment.offert,
             },
             {
-              label: "Category",
-              value: "Apartments",
+              label: t("category"),
+              value: t("apartments"),
             },
             {
-              label: "Location",
+              label: t("location"),
               value: (
                 <>
-                  {apartment.location.location_category.ro}
+                  {/* @ts-ignore */}
+                  {apartment.location.location_category[locale]}
                   {", "}
-                  {apartment.location.location_subcategory.ro}
+                  {/* @ts-ignore */}
+                  {apartment.location.location_subcategory[locale]}
                 </>
               ),
             },
-            { label: "Addres", value: apartment.location.street_ro },
             {
-              label: "Rooms",
+              label: t("address"),
+              // @ts-ignore
+              value: apartment.location[`street_${locale}`],
+            },
+            {
+              label: t("rooms"),
               value: apartment.rooms,
             },
             {
-              label: "Total Surface",
+              label: t("total_surface"),
               value: apartment.surface.toString().concat("mp"),
             },
             {
-              label: "Floors",
+              label: t("floors"),
               value: apartment.floor
                 .toString()
                 .concat("/")
                 .concat(apartment.floors.toString()),
             },
             {
-              label: "Bath Rooms",
+              label: t("bath_rooms"),
               value: apartment.sanitaries,
             },
             {
-              label: "Property Condition",
+              label: t("property_condition"),
               value: (
                 <ul>
                   {apartment.housing_conditions.map((c) => (
-                    <li key={c.id}>{c.ro}</li>
+                    // @ts-ignore
+                    <li key={c.id}>{c[locale]}</li>
                   ))}
                 </ul>
               ),
             },
             {
-              label: "Housing Stock",
-              value: apartment.housing_stock.ro,
+              label: t("housing_stock"),
+              // @ts-ignore
+              value: apartment.housing_stock[locale],
             },
           ]}
         />

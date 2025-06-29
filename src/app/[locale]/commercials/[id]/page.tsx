@@ -1,45 +1,55 @@
 import { HotSection } from "@/components/hot/hot";
 import { getCommercial } from "@/features/offerts/api";
 import OffertPage from "@/features/offerts/components/offert-page";
+import { getTranslations } from "next-intl/server";
 
 export default async function CommercialPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const commercial = await getCommercial({ id: parseInt(id) });
+  const t = await getTranslations("common");
   return (
     <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl py-10 md:py-14">
         <OffertPage
+          locale={locale}
           offert={commercial}
           table={[
             {
-              label: "Offert Type",
+              label: t("offert_type"),
               value: commercial.offert,
             },
             {
-              label: "Category",
-              value: "Commercial Spaces",
+              label: t("category"),
+              value: t("commercial_spaces"),
             },
             {
-              label: "Location",
+              label: t("location"),
               value: (
                 <>
-                  {commercial.location.location_category.ro}
+                  {/* @ts-ignore */}
+                  {commercial.location.location_category[locale]}
                   {", "}
-                  {commercial.location.location_subcategory.ro}
+                  {/* @ts-ignore */}
+                  {commercial.location.location_subcategory[locale]}
                 </>
               ),
             },
-            { label: "Addres", value: commercial.location.street_ro },
             {
-              label: "Object Destination",
+              label: t("address"),
+              // @ts-ignore
+              value: commercial.location[`street_${locale}`],
+            },
+            {
+              label: t("object_destination"),
               value: (
                 <ul>
                   {commercial.commercial_destinations.map((c) => (
-                    <li key={c.id}>{c.ro}</li>
+                    // @ts-ignore
+                    <li key={c.id}>{c[locale]}</li>
                   ))}
                 </ul>
               ),

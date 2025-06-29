@@ -17,13 +17,19 @@ import {
 } from "../ui/accordion";
 import { ServiceType } from "@/types";
 import { LocaleType } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
   services: ServiceType[];
   locale: LocaleType;
 }
 
-export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
+export const MobileNavigation: React.FC<Props> = async ({
+  services,
+  locale,
+}) => {
+  const t = await getTranslations("navbar");
+
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild className="p-0 m-0">
@@ -31,11 +37,11 @@ export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
       </DrawerTrigger>
       <DrawerContent className="pl-6">
         <DrawerHeader className="py-10">
-          <DrawerTitle className="sr-only"></DrawerTitle>
+          <DrawerTitle className="sr-only" />
           <DrawerDescription>
-            <Link href={"/"}>
+            <Link href="/">
               <Image
-                src={"/assets/logo-blue.png"}
+                src="/assets/logo-blue.png"
                 alt="dialog imobil blue logo"
                 width={120}
                 height={42}
@@ -53,44 +59,42 @@ export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
             >
               <AccordionItem value="estate" className="m-0 p-0 border-none">
                 <AccordionTrigger className="m-0 p-0 text-base font-normal hover:no-underline">
-                  Imobiliare
+                  {t("real_estate")}
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col items-start gap-6 text-sm font-normal pl-6 pt-8">
                     <li>
-                      <Link href={"/apartments"} className="hover:text-primary">
-                        Apartamente
+                      <Link href="/apartments" className="hover:text-primary">
+                        {t("apartments")}
                       </Link>
                     </li>
                     <li>
-                      <Link href={"/houses"} className="hover:text-primary">
-                        Case
+                      <Link href="/houses" className="hover:text-primary">
+                        {t("houses")}
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href={"/commercials"}
-                        className="hover:text-primary"
-                      >
-                        Spații comerciale
+                      <Link href="/commercials" className="hover:text-primary">
+                        {t("commercial_spaces")}
                       </Link>
                     </li>
                     <li>
-                      <Link href={"/terrains"} className="hover:text-primary">
-                        Terenuri
+                      <Link href="/terrains" className="hover:text-primary">
+                        {t("lands")}
                       </Link>
                     </li>
                     <li>
-                      <Link href={"#"} className="hover:text-primary">
-                        Investiții
+                      <Link href="#" className="hover:text-primary">
+                        {t("investments")}
                       </Link>
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
+
               <AccordionItem value="services" className="m-0 p-0 border-none">
                 <AccordionTrigger className="m-0 p-0 text-base font-normal hover:no-underline">
-                  Servicii
+                  {t("services")}
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="flex flex-col items-start gap-6 text-sm font-normal pl-6 pt-8">
@@ -111,18 +115,18 @@ export const MobileNavigation: React.FC<Props> = ({ services, locale }) => {
           </li>
 
           <li>
-            <Link href={"/about-us"} className="hover:text-primary">
-              Despre Noi
+            <Link href="/about-us" className="hover:text-primary">
+              {t("about_us")}
             </Link>
           </li>
           <li>
-            <Link href={"/blogs"} className="hover:text-primary">
-              Știri imobiliare
+            <Link href="/blogs" className="hover:text-primary">
+              {t("real_estate_news")}
             </Link>
           </li>
           <li>
-            <Link href={"/contacts"} className="hover:text-primary">
-              Contacte
+            <Link href="/contacts" className="hover:text-primary">
+              {t("contacts")}
             </Link>
           </li>
         </ul>
