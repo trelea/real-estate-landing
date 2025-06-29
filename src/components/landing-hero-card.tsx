@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
+import { UrlObject } from "url";
 
 interface Props {
   title: string;
-  href?: string;
+  href?: UrlObject;
   img: {
     src: string;
     alt: string;
@@ -25,6 +27,13 @@ export const LandingHeroCard: React.FC<Props> = ({
         clasName
       )}
     >
+      {href && (
+        <Link
+          href={href as UrlObject}
+          className="h-full w-full absolute top-0 right-0 left-0 bottom-0 z-10"
+        ></Link>
+      )}
+
       <CardHeader className="m-0 p-2 sm:p-4 relative z-10">
         <CardTitle className="font-semibold text-base sm:text-lg xl:text-xl  2xl:text-2xl p-0 m-0">
           {title}

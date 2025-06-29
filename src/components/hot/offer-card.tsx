@@ -18,10 +18,17 @@ interface Props {
   type?: Partial<"apartments" | "houses" | "commercials" | "terrains">;
 }
 export const OfferCard: React.FC<Props> = ({ offert, type }) => {
+  const thumb = offert.media
+    .sort(
+      (a, b) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    )
+    .at(0)?.url;
+
   return (
     <Card className="m-0 p-0 shadow w-full h-fit gap-0 rounded-2xl relative">
       <Link
-        href={`${type ?? offert?.type?.toLowerCase()}/${offert.id}`}
+        href={`/${type ?? offert?.type?.toLowerCase()}/${offert.id}`}
         className="w-full h-full absolute top-0 left-0 z-10"
       ></Link>
       <div className="w-full h-full relative overflow-hidden">
@@ -32,7 +39,7 @@ export const OfferCard: React.FC<Props> = ({ offert, type }) => {
           </div>
         )}
         <Image
-          src={offert.media?.at(0)?.url || "/assets/logo-blue.png"}
+          src={thumb || "/assets/logo-blue.png"}
           height={200}
           width={500}
           alt="Dialog"

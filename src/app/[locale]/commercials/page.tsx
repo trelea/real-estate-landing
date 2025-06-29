@@ -12,6 +12,7 @@ import {
 } from "@/features/offerts/api";
 import CommercialsFilter from "@/features/offerts/components/commercials-filter";
 import OffertsGrid from "@/features/offerts/components/offerts-grid";
+import { parseArrayParam, parseParam } from "@/utils/parser";
 
 export default async function Commercials({
   searchParams,
@@ -41,12 +42,57 @@ export default async function Commercials({
   >;
 }) {
   const params = await searchParams;
+  const parsedParams = {
+    page: parseParam(params.page as unknown as string, "number"),
+    sort: params.sort,
+    offert: parseArrayParam(params.offert as unknown as string, "string") as (
+      | "SALE"
+      | "RENT"
+    )[],
+    location_category: parseArrayParam(
+      params.location_category as unknown as string,
+      "number"
+    ),
+    location_subcategory: parseArrayParam(
+      params.location_subcategory as unknown as string,
+      "number"
+    ),
+    floors: parseArrayParam(params.floors as unknown as string, "number"),
+    first_line: parseParam(params.first_line as unknown as string, "boolean"),
+    price_from: parseParam(params.price_from as unknown as string, "number"),
+    price_to: parseParam(params.price_to as unknown as string, "number"),
+    price_square_from: parseParam(
+      params.price_square_from as unknown as string,
+      "number"
+    ),
+    price_square_to: parseParam(
+      params.price_square_to as unknown as string,
+      "number"
+    ),
+    surface_from: parseParam(
+      params.surface_from as unknown as string,
+      "number"
+    ),
+    surface_to: parseParam(params.surface_to as unknown as string, "number"),
+    floor_from: parseParam(params.floor_from as unknown as string, "number"),
+    floor_to: parseParam(params.floor_to as unknown as string, "number"),
+    housing_conditions: parseArrayParam(
+      params.housing_conditions as unknown as string,
+      "number"
+    ),
+    features: parseArrayParam(params.features as unknown as string, "number"),
+    destinations: parseArrayParam(
+      params.destinations as unknown as string,
+      "number"
+    ),
+    placeings: parseArrayParam(params.placeings as unknown as string, "number"),
+  };
   const commercialsHotOfferts = await getCommercialsHotOfferts({
     limit: 3,
   });
   const { data: commercialsOfferts, meta } = await getCommercialsOfferts({
     limit: 15,
-    ...params,
+    ...(parsedParams as unknown as Record<string, any>),
   });
 
   const locationCategories = await getLocationCategories();

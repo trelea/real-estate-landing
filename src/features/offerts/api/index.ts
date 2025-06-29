@@ -216,3 +216,31 @@ export const getHotOfferts = async ({ limit }: { limit: number }) => {
     })
   ).data;
 };
+
+export const getApartment = async ({ id }: { id: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<Apartment>>(
+      `/apartments/${id}`
+    )
+  ).data;
+};
+
+export const getHouse = async ({ id }: { id: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<House>>(`/houses/${id}`)
+  ).data;
+};
+
+export const getCommercial = async ({ id }: { id: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<Commercial>>(
+      `/commercials/${id}`
+    )
+  ).data;
+};
+
+export const getTerrain = async ({ id }: { id: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<Terrain>>(`/terrains/${id}`)
+  ).data;
+};

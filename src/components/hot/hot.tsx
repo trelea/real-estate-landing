@@ -3,6 +3,7 @@ import { CarouselContent, CarouselItem } from "../ui/carousel";
 import { OfferCard } from "./offer-card";
 import { OffersCarousel } from "./offers-carousel";
 import { getHotOfferts } from "@/features/offerts/api";
+import { randomUUID } from "node:crypto";
 
 interface Props {}
 
@@ -19,7 +20,7 @@ export const HotSection: React.FC<Props> = async ({}) => {
         <CarouselContent className="w-full">
           {hotOfferts.map((offert, _) => (
             <CarouselItem
-              key={offert.id}
+              key={randomUUID()}
               className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 w-full"
             >
               <OfferCard offert={offert as any} />

@@ -10,6 +10,7 @@ import {
 } from "@/features/offerts/api";
 import OffertsGrid from "@/features/offerts/components/offerts-grid";
 import TerrainsFilter from "@/features/offerts/components/terrains-filter";
+import { parseArrayParam, parseParam } from "@/utils/parser";
 
 export default async function Terrains({
   searchParams,
@@ -31,12 +32,40 @@ export default async function Terrains({
   >;
 }) {
   const params = await searchParams;
+  const parsedParams = {
+    page: parseParam(params.page as unknown as string, "number"),
+    sort: params.sort,
+    offert: parseArrayParam(params.offert as unknown as string, "string") as (
+      | "SALE"
+      | "RENT"
+    )[],
+    location_category: parseArrayParam(
+      params.location_category as unknown as string,
+      "number"
+    ),
+    location_subcategory: parseArrayParam(
+      params.location_subcategory as unknown as string,
+      "number"
+    ),
+    price_from: parseParam(params.price_from as unknown as string, "number"),
+    price_to: parseParam(params.price_to as unknown as string, "number"),
+    surface_from: parseParam(
+      params.surface_from as unknown as string,
+      "number"
+    ),
+    surface_to: parseParam(params.surface_to as unknown as string, "number"),
+    usabilities: parseArrayParam(
+      params.usabilities as unknown as string,
+      "number"
+    ),
+    features: parseArrayParam(params.features as unknown as string, "number"),
+  };
   const terrainsHotOfferts = await getTerrainsHotOfferts({
     limit: 3,
   });
   const { data: terrainsOfferts, meta } = await getTerrainsOfferts({
     limit: 15,
-    ...params,
+    ...(parsedParams as unknown as Record<string, any>),
   });
   const locationCategories = await getLocationCategories();
   const usabilities = await getTerrainUsabilities();

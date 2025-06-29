@@ -1,3 +1,16 @@
+import {
+  HousingStock,
+  ApartmentFeature,
+  CommercialDestination,
+  CommercialFeature,
+  CommercialPlaceing,
+  HouseFeature,
+  TerrainFeature,
+  TerrainUtility,
+  HousingCondition,
+  MultiLanguageType,
+} from "@/features/filters/types";
+
 export interface Profile {
   id: string;
   created_at: string;
@@ -24,12 +37,10 @@ export interface Location {
   id: number;
   location_category: {
     id: number;
-    name: string;
-  };
+  } & MultiLanguageType;
   location_subcategory: {
     id: number;
-    name: string;
-  };
+  } & MultiLanguageType;
   lat: number;
   lng: number;
   street_ro: string;
@@ -46,15 +57,15 @@ export interface Media {
   updated_at: string;
 }
 
-export interface HousingStock {
-  id: number;
-  name: string;
-}
+// export interface HousingStock {
+//   id: number;
+//   name: string;
+// }
 
-export interface Feature {
-  id: number;
-  name: string;
-}
+// export interface Feature {
+//   id: number;
+//   name: string;
+// }
 
 export interface Apartment {
   id: number;
@@ -74,8 +85,8 @@ export interface Apartment {
   floor: number;
   floors: number;
   housing_stock: HousingStock;
-  housing_conditions: { id: number }[];
-  features: Feature[];
+  housing_conditions: HousingCondition[];
+  features: ApartmentFeature[];
   media: Media[];
   views: number;
   created_at: string;
@@ -98,11 +109,11 @@ export interface Commercial {
   rooms: number;
   floor: number;
   floors: number;
-  housing_stock: { id: number; name: string };
-  housing_conditions: { id: number }[];
-  commercial_destinations: { id: number; name: string }[];
-  commercial_placings: { id: number; name: string }[];
-  features: { id: number; name: string }[];
+  housing_stock: HousingStock;
+  housing_conditions: HousingCondition[];
+  commercial_destinations: CommercialDestination[];
+  commercial_placings: CommercialPlaceing[];
+  features: CommercialFeature[];
   media: Media[];
   views: number;
   created_at: string;
@@ -127,8 +138,8 @@ export interface House {
   area: number;
   balcony: number;
   housing_stock: HousingStock;
-  housing_conditions: { id: number }[];
-  features: Feature[];
+  housing_conditions: HousingCondition[];
+  features: HouseFeature[];
   media: Media[];
   views: number;
   created_at: string;
@@ -147,8 +158,8 @@ export interface Terrain {
   desc_en: string;
   location: Location;
   area: number;
-  usability: { id: number }[];
-  features: { id: number }[];
+  usability: TerrainUtility[];
+  features: TerrainFeature[];
   media: Media[];
   views: number;
   created_at: string;

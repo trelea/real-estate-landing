@@ -48,6 +48,7 @@ export const LandingHero: React.FC<Props> = ({}) => {
             <LandingHeroCard
               clasName="col-span-3 w-full"
               title="Apartamente"
+              href={{ pathname: "/apartments" }}
               img={{
                 src: "/assets/apartments.png",
                 alt: "Apartments Category",
@@ -57,6 +58,7 @@ export const LandingHero: React.FC<Props> = ({}) => {
             <LandingHeroCard
               clasName="col-span-3 sm:hidden"
               title="Spații comerciale"
+              href={{ pathname: "/commercials" }}
               img={{
                 src: "/assets/offices.png",
                 alt: "Commercial Spaces Category",
@@ -66,18 +68,21 @@ export const LandingHero: React.FC<Props> = ({}) => {
             <LandingHeroCard
               clasName="col-span-2 sm:hidden"
               title="Case"
+              href={{ pathname: "/houses" }}
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
             <LandingHeroCard
               clasName="sm:col-span-3 sm:block hidden"
               title="Case"
+              href={{ pathname: "/houses" }}
               img={{ src: "/assets/houses.png", alt: "Houses Category" }}
             />
 
             <LandingHeroCard
               clasName="sm:col-span-2 sm:block hidden"
               title="Spații comerciale"
+              href={{ pathname: "/commercials" }}
               img={{
                 src: "/assets/offices.png",
                 alt: "Commercial Spaces Category",
@@ -87,6 +92,7 @@ export const LandingHero: React.FC<Props> = ({}) => {
             <LandingHeroCard
               clasName="col-span-2"
               title="Terenuri"
+              href={{ pathname: "/terrains" }}
               img={{ src: "/assets/lands.png", alt: "Lands Category" }}
             />
 

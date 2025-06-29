@@ -34,6 +34,7 @@ import {
   LocationCategory,
 } from "@/features/filters/types";
 import { Input } from "@/components/ui/input";
+import PaginationOfferts from "@/components/pagination/pagination";
 
 const FilterComponent = ({
   query,
@@ -57,12 +58,16 @@ const FilterComponent = ({
         <AccordionTrigger className="font-semibold text-base">
           Offert
         </AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-1">
+        <AccordionContent>
           <div className="flex items-center gap-2">
             <Checkbox
               checked={query.offert?.includes("SALE")}
               onCheckedChange={(checked) =>
-                setQuery({ offert: checked ? ["SALE"] : [] })
+                setQuery({
+                  offert: checked
+                    ? [...(query.offert ?? []), "SALE"]
+                    : query.offert?.filter((o: any) => o !== "SALE"),
+                })
               }
             />
             <span>Sale</span>
@@ -71,7 +76,11 @@ const FilterComponent = ({
             <Checkbox
               checked={query.offert?.includes("RENT")}
               onCheckedChange={(checked) =>
-                setQuery({ offert: checked ? ["RENT"] : [] })
+                setQuery({
+                  offert: checked
+                    ? [...(query.offert ?? []), "RENT"]
+                    : query.offert?.filter((o: any) => o !== "RENT"),
+                })
               }
             />
             <span>Rent</span>
@@ -466,7 +475,7 @@ export default function HousesFilter({
 }) {
   const [query, setQuery] = useQueryStates(
     {
-      page: parseAsInteger,
+      page: parseAsInteger.withDefault(1),
       sort: parseAsString,
       offert: parseAsArrayOf(parseAsString),
       location_category: parseAsArrayOf(parseAsInteger),
@@ -485,10 +494,10 @@ export default function HousesFilter({
       housing_conditions: parseAsArrayOf(parseAsInteger),
       features: parseAsArrayOf(parseAsInteger),
     },
-    { shallow: false }
+    { shallow: false, history: "push", throttleMs: 1000, scroll: true }
   );
   return (
-    <div className="w-full flex gap-6">
+    <div className="w-full flex gap-6 pb-10">
       <div className="w-full flex flex-col gap-6">
         <div className="w-full flex flex-col gap-2 xl:flex-row xl:justify-between">
           <div className="flex items-center gap-6">
@@ -548,6 +557,16 @@ export default function HousesFilter({
           </div>
         </div>
         {children}
+        <PaginationOfferts
+          next={() =>
+            setQuery(({ page, ..._ }) => ({ page: (page as number) + 1, ..._ }))
+          }
+          prev={() =>
+            setQuery(({ page, ..._ }) => ({ page: (page as number) - 1, ..._ }))
+          }
+          access={(page) => setQuery({ ...query, page })}
+          meta={meta}
+        />
       </div>
 
       <div className=" flex-col gap-6 w-72 hidden xl:flex">

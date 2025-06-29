@@ -1,4 +1,3 @@
-import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
@@ -8,6 +7,7 @@ import { Footer } from "@/components/footer/footer";
 import { ContactsPopover } from "@/components/navbar/contacts-popover";
 import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import "../globals.css";
 
 const onest = Onest({
   subsets: ["latin"],

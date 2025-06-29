@@ -14,7 +14,14 @@ export const OffersCarousel: React.FC<Props> = ({ children, className }) => {
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
   return (
-    <Carousel plugins={[plugin.current]} className={className}>
+    <Carousel
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      plugins={[plugin.current]}
+      className={className}
+    >
       {children}
     </Carousel>
   );
