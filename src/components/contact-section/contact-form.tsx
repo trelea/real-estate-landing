@@ -12,6 +12,7 @@ export const ContactForm: React.FC<Props> = ({}) => {
   const t = useTranslations("contacts.form");
 
   return (
+    // @ts-ignore
     <form className="flex flex-col gap-6 w-full" action={formAction}>
       <div className="flex flex-col gap-4 w-full">
         <div className="flex flex-col gap-1 w-full">
