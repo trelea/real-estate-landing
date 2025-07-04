@@ -26,7 +26,7 @@
   },
   "about": {
     "title": "About Us",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in rem mollitia delectus totam commodi aperiam quaerat eius magnam qui illum recusandae cupiditate reprehenderit nesciunt, illo, tempore architecto earum sed ipsum quidem lure labore vitae! Est eveniet amet esse veniam! Non expedita dolores neque facilis sint quis totam suscipit itaque!",
+    "desc": "Dialog Imobil is an experienced real estate agency in the Republic of Moldova, dedicated to providing clients with comprehensive and personalized services in buying, selling, and renting properties. We focus on professionalism, transparency, and continuous support to help you make the best real estate decisions.",
     "one": "Client Satisfaction",
     "two": "Years of Experience",
     "three": "Properties Sold"
@@ -130,6 +130,7 @@
     "housing_stock": "Housing Stock",
     "address": "Address",
     "object_destination": "Object Destination",
+    "apartments": "Apartments",
     "commercial_spaces": "Commercial Spaces",
     "houses": "Houses",
     "lands": "Lands",
@@ -142,7 +143,7 @@
     "property_id": "Property ID"
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue.",
+    "description": "Dialog Imobil — Trusted real estate agency in the Republic of Moldova, providing comprehensive services for buying, selling, and renting properties.",
     "about_us": "About Us",
     "real_estate_news": "Real Estate News",
     "privacy_policy": "Privacy Policy",

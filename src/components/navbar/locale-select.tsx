@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import {
   Select,
   SelectContent,
@@ -10,20 +10,27 @@ import {
 } from "../ui/select";
 import { useLocale } from "next-intl";
 import { LocaleType } from "@/i18n/routing";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 interface Props {}
 
 export const LocaleSelect: React.FC<Props> = ({}) => {
   const router = useRouter();
   const locale = useLocale();
-  const pathname = usePathname();
   const [isPending, startTransition] = React.useTransition();
 
   const onLocaleChange = React.useCallback(
     (locale: LocaleType) =>
       startTransition(() => {
-        router.replace({ pathname }, { locale });
+        router.replace(
+          {
+            pathname:
+              "/" +
+              window.location.pathname.split(/\/(en|ro|ru)\//)[2] +
+              window.location.search,
+          },
+          { locale }
+        );
       }),
     [locale]
   );

@@ -4,7 +4,7 @@
     "apartments": "Квартиры",
     "houses": "Дома",
     "commercial_spaces": "Коммерческие помещения",
-    "lands": "Участки",
+    "lands": "Земельные участки",
     "investments": "Инвестиции",
     "services": "Услуги",
     "about_us": "О нас",
@@ -13,7 +13,7 @@
     "consult_expert": "Консультация эксперта"
   },
   "banner": {
-    "title": "Подходящее жильё.",
+    "title": "Подходящий дом.",
     "subtitle": "Подходящее агентство.",
     "apartments": "Квартиры",
     "houses": "Дома",
@@ -26,14 +26,14 @@
   },
   "about": {
     "title": "О нас",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in rem mollitia delectus totam commodi aperiam quaerat eius magnam qui illum recusandae cupiditate reprehenderit nesciunt, illo, tempore architecto earum sed ipsum quidem lure labore vitae! Est eveniet amet esse veniam! Non expedita dolores neque facilis sint quis totam suscipit itaque!",
+    "desc": "Dialog Imobil — это опытное агентство недвижимости в Республике Молдова, посвященное предоставлению клиентам комплексных и персонализированных услуг в области покупки, продажи и аренды недвижимости. Мы сосредоточены на профессионализме, прозрачности и постоянной поддержке, чтобы помочь вам принимать лучшие решения в сфере недвижимости.",
     "one": "Удовлетворенность клиентов",
     "two": "Лет опыта",
     "three": "Проданных объектов"
   },
   "services": {
     "our_services": "Наши услуги",
-    "more": "больше"
+    "more": "Подробнее"
   },
   "team": {
     "title": "Наша команда",
@@ -44,7 +44,7 @@
   },
   "news": {
     "news": "Новости недвижимости",
-    "more": "Подробнее"
+    "more": "Больше"
   },
   "contacts": {
     "form": {
@@ -55,7 +55,7 @@
       },
       "phone": {
         "label": "Телефон",
-        "placeholder": "+7 123 456 7890"
+        "placeholder": "+373 699 84 245"
       },
       "email": {
         "label": "Email",
@@ -70,34 +70,34 @@
   },
   "filters": {
     "title": "Фильтры",
-    "clear": "Сбросить",
+    "clear": "Очистить",
     "offert": "Предложение",
     "location": "Местоположение",
     "rooms": "Комнаты",
     "sanitaries": "Санузлы",
     "price": "Цена",
-    "price_square": "Цена за квадратный метр",
+    "price_square": "Цена за кв.м",
     "surface": "Площадь",
     "floor": "Этаж",
-    "housing_stock": "Жилищный фонд",
+    "housing_stock": "Жилой фонд",
     "housing_conditions": "Жилищные условия",
     "features": "Особенности",
-    "floors": "Этажность",
+    "floors": "Этажи",
     "first_line": "Первая линия",
     "destinations": "Назначения",
-    "placeings": "Расположения",
-    "usabilities": "Возможности использования",
+    "placeings": "Размещения",
+    "usabilities": "Использование",
     "found": "Найдено",
     "apartments": "квартиры",
-    "sort_by": "Сортировка по",
+    "sort_by": "Сортировать по",
     "default": "По умолчанию",
-    "low_to_high": "От меньшего к большему",
-    "high_to_low": "От большего к меньшему",
+    "low_to_high": "От низкой к высокой",
+    "high_to_low": "От высокой к низкой",
     "area": "Площадь",
-    "commercials": "Коммерческие помещения",
+    "commercials": "Коммерческие",
     "houses": "Дома",
-    "terrains": "Территории",
-    "lands": "Земельные участки",
+    "terrains": "Участки",
+    "lands": "Земли",
     "investments": "Инвестиции",
     "sale": "Продажа",
     "rent": "Аренда",
@@ -116,45 +116,46 @@
   },
   "common": {
     "square_meter": "м²",
-    "rooms": "комнат",
+    "rooms": "комнаты",
     "on_map": "На карте",
-    "previous": "Предыдущая",
-    "next": "Следующая",
+    "previous": "Предыдущий",
+    "next": "Следующий",
     "offert_type": "Тип предложения",
     "category": "Категория",
     "location": "Местоположение",
     "total_surface": "Общая площадь",
     "floors": "Этажи",
-    "bath_rooms": "Санузлы",
+    "bath_rooms": "Ванные комнаты",
     "property_condition": "Состояние недвижимости",
-    "housing_stock": "Жилищный фонд",
+    "housing_stock": "Жилой фонд",
     "address": "Адрес",
     "object_destination": "Назначение объекта",
+    "apartments": "Квартиры",
     "commercial_spaces": "Коммерческие помещения",
     "houses": "Дома",
-    "lands": "Земельные участки",
+    "lands": "Земли",
     "investments": "Инвестиции",
-    "terrains": "Территории",
-    "terrain_destinations": "Назначения территории",
+    "terrains": "Участки",
+    "terrain_destinations": "Назначения участков",
     "caracteristics": "Характеристики",
     "description": "Описание",
     "contacts": "Контакты",
-    "property_id": "ID объекта"
+    "property_id": "ID недвижимости"
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue.",
+    "description": "Dialog Imobil — Надежное агентство недвижимости в Республике Молдова, предоставляющее комплексные услуги по купле-продаже и аренде недвижимости.",
     "about_us": "О нас",
     "real_estate_news": "Новости недвижимости",
     "privacy_policy": "Политика конфиденциальности",
-    "ethics_code": "Кодекс этики",
+    "ethics_code": "Этический кодекс",
     "services": "Услуги",
     "social_media": "Социальные сети",
-    "terms_and_conditions": "Условия и положения",
+    "terms_and_conditions": "Условия использования",
     "all_rights_reserved": "Все права защищены",
     "apartments": "Квартиры",
     "houses": "Дома",
     "commercial_spaces": "Коммерческие помещения",
-    "lands": "Земельные участки",
+    "lands": "Земли",
     "investments": "Инвестиции"
   }
 }

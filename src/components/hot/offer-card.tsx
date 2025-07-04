@@ -36,12 +36,27 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
         className="w-full h-full absolute top-0 left-0 z-10"
       ></Link>
       <div className="w-full h-full relative overflow-hidden">
-        {offert.hot && (
+        {/* {offert.hot && (
           <div className="absolute top-1.5 left-1.5 flex items-center justify-center gap-2 bg-gradient-to-r from-red-400 to-red-500 p-2 rounded-full">
             <Flame className="size-4 fill-white stroke-white" />
             <span className="text-xs text-white font-semibold">HOT</span>
           </div>
+        )} */}
+
+        {offert.hot && (
+          <div className="absolute top-1.5 left-1.5 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/75 p-2 rounded-full">
+            <Flame className="size-4 fill-orange-500 stroke-orange-500" />
+            <span className="text-xs text-orange-500 font-bold">HOT</span>
+          </div>
         )}
+
+        {/* {offert.hot && (
+          <div className="absolute top-1.5 left-40 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/75 p-2 rounded-full">
+            <Flame className="size-4 fill-white stroke-white" />
+            <span className="text-xs text-white font-semibold">HOT</span>
+          </div>
+        )} */}
+
         <Image
           src={thumb || "/assets/logo-blue.png"}
           height={200}

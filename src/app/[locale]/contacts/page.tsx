@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Contacts: React.FC = () => {
   return (
-    <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
+    <section className="pt-10 sm:pt-12 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl pt-14">
         {/* thumb */}
         <div className="relative h-44">

@@ -26,7 +26,7 @@
   },
   "about": {
     "title": "Despre noi",
-    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in rem mollitia delectus totam commodi aperiam quaerat eius magnam qui illum recusandae cupiditate reprehenderit nesciunt, illo, tempore architecto earum sed ipsum quidem lure labore vitae! Est eveniet amet esse veniam! Non expedita dolores neque facilis sint quis totam suscipit itaque!",
+    "desc": "Dialog Imobil este o agenție imobiliară cu experiență în Republica Moldova, dedicată să ofere clienților servicii complete și personalizate în domeniul vânzării, cumpărării și închirierii proprietăților. Ne concentrăm pe profesionalism, transparență și sprijin constant pentru a te ajuta să iei cele mai bune decizii imobiliare.",
     "one": "Satisfacție clientilor",
     "two": "Ani de experiență",
     "three": "Obiecte vândute"
@@ -130,6 +130,7 @@
     "housing_stock": "Fond locativ",
     "address": "Adresă",
     "object_destination": "Destinație obiect",
+    "apartments": "Apartamente",
     "commercial_spaces": "Spații comerciale",
     "houses": "Case",
     "lands": "Terenuri",
@@ -142,7 +143,7 @@
     "property_id": "ID proprietate"
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue.",
+    "description": "Dialog Imobil — Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",
     "about_us": "Despre Noi",
     "real_estate_news": "Știri imobiliare",
     "privacy_policy": "Politica de confidențialitate",

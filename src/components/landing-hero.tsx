@@ -8,7 +8,7 @@ interface Props {}
 export const LandingHero: React.FC<Props> = async ({}) => {
   const t = await getTranslations("banner");
   return (
-    <section className="relative pt-14 sm:pt-20 h-fit w-full">
+    <section className="relative pt-10 sm:pt-12 h-fit w-full">
       {/* PHONE VERSION IMAGE */}
       <Image
         src={"/assets/phone-hero-banner.png"}

@@ -31,7 +31,7 @@ export const AboutUsSection = async () => {
             {t("desc")}
           </CardDescription>
         </CardHeader>
-        <CardContent className="m-0 p-0 mt-8 sm:mt-14 xl:flex xl:items-end w-full h-full">
+        {/* <CardContent className="m-0 p-0 mt-8 sm:mt-14 xl:flex xl:items-end w-full h-full">
           <ul className="flex flex-col gap-8 font-bold sm:grid grid-cols-3 w-full">
             <li className="flex flex-col gap-2 sm:gap-3">
               <h1 className="text-[40px] sm:text-5xl text-primary">98%</h1>
@@ -46,7 +46,7 @@ export const AboutUsSection = async () => {
               <h6 className="text-sm sm:text-base">{t("three")}</h6>
             </li>
           </ul>
-        </CardContent>
+        </CardContent> */}
       </Card>
     </article>
   );

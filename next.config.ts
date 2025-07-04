@@ -9,9 +9,7 @@ const nextConfig: NextConfig = {
   //   cacheLife: {},
   // },
   images: {
-    remotePatterns: [
-      { hostname: "premierimobilimagebucket.s3.eu-north-1.amazonaws.com" },
-    ],
+    remotePatterns: [{ hostname: "*" }],
   },
 };
 

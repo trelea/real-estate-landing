@@ -11,7 +11,7 @@ const Blog: React.FC<Props> = async ({ params }) => {
   const { locale, id } = await params;
   const blog = await getBlog({ id });
   return (
-    <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
+    <section className="pt-10 sm:pt-12 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl">
         <BlogArticle blog={blog} locale={locale} />
         <ContactSection />

@@ -20,7 +20,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
 
   return (
     <header className="fixed z-50 w-full shadow">
-      <section className="py-2 px-6 sm:px-11 lg:px-20 hidden sm:flex w-full relative text-white h-fit justify-between z-50">
+      {/* <section className="py-2 px-6 sm:px-11 lg:px-20 hidden sm:flex w-full relative text-white h-fit justify-between z-50">
         <Image
           src={"/assets/header.png"}
           alt="header"
@@ -45,7 +45,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
             <h6 className="text-xs font-light">dialog@imobil.md</h6>
           </li>
         </ul>
-      </section>
+      </section> */}
       <nav className="py-2 px-6 sm:px-11 lg:px-20 shadow flex items-center justify-between relative z-50 bg-background">
         {/* logo */}
         <div className="shrink w-fit">

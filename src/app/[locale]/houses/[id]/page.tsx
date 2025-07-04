@@ -12,7 +12,7 @@ export default async function HousePage({
   const house = await getHouse({ id: parseInt(id) });
   const t = await getTranslations("common");
   return (
-    <section className="pt-14 sm:pt-24 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
+    <section className="pt-10 sm:pt-12 h-fit w-full px-6 sm:px-11 lg:px-20 flex flex-col items-center">
       <div className="w-full max-w-7xl py-10 md:py-14">
         <OffertPage
           locale={locale}
