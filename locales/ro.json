@@ -1,0 +1,161 @@
+{
+  "navbar": {
+    "real_estate": "Imobiliare",
+    "apartments": "Apartamente",
+    "houses": "Case",
+    "commercial_spaces": "Spații comerciale",
+    "lands": "Terenuri",
+    "investments": "Investiții",
+    "services": "Servicii",
+    "about_us": "Despre Noi",
+    "real_estate_news": "Știri imobiliare",
+    "contacts": "Contacte",
+    "consult_expert": "Consultare expert"
+  },
+  "banner": {
+    "title": "Locuința potrivită.",
+    "subtitle": "Agenția potrivită.",
+    "apartments": "Apartamente",
+    "houses": "Case",
+    "commercial_spaces": "Spații comerciale",
+    "lands": "Terenuri",
+    "investments": "Investiții"
+  },
+  "hot": {
+    "hot": "Oferte Hot"
+  },
+  "about": {
+    "title": "Despre noi",
+    "desc": "Dialog Imobil este o agenție imobiliară cu experiență în Republica Moldova, dedicată să ofere clienților servicii complete și personalizate în domeniul vânzării, cumpărării și închirierii proprietăților. Ne concentrăm pe profesionalism, transparență și sprijin constant pentru a te ajuta să iei cele mai bune decizii imobiliare.",
+    "one": "Satisfacție clientilor",
+    "two": "Ani de experiență",
+    "three": "Obiecte vândute"
+  },
+  "services": {
+    "our_services": "Serviciile noastre",
+    "more": "Vezi mai mult"
+  },
+  "team": {
+    "title": "Echipa noastră",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est augue, ac posuere nunc mattis eget."
+  },
+  "partners": {
+    "partners": "Partenerii noștri"
+  },
+  "news": {
+    "news": "Știri imobiliare",
+    "more": "Mai mult"
+  },
+  "contacts": {
+    "form": {
+      "title": "Completează câmpurile",
+      "name": {
+        "label": "Nume",
+        "placeholder": "Numele dvs"
+      },
+      "phone": {
+        "label": "Telefon",
+        "placeholder": "+373 699 84 245"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@exemplu.com"
+      },
+      "btn": "Trimite"
+    },
+    "title": "Aveți nevoie de o consultare?",
+    "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "address": "Str. Stefan cel Mare 1/6",
+    "days": "Luni - Vineri"
+  },
+  "filters": {
+    "title": "Filtre",
+    "clear": "Curăță",
+    "offert": "Ofertă",
+    "location": "Locație",
+    "rooms": "Camere",
+    "sanitaries": "Grupuri sanitare",
+    "price": "Preț",
+    "price_square": "Preț per metru pătrat",
+    "surface": "Suprafață",
+    "floor": "Etaj",
+    "housing_stock": "Fond locativ",
+    "housing_conditions": "Condiții locative",
+    "features": "Caracteristici",
+    "floors": "Etaje",
+    "first_line": "Prima linie",
+    "destinations": "Destinații",
+    "placeings": "Amplasamente",
+    "usabilities": "Utilizări",
+    "found": "Găsit",
+    "apartments": "apartamente",
+    "sort_by": "Sortare după",
+    "default": "Implicit",
+    "low_to_high": "De la mic la mare",
+    "high_to_low": "De la mare la mic",
+    "area": "Suprafață",
+    "commercials": "Comerciale",
+    "houses": "Case",
+    "terrains": "Terenuri",
+    "lands": "Terenuri",
+    "investments": "Investiții",
+    "sale": "Vânzare",
+    "rent": "Chirie",
+    "1_room": "1 cameră",
+    "2_rooms": "2 camere",
+    "3_rooms": "3 camere",
+    "4_rooms": "4+ camere",
+    "1_sanitary": "1 grup sanitare",
+    "2_sanitaries": "2 grupuri sanitare",
+    "3_sanitaries": "3+ grupuri sanitare",
+    "1_floor": "1 etaj",
+    "2_floors": "2 etaje",
+    "3_floors": "3+ etaje",
+    "from": "De la",
+    "to": "La"
+  },
+  "common": {
+    "square_meter": "m²",
+    "rooms": "camere",
+    "on_map": "Pe harta",
+    "previous": "Anterior",
+    "next": "Următor",
+    "offert_type": "Tip ofertă",
+    "category": "Categorie",
+    "location": "Locație",
+    "total_surface": "Suprafață totală",
+    "floors": "Etaje",
+    "bath_rooms": "Băi",
+    "property_condition": "Condiție imobiliară",
+    "housing_stock": "Fond locativ",
+    "address": "Adresă",
+    "object_destination": "Destinație obiect",
+    "apartments": "Apartamente",
+    "commercial_spaces": "Spații comerciale",
+    "houses": "Case",
+    "lands": "Terenuri",
+    "investments": "Investiții",
+    "terrains": "Terenuri",
+    "terrain_destinations": "Destinații teren",
+    "caracteristics": "Caracteristici",
+    "description": "Descriere",
+    "contacts": "Contacte",
+    "property_id": "ID proprietate"
+  },
+  "footer": {
+    "description": "Dialog Imobil — Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",
+    "about_us": "Despre Noi",
+    "real_estate_news": "Știri imobiliare",
+    "privacy_policy": "Politica de confidențialitate",
+    "ethics_code": "Codul de etică",
+    "services": "Servicii",
+    "social_media": "Social Media",
+    "terms_and_conditions": "Termeni și condiții",
+    "all_rights_reserved": "Toate drepturile rezervate",
+    "apartments": "Apartamente",
+    "houses": "Case",
+    "commercial_spaces": "Spații comerciale",
+    "lands": "Terenuri",
+    "investments": "Investiții"
+  }
+}
