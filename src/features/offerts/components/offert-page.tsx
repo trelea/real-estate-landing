@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Apartment, Commercial, House, Terrain } from "../types";
-import { CircleCheckBig, Eye } from "lucide-react";
+import { CircleCheckBig, Eye, MapPinHouse } from "lucide-react";
 import OffertCarousel from "./offert-carousel";
 import OffertDesc from "./offert-desc";
 import {
@@ -16,6 +16,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Link } from "@/i18n/navigation";
 import OffertMap from "./offert-map";
 import { getTranslations } from "next-intl/server";
+import OffertPageContact from "./offert-page-contact";
 
 export default async function OffertPage({
   offert,
@@ -30,11 +31,11 @@ export default async function OffertPage({
   return (
     <article className="flex flex-col gap-4 pb-10">
       <div className="flex flex-col gap-2">
-        <h1 className="text-xl md:text-2xl font-bold">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">
           {/* @ts-ignore */}
           {offert.location[`street_${locale}`]}
         </h1>
-        <div className="flex gap-4 items-center h-4">
+        {/* <div className="flex gap-4 items-center h-4">
           <span className="text-xs md:text-sm text-gray-500">
             {t("property_id")}: <strong>{offert.id}</strong>
           </span>
@@ -43,32 +44,113 @@ export default async function OffertPage({
             <Eye className="w-4 h-4" />
             <strong>{offert.views}</strong>
           </span>
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full h-full flex flex-col xl:flex-row gap-4">
         <div className="w-full xl:w-2/3 h-full flex flex-col gap-6">
           <OffertCarousel media={offert.media} />
 
+          {/* PIDARASINS SUKA */}
+          {/*               
+Furnished
+With appliances
+Independent heating
+Air conditioning
+Thermo-pane windows
+Panoramic windows
+Underfloor heating
+Parquet flooring
+High ceilings
+Armored door
+Alarm systems
+Intercom
+Excludes ground floor
+Excludes top floor
+Middle floor placement
+Elevator
+Parking space
+Kindergarten
+Electricity
+Gas
+Sewage
+Supermarket
+Water supply
+School
+Children's playground
+Hospital / clinic
+Paved road
+
+filter and deselct the places like kinder gardden ,market ,school ,children's playground ,hospital / clinic ,paved road
+           */}
           {offert.features.length > 0 && (
-            <div className="flex flex-col gap-4">
-              <h1 className="text-xl md:text-2xl font-bold">
-                {t("caracteristics")}
-              </h1>
-              <ul className="grid grid-cols-3 gap-4">
-                {offert.features.map((feature) => (
-                  <li key={feature.id}>
-                    <div className="flex items-center gap-2">
-                      <CircleCheckBig className="w-6 h-6 stroke-primary" />
-                      <span className="text-base font-medium">
-                        {/* @ts-ignore */}
-                        {feature[locale]}
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <>
+              <div className="flex flex-col gap-4">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  {t("caracteristics")}
+                </h1>
+                <ul className="grid grid-cols-3 gap-4">
+                  {/* 
+              
+
+              */}
+                  {offert.features
+                    .filter(
+                      (feature) =>
+                        feature.en !== "Kindergarten" &&
+                        feature.en !== "Supermarket" &&
+                        feature.en !== "School" &&
+                        feature.en !== "Children's playground" &&
+                        feature.en !== "Hospital / clinic"
+                    )
+
+                    .map((feature) => (
+                      <li key={feature.id}>
+                        <div className="flex items-center gap-2">
+                          <CircleCheckBig className="w-6 h-6 stroke-primary" />
+                          <span className="text-base font-medium">
+                            {/* @ts-ignore */}
+                            {feature[locale]}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+              <Separator className="bg-gray-200" />
+              <div className="flex flex-col gap-4">
+                <h1 className="text-xl md:text-2xl font-bold">
+                  {t("caracteristics_2")}
+                </h1>
+                <ul className="grid grid-cols-3 gap-4">
+                  {/* 
+              
+
+              */}
+                  {offert.features
+                    .filter(
+                      (feature) =>
+                        feature.en === "Kindergarten" ||
+                        feature.en === "Supermarket" ||
+                        feature.en === "School" ||
+                        feature.en === "Children's playground" ||
+                        feature.en === "Hospital / clinic"
+                    )
+
+                    .map((feature) => (
+                      <li key={feature.id}>
+                        <div className="flex items-center gap-2">
+                          <MapPinHouse className="w-6 h-6 stroke-primary" />
+                          <span className="text-base font-medium">
+                            {/* @ts-ignore */}
+                            {feature[locale]}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </>
           )}
 
           <Separator className="bg-gray-200" />
@@ -87,34 +169,7 @@ export default async function OffertPage({
           )}
         </div>
         <div className="w-full xl:w-1/3 h-full flex-col gap-4 flex">
-          <Card className="h-full w-full m-0 p-4">
-            <CardHeader className="flex items-center gap-6 m-0 p-0">
-              <CardTitle>
-                <div>
-                  <Avatar className="h-[80px] w-[80px] md:h-24 md:w-24">
-                    <AvatarImage
-                      src={offert.user.profile.thumbnail as string}
-                    />
-                    <AvatarFallback>
-                      {offert.user.profile.surname.at(0)?.toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
-                </div>
-              </CardTitle>
-              <CardDescription className="flex flex-col">
-                <h3 className="text-sm md:text-base font-medium">
-                  {offert.user.profile.surname} {offert.user.profile.name}
-                </h3>
-                <Link
-                  className="text-base md:text-lg font-semibold text-primary"
-                  href={`tel:${offert.user.profile.contact}`}
-                  target="_blank"
-                >
-                  {offert.user.profile.contact}
-                </Link>
-              </CardDescription>
-            </CardHeader>
-          </Card>
+          <OffertPageContact offert={offert} />
 
           <Card className="h-full w-full m-0 p-4 py-6">
             <CardHeader className="flex items-center gap-6 m-0 p-0">

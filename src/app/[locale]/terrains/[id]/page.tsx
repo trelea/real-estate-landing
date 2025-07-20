@@ -20,7 +20,11 @@ export default async function TerrainPage({
           table={[
             {
               label: t("offert_type"),
-              value: terrain.offert,
+              value: terrain.offert.includes("SALE")
+                ? t("sale")
+                : terrain.offert.includes("RENT")
+                ? t("rent")
+                : t("sale"),
             },
             {
               label: t("category"),

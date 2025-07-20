@@ -35,7 +35,7 @@ export const LandingHeroCard: React.FC<Props> = ({
       )}
 
       <CardHeader className="m-0 p-2 sm:p-4 relative z-10">
-        <CardTitle className="font-semibold text-base sm:text-lg xl:text-xl  2xl:text-2xl p-0 m-0">
+        <CardTitle className="font-semibold text-sm sm:text-base xl:text-lg 2xl:text-xl p-0 m-0">
           {title}
         </CardTitle>
       </CardHeader>

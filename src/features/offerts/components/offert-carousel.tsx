@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Media } from "../types";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -27,19 +27,38 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               alt={media[currentIndex].url}
               width={1000}
               height={1000}
-              className="w-full min-h-[240px] max-h-[500px] object-cover rounded-md hover:scale-105 transition-all duration-300"
+              className="w-full lg:h-[500px] object-cover rounded-md  transition-all duration-300"
             />
+
+            <div className="absolute bottom-0 left-0 w-full flex justify-center items-center pb-4 lg:pb-10">
+              <Image
+                src={"/assets/logo-white.png"}
+                alt="logo"
+                width={1000}
+                height={1000}
+                className="w-20 lg:w-40 h-auto"
+              />
+            </div>
           </div>
         </DialogTrigger>
-        <DialogContent className="bg-transparent border-none p-0 m-0 h-[80%] min-w-[80%] flex justify-center items-center">
-          <div className="h-full w-full flex justify-center items-center bg-white rounded-2xl relative">
+        <DialogContent className="bg-transparent shadow-none border-none p-0 m-0 h-[80%] min-w-[80%] flex justify-center items-center">
+          <div className="h-full w-full flex justify-center border-none items-center bg-transparent shadow-none rounded-2xl relative">
             <Image
               src={media[currentIndex].url}
               alt={media[currentIndex].url}
               width={1000}
               height={1000}
-              className="rounded-2xl h-full w-full object-contain"
+              className="rounded-2xl h-full w-full object-contain bg-transparent"
             />
+            <div className="absolute bottom-0 left-0 w-full flex justify-center items-center pb-4 md:pb-10 lg:pb-20">
+              <Image
+                src={"/assets/logo-white.png"}
+                alt="logo"
+                width={1000}
+                height={1000}
+                className="w-20 md:w-40 lg:w-60 xl:w-80 2xl:w-96 h-auto"
+              />
+            </div>
 
             <div className="absolute right-0 flex w-full justify-between gap-2">
               <Button
@@ -49,6 +68,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
                   if (currentIndex > 0) {
                     setCurrentIndex(currentIndex - 1);
                     api?.scrollTo(currentIndex - 1);
+                  } else {
+                    setCurrentIndex(media.length - 1);
+                    api?.scrollTo(media.length - 1);
                   }
                 }}
                 className="bg-white rounded-full ml-2"
@@ -62,6 +84,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
                   if (currentIndex < media.length - 1) {
                     setCurrentIndex(currentIndex + 1);
                     api?.scrollTo(currentIndex + 1);
+                  } else {
+                    setCurrentIndex(0);
+                    api?.scrollTo(0);
                   }
                 }}
                 className="bg-white rounded-full mr-2"
@@ -92,7 +117,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               }}
             >
               <div
-                className={`w-full h-full max-h-28 rounded-lg overflow-hidden transition-all duration-300 ${
+                className={`w-full h-full max-h-28 rounded-lg overflow-hidden transition-all duration-300 relative ${
                   currentIndex === index
                     ? "border-2 border-primary/100"
                     : "border-2 border-transparent"
@@ -105,11 +130,21 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
                   height={1000}
                   className="w-full h-full object-cover rounded-md hover:scale-105 transition-all duration-300"
                 />
+
+                <div className="absolute bottom-0 left-0 w-full flex justify-center items-center pb-2">
+                  <Image
+                    src={"/assets/logo-white.png"}
+                    alt="logo"
+                    width={1000}
+                    height={1000}
+                    className="w-20 h-auto"
+                  />
+                </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute -top-[325%] sm:-top-[280%] md:-top-[270%] lg:-top-[260%] xl:-top-[250%] right-0 flex w-full justify-between gap-2">
+        <div className="absolute -top-[400%] sm:-top-[280%] md:-top-[270%] lg:-top-[275%] right-0 flex w-full justify-between gap-2">
           <Button
             variant="outline"
             size="icon"
@@ -117,6 +152,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               if (currentIndex > 0) {
                 setCurrentIndex(currentIndex - 1);
                 api?.scrollTo(currentIndex - 1);
+              } else {
+                setCurrentIndex(media.length - 1);
+                api?.scrollTo(media.length - 1);
               }
             }}
             className="bg-white rounded-full ml-2"
@@ -130,6 +168,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               if (currentIndex < media.length - 1) {
                 setCurrentIndex(currentIndex + 1);
                 api?.scrollTo(currentIndex + 1);
+              } else {
+                setCurrentIndex(0);
+                api?.scrollTo(0);
               }
             }}
             className="bg-white rounded-full mr-2"

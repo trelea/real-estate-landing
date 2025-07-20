@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function OffertDesc({
   desc,
@@ -11,6 +12,7 @@ export default function OffertDesc({
   desc: string;
   maxLength?: number;
 }) {
+  const t = useTranslations("common");
   const [showMore, setShowMore] = useState(false);
   return (
     <>
@@ -27,7 +29,7 @@ export default function OffertDesc({
         onClick={() => setShowMore(!showMore)}
       >
         <span className="text-primary font-semibold text-base">
-          Read more...
+          {t("read_more")}
         </span>
         {showMore ? (
           <ChevronUp className="w-4 h-4" />

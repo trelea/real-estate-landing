@@ -8,6 +8,7 @@ import { ContactsPopover } from "@/components/navbar/contacts-popover";
 import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "../globals.css";
+import { Up } from "@/components/up";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ s0.parentNode.insertBefore(s1,s0);
               {/* footer */}
               <Footer />
               <ContactsPopover />
+              <Up />
             </main>
           </NextIntlClientProvider>
         </NuqsAdapter>
