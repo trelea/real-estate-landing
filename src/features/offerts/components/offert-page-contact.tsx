@@ -26,7 +26,10 @@ export default function OffertPageContact({
         <CardTitle>
           <div>
             <Avatar className="h-[80px] w-[80px] md:h-24 md:w-24">
-              <AvatarImage src={offert.user.profile.thumbnail as string} />
+              <AvatarImage
+                src={offert.user.profile.thumbnail as string}
+                className="aspect-square object-cover object-center h-[80px] w-[80px] md:h-24 md:w-24"
+              />
               <AvatarFallback>
                 {offert.user.profile.surname.at(0)?.toUpperCase()}
               </AvatarFallback>
