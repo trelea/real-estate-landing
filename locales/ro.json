@@ -1,4 +1,7 @@
 {
+  "up": {
+    "up": "Sus"
+  },
   "navbar": {
     "real_estate": "Imobiliare",
     "apartments": "Apartamente",
@@ -141,7 +144,14 @@
     "caracteristics": "Caracteristici",
     "description": "Descriere",
     "contacts": "Contacte",
-    "property_id": "ID proprietate"
+    "property_id": "ID proprietate",
+    "show_contact": "Arată contact",
+    "request_call": "Solicită apel",
+    "agent_imobiliar": "Agent imobiliar",
+    "caracteristics_2": "Amplasare",
+    "read_more": "Citește mai mult...",
+    "sale": "Vânzare",
+    "rent": "Chirie"
   },
   "footer": {
     "description": "Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",

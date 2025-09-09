@@ -10,13 +10,14 @@ import {
 } from "../ui/select";
 import { useLocale } from "next-intl";
 import { LocaleType } from "@/i18n/routing";
-import { useRouter } from "@/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 
 interface Props {}
 
 export const LocaleSelect: React.FC<Props> = ({}) => {
   const router = useRouter();
   const locale = useLocale();
+  const pathname = usePathname();
   const [isPending, startTransition] = React.useTransition();
 
   const onLocaleChange = React.useCallback(
@@ -24,15 +25,12 @@ export const LocaleSelect: React.FC<Props> = ({}) => {
       startTransition(() => {
         router.replace(
           {
-            pathname:
-              "/" +
-              window.location.pathname.split(/\/(en|ro|ru)\//)[2] +
-              window.location.search,
+            pathname,
           },
           { locale }
         );
       }),
-    [locale]
+    [locale, pathname]
   );
 
   return (

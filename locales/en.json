@@ -1,4 +1,7 @@
 {
+  "up": {
+    "up": "Up"
+  },
   "navbar": {
     "real_estate": "Real Estate",
     "apartments": "Apartments",
@@ -141,7 +144,14 @@
     "caracteristics": "Caracteristics",
     "description": "Description",
     "contacts": "Contacts",
-    "property_id": "Property ID"
+    "property_id": "Property ID",
+    "show_contact": "Show Contact",
+    "request_call": "Request Call",
+    "agent_imobiliar": "Real Estate Agent",
+    "caracteristics_2": "Location",
+    "read_more": "Read more...",
+    "sale": "Sale",
+    "rent": "Rent"
   },
   "footer": {
     "description": "Trusted real estate agency in the Republic of Moldova, providing comprehensive services for buying, selling, and renting properties.",

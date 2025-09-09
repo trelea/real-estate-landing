@@ -63,15 +63,25 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
           width={500}
           alt="Dialog"
           loading="lazy"
-          className={`h-[200px] shadow rounded-t-2xl border-b ${
+          className={`h-[190px] shadow rounded-t-2xl border-b ${
             offert.media?.at(0)?.url
               ? "object-cover object-center"
               : "p-20 object-contain"
           }`}
         />
+
+        <div className="absolute bottom-0 left-0 w-full flex justify-center items-center pb-4">
+          <Image
+            src={"/assets/logo-white.png"}
+            alt="logo"
+            width={1000}
+            height={1000}
+            className="w-20 lg:w-32"
+          />
+        </div>
       </div>
 
-      <CardDescription className="m-0 p-0 py-4 px-2 flex flex-col gap-4 w-full">
+      <CardDescription className="m-0 p-0 py-3 px-2 flex flex-col gap-3 w-full">
         <div className="flex justify-between items-center">
           <h1 className="text-primary font-semibold text-xl">
             {Intl.NumberFormat("en-US", {
