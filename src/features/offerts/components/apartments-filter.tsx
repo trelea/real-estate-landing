@@ -112,18 +112,14 @@ export const FilterComponent = ({
                               ...(query.location_category ?? []),
                               category.id,
                             ],
-                            location_subcategory: [
-                              ...(query.location_subcategory ?? []),
-                              ...category.subcategories.map(
-                                (subcategory) => subcategory.id
-                              ),
-                            ],
+                            // Removed automatic subcategory selection
                           });
                         } else {
                           setQuery({
                             location_category: query.location_category?.filter(
                               (id: any) => id !== category.id
                             ),
+                            // Also remove all subcategories of this category when unchecking
                             location_subcategory:
                               query.location_subcategory?.filter(
                                 (id: any) =>
@@ -153,12 +149,12 @@ export const FilterComponent = ({
                           setQuery({
                             location_subcategory: checked
                               ? [
-                                  ...(query.location_subcategory ?? []),
-                                  subcategory.id,
-                                ]
+                                ...(query.location_subcategory ?? []),
+                                subcategory.id,
+                              ]
                               : query.location_subcategory?.filter(
-                                  (id: any) => id !== subcategory.id
-                                ),
+                                (id: any) => id !== subcategory.id
+                              ),
                           })
                         }
                       />
@@ -463,8 +459,8 @@ export const FilterComponent = ({
                     housing_stocks: checked
                       ? [...(query.housing_stocks ?? []), stock.id]
                       : query.housing_stocks?.filter(
-                          (s: any) => s !== stock.id
-                        ),
+                        (s: any) => s !== stock.id
+                      ),
                   })
                 }
               />
@@ -489,8 +485,8 @@ export const FilterComponent = ({
                     housing_conditions: checked
                       ? [...(query.housing_conditions ?? []), condition.id]
                       : query.housing_conditions?.filter(
-                          (c: any) => c !== condition.id
-                        ),
+                        (c: any) => c !== condition.id
+                      ),
                   })
                 }
               />

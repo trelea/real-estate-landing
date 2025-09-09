@@ -4,11 +4,17 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { getServices } from "@/features/services/api";
+import { getLocale } from "next-intl/server";
+import { ContentType } from "@/types";
 
 interface Props {}
 
-export const Footer: React.FC<Props> = async ({}) => {
+export const Footer: React.FC<Props> = async ({ }) => {
   const t = await getTranslations("footer");
+  const services = await getServices();
+  const locale = await getLocale();
+
   return (
     <footer className="px-6 sm:px-11 lg:px-20 py-12 w-full bg-[#163259] flex flex-col gap-12 text-white">
       <div className="flex flex-col gap-14 xl:gap-0 xl:flex-row">
@@ -25,7 +31,7 @@ export const Footer: React.FC<Props> = async ({}) => {
             {t("description")}
           </p>
         </div>
-        <div className="flex-1 flex justify-between flex-col gap-14 sm:flex-row sm:gap-0">
+        <div className="flex-1 flex justify-between flex-col gap-14 sm:flex-row sm:gap-2">
           <nav className="flex flex-col gap-7">
             <h1 className="font-bold text-xl">Dialog Imobil</h1>
             <ul className="text-base flex flex-col gap-6">
@@ -49,18 +55,13 @@ export const Footer: React.FC<Props> = async ({}) => {
           <nav className="flex flex-col gap-7">
             <h1 className="font-bold text-xl">{t("services")}</h1>
             <ul className="text-base flex flex-col gap-6">
-              <li>
-                <Link href={"/apartments"}>{t("apartments")}</Link>
-              </li>
-              <li>
-                <Link href={"/houses"}>{t("houses")}</Link>
-              </li>
-              <li>
-                <Link href={"/commercials"}>{t("commercial_spaces")}</Link>
-              </li>
-              <li>
-                <Link href={"/terrains"}>{t("lands")}</Link>
-              </li>
+              {services.map((content, id) => (
+                <li key={id}>
+                  <Link href={`/services/${content.id}`}>
+                    {content.content[`title_${locale}` as keyof ContentType]}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 

@@ -10,13 +10,14 @@
     "lands": "Lands",
     "investments": "Investments",
     "services": "Services",
+    "mortgage": "Mortgage",
     "about_us": "About Us",
     "real_estate_news": "Real Estate News",
     "contacts": "Contacts",
     "consult_expert": "Consult an Expert"
   },
   "banner": {
-    "title": "The right home.",
+    "title": "Feel the difference.",
     "subtitle": "The right agency.",
     "apartments": "Apartments",
     "houses": "Houses",
@@ -68,7 +69,7 @@
     },
     "title": "Need a consultation?",
     "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-    "address": "Str. Stefan cel Mare 1/6",
+    "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Monday - Friday"
   },
   "filters": {
@@ -153,7 +154,7 @@
     "rent": "Rent"
   },
   "footer": {
-    "description": "Dialog Imobil — Trusted real estate agency in the Republic of Moldova, providing comprehensive services for buying, selling, and renting properties.",
+    "description": "Trusted real estate agency in the Republic of Moldova, providing comprehensive services for buying, selling, and renting properties.",
     "about_us": "About Us",
     "real_estate_news": "Real Estate News",
     "privacy_policy": "Privacy Policy",

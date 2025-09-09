@@ -1,3 +1,5 @@
+"use client";
+
 import { Menu } from "lucide-react";
 import {
   Drawer,
@@ -6,6 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
+  DrawerClose,
 } from "../ui/drawer";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -17,18 +20,25 @@ import {
 } from "../ui/accordion";
 import { ServiceType } from "@/types";
 import { LocaleType } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { useRef } from "react";
 
 interface Props {
   services: ServiceType[];
   locale: LocaleType;
 }
 
-export const MobileNavigation: React.FC<Props> = async ({
+export const MobileNavigation: React.FC<Props> = ({
   services,
   locale,
 }) => {
-  const t = await getTranslations("navbar");
+  const t = useTranslations("navbar");
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  const handleLinkClick = () => {
+    // Close the drawer when any link is clicked
+    closeRef.current?.click();
+  };
 
   return (
     <Drawer direction="right">
@@ -39,7 +49,7 @@ export const MobileNavigation: React.FC<Props> = async ({
         <DrawerHeader className="py-10">
           <DrawerTitle className="sr-only" />
           <DrawerDescription>
-            <Link href="/">
+            <Link href="/" onClick={handleLinkClick}>
               <Image
                 src="/assets/logo-blue.png"
                 alt="dialog imobil blue logo"
@@ -64,27 +74,47 @@ export const MobileNavigation: React.FC<Props> = async ({
                 <AccordionContent>
                   <ul className="flex flex-col items-start gap-6 text-sm font-normal pl-6 pt-8">
                     <li>
-                      <Link href="/apartments" className="hover:text-primary">
+                      <Link 
+                        href="/apartments" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
                         {t("apartments")}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/houses" className="hover:text-primary">
+                      <Link 
+                        href="/houses" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
                         {t("houses")}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/commercials" className="hover:text-primary">
+                      <Link 
+                        href="/commercials" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
                         {t("commercial_spaces")}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/terrains" className="hover:text-primary">
+                      <Link 
+                        href="/terrains" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
                         {t("lands")}
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="hover:text-primary">
+                      <Link 
+                        href="#" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
                         {t("investments")}
                       </Link>
                     </li>
@@ -103,6 +133,7 @@ export const MobileNavigation: React.FC<Props> = async ({
                         <Link
                           href={`/services/${id}`}
                           className="hover:text-primary"
+                          onClick={handleLinkClick}
                         >
                           {content[`title_${locale}`]}
                         </Link>
@@ -115,21 +146,46 @@ export const MobileNavigation: React.FC<Props> = async ({
           </li>
 
           <li>
-            <Link href="/about-us" className="hover:text-primary">
+            <Link 
+              href="/mortgage" 
+              className="hover:text-primary"
+              onClick={handleLinkClick}
+            >
+              {t("mortgage")}
+            </Link>
+          </li>
+
+          <li>
+            <Link 
+              href="/about-us" 
+              className="hover:text-primary"
+              onClick={handleLinkClick}
+            >
               {t("about_us")}
             </Link>
           </li>
           <li>
-            <Link href="/blogs" className="hover:text-primary">
+            <Link 
+              href="/blogs" 
+              className="hover:text-primary"
+              onClick={handleLinkClick}
+            >
               {t("real_estate_news")}
             </Link>
           </li>
           <li>
-            <Link href="/contacts" className="hover:text-primary">
+            <Link 
+              href="/contacts" 
+              className="hover:text-primary"
+              onClick={handleLinkClick}
+            >
               {t("contacts")}
             </Link>
           </li>
         </ul>
+
+        {/* Hidden close button for programmatic control */}
+        <DrawerClose ref={closeRef} className="sr-only" />
       </DrawerContent>
     </Drawer>
   );

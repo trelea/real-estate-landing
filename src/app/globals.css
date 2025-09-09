@@ -139,6 +139,14 @@
   --sidebar-ring: oklch(0.35 0.12 259.78);
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.tawk-message-preview-content {
+  display: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

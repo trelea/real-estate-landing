@@ -100,6 +100,11 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
               />
             </li>
             <li>
+              <Link href={"/mortgage"} className="hover:text-primary">
+                {t("mortgage")}
+              </Link>
+            </li>
+            <li>
               <Link href={"/about-us"} className="hover:text-primary">
                 {t("about_us")}
               </Link>
@@ -119,7 +124,9 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
         {/* locale switcher and contact */}
         <div className="space-x-4 flex h-fit justify-end shrink w-fit items-center">
           <Button className="hidden sm:block text-sm rounded-lg w-fit h-fit py-2.5 px-4">
-            {t("consult_expert")}
+            <Link href={"tel:+37360788889"}>
+              {t("consult_expert")}
+            </Link>
           </Button>
 
           <div className="pl-4 sm:border-l">

@@ -20,7 +20,7 @@ export const PartnersSection: React.FC<Props> = async ({}) => {
             (partner, key) => (
               <CarouselItem
                 key={key}
-                className="basis-1/2 sm:basis-1/3 xl:basis-1/4 w-full flex justify-center items-center h-80 sm:h-96 py-2"
+                className="basis-1/2 sm:basis-1/3 xl:basis-1/4 w-full flex justify-center items-center h-48 sm:h-48 py-2"
               >
                 <Image
                   src={`/assets/partners/${partner}.png`}
