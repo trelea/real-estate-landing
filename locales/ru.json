@@ -7,13 +7,14 @@
     "lands": "Земельные участки",
     "investments": "Инвестиции",
     "services": "Услуги",
+    "mortgage": "Ипотека",
     "about_us": "О нас",
     "real_estate_news": "Новости недвижимости",
     "contacts": "Контакты",
     "consult_expert": "Консультация эксперта"
   },
   "banner": {
-    "title": "Подходящий дом.",
+    "title": "Почувствуй разницу.",
     "subtitle": "Подходящее агентство.",
     "apartments": "Квартиры",
     "houses": "Дома",
@@ -65,7 +66,7 @@
     },
     "title": "Нужна консультация?",
     "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-    "address": "Str. Stefan cel Mare 1/6",
+    "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Понедельник - Пятница"
   },
   "filters": {
@@ -143,7 +144,7 @@
     "property_id": "ID недвижимости"
   },
   "footer": {
-    "description": "Dialog Imobil — Надежное агентство недвижимости в Республике Молдова, предоставляющее комплексные услуги по купле-продаже и аренде недвижимости.",
+    "description": "Надежное агентство недвижимости в Республике Молдова, предоставляющее комплексные услуги по купле-продаже и аренде недвижимости.",
     "about_us": "О нас",
     "real_estate_news": "Новости недвижимости",
     "privacy_policy": "Политика конфиденциальности",

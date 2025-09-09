@@ -7,13 +7,14 @@
     "lands": "Terenuri",
     "investments": "Investiții",
     "services": "Servicii",
+    "mortgage": "Ipotecă",
     "about_us": "Despre Noi",
     "real_estate_news": "Știri imobiliare",
     "contacts": "Contacte",
     "consult_expert": "Consultare expert"
   },
   "banner": {
-    "title": "Locuința potrivită.",
+    "title": "Simte diferența.",
     "subtitle": "Agenția potrivită.",
     "apartments": "Apartamente",
     "houses": "Case",
@@ -65,7 +66,7 @@
     },
     "title": "Aveți nevoie de o consultare?",
     "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-    "address": "Str. Stefan cel Mare 1/6",
+    "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Luni - Vineri"
   },
   "filters": {
@@ -143,7 +144,7 @@
     "property_id": "ID proprietate"
   },
   "footer": {
-    "description": "Dialog Imobil — Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",
+    "description": "Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",
     "about_us": "Despre Noi",
     "real_estate_news": "Știri imobiliare",
     "privacy_policy": "Politica de confidențialitate",

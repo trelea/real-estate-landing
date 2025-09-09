@@ -27,12 +27,16 @@ export default async function OffertPage({
   locale: string;
 }) {
   const t = await getTranslations("common");
+
+  {/* @ts-ignore */}
+  const [street = "", sector = "", country = ""] = offert.location[`street_${locale}`]?.split(",").map(s => s.trim()) || [];
+
   return (
     <article className="flex flex-col gap-4 pb-10">
       <div className="flex flex-col gap-2">
         <h1 className="text-xl md:text-2xl font-bold">
           {/* @ts-ignore */}
-          {offert.location[`street_${locale}`]}
+          {street} {sector && `, sect. ${sector}`} {country && `, mun. ${country}`}
         </h1>
         <div className="flex gap-4 items-center h-4">
           <span className="text-xs md:text-sm text-gray-500">
@@ -55,7 +59,7 @@ export default async function OffertPage({
               <h1 className="text-xl md:text-2xl font-bold">
                 {t("caracteristics")}
               </h1>
-              <ul className="grid grid-cols-3 gap-4">
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {offert.features.map((feature) => (
                   <li key={feature.id}>
                     <div className="flex items-center gap-2">
@@ -161,6 +165,8 @@ export default async function OffertPage({
                 {Intl.NumberFormat("en-US", {
                   style: "currency",
                   currency: "EUR",
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
                 }).format(offert.price)}
               </CardTitle>
             </CardHeader>
@@ -173,10 +179,10 @@ export default async function OffertPage({
                       className={_ % 2 === 0 ? "bg-gray-100" : "bg-transparent"}
                     >
                       <TableCell className="text-sm md:text-base p-4">
-                        {key.label}
+                        {key.label}:
                       </TableCell>
                       <TableCell className="text-sm md:text-base">
-                        <strong className="break-all">{key.value}</strong>
+                        <strong className="break-words">{key.value}</strong>
                       </TableCell>
                     </TableRow>
                   ))}

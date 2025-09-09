@@ -21,29 +21,29 @@ export const ContactSection: React.FC<Props> = async ({}) => {
       <ul className="flex flex-col gap-6 lg:col-start-1">
         <li className="flex items-center gap-4">
           <Phone className="size-6 aspect-square text-primary" />
-          <Link href={""}>
-            <span className="text-base text-foreground">+373 696 123 123</span>
+          <Link href={"tel:+37360788889"}>
+            <span className="text-base text-foreground">+373 60 788889</span>
           </Link>
         </li>
         <li className="flex items-center gap-4">
           <Mail className="size-6 aspect-square text-primary" />
-          <Link href={""}>
-            <span className="text-base text-foreground">contact@dialog.md</span>
+          <Link href={"mailto:dialogimobil@gmail.com"}>
+            <span className="text-base text-foreground">dialogimobil@gmail.com</span>
           </Link>
         </li>
         <li className="flex items-center gap-4">
           <MapPinned className="size-6 aspect-square text-primary" />
-          <Link href={""}>
+          <Link href={"https://www.google.com/maps?q=mun.+Chișinău,+str.+Cojocarilor+20"}>
             <span className="text-base text-foreground">{t("address")}</span>
           </Link>
         </li>
         <li className="flex items-center gap-4">
           <Clock4 className="size-6 aspect-square text-primary" />
-          <Link href={""}>
+          <Link href={"#"}>
             <span className="text-base text-foreground">
               {t("days")}
               <br />
-              08:00 - 17:00
+              09:00 - 18:00
             </span>
           </Link>
         </li>
