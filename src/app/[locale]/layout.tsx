@@ -14,6 +14,12 @@ const onest = Onest({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Dialog Imobil - Agenție imobiliară în Chișinău, Moldova",
+  description:
+    "Dialog Imobil - Agenție imobiliară în Chișinău, Moldova. Oferim servicii de vânzare, cumpărare și închiriere a proprietăților imobiliare.",
+};
+
 export default async function RootLayout({
   children,
   params,

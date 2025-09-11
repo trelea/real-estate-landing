@@ -101,6 +101,7 @@ export const LandingHero: React.FC<Props> = async ({}) => {
             <LandingHeroCard
               clasName="col-span-2"
               title={t("investments")}
+              href={{ pathname: "https://dialoginvest.md/" }}
               img={{
                 src: "/assets/investments.png",
                 alt: "Investments Category",
