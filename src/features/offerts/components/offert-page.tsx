@@ -53,40 +53,15 @@ export default async function OffertPage({
 
       <div className="w-full h-full flex flex-col xl:flex-row gap-4">
         <div className="w-full xl:w-2/3 h-full flex flex-col gap-6">
+          {/* 1. Carousel - always first */}
           <OffertCarousel media={offert.media} />
 
-          {/* PIDARASINS SUKA */}
-          {/*               
-Furnished
-With appliances
-Independent heating
-Air conditioning
-Thermo-pane windows
-Panoramic windows
-Underfloor heating
-Parquet flooring
-High ceilings
-Armored door
-Alarm systems
-Intercom
-Excludes ground floor
-Excludes top floor
-Middle floor placement
-Elevator
-Parking space
-Kindergarten
-Electricity
-Gas
-Sewage
-Supermarket
-Water supply
-School
-Children's playground
-Hospital / clinic
-Paved road
+          {/* 2. Agent contact - show on mobile/tablet, hide on desktop */}
+          <div className="xl:hidden">
+            <OffertPageContact offert={offert} />
+          </div>
 
-filter and deselct the places like kinder gardden ,market ,school ,children's playground ,hospital / clinic ,paved road
-           */}
+          {/* 3. Features - moved up for mobile */}
           {offert.features.length > 0 && (
             <div className="flex flex-col gap-4">
               <h1 className="text-xl md:text-2xl font-bold">
@@ -110,6 +85,7 @@ filter and deselct the places like kinder gardden ,market ,school ,children's pl
 
           <Separator className="bg-gray-200" />
 
+          {/* 4. Description - moved to the end */}
           {offert.desc_ro && (
             <div className="flex flex-col gap-4 items-start">
               <h1 className="text-xl md:text-2xl font-bold">
@@ -123,9 +99,95 @@ filter and deselct the places like kinder gardden ,market ,school ,children's pl
             </div>
           )}
         </div>
-        <div className="w-full xl:w-1/3 h-full flex-col gap-4 flex">
+        
+        {/* Desktop sidebar - hidden on mobile/tablet */}
+        <div className="hidden xl:flex w-full xl:w-1/3 h-full flex-col gap-4">
           <OffertPageContact offert={offert} />
 
+          <Card className="h-full w-full m-0 p-4 py-6">
+            <CardHeader className="flex items-center gap-6 m-0 p-0">
+              <CardTitle className="text-sm md:text-base font-semibold">
+                {t("contacts")}
+              </CardTitle>
+              <CardDescription>
+                <ul className="flex items-center gap-3">
+                  {offert.user.profile.telegram && (
+                    <li>
+                      <Link href={offert.user.profile.telegram} target="_blank">
+                        <FaTelegram className="h-6 w-6 md:h-8 md:w-8 text-blue-500" />
+                      </Link>
+                    </li>
+                  )}
+                  {offert.user.profile.viber && (
+                    <li>
+                      <Link
+                        href={`viber://chat?number=${offert.user.profile.viber}`}
+                        target="_blank"
+                      >
+                        <FaViber className="h-6 w-6 md:h-8 md:w-8 text-violet-500" />
+                      </Link>
+                    </li>
+                  )}
+                  {offert.user.profile.whatsapp && (
+                    <li>
+                      <Link
+                        href={`https://wa.me/${offert.user.profile.whatsapp}`}
+                        target="_blank"
+                      >
+                        <FaWhatsapp className="h-6 w-6 md:h-8 md:w-8 text-green-500" />
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </CardDescription>
+            </CardHeader>
+          </Card>
+
+          <Card className="p-0 m-0 gap-0">
+            <CardHeader className="p-0 m-0 px-4 py-6">
+              <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
+                {Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "EUR",
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                }).format(offert.price)}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="m-0 p-0 w-full">
+              <Table className="w-full">
+                <TableBody className="w-full">
+                  {table?.map((key, _) => (
+                    <TableRow
+                      key={_}
+                      className={_ % 2 === 0 ? "bg-gray-100" : "bg-transparent"}
+                    >
+                      <TableCell className="text-sm md:text-base p-4">
+                        {key.label}:
+                      </TableCell>
+                      <TableCell className="text-sm md:text-base">
+                        <strong className="break-words">{key.value}</strong>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+
+          <Card className="m-0 p-2">
+            <CardContent className="m-0 p-0">
+              <OffertMap
+                apiKey={process.env.MAPS_API as string}
+                lat={Number(offert.location.lat)}
+                lng={Number(offert.location.lng)}
+              />
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Mobile contact cards and map - show only on mobile/tablet */}
+        <div className="xl:hidden flex flex-col gap-4">
           <Card className="h-full w-full m-0 p-4 py-6">
             <CardHeader className="flex items-center gap-6 m-0 p-0">
               <CardTitle className="text-sm md:text-base font-semibold">
@@ -210,4 +272,4 @@ filter and deselct the places like kinder gardden ,market ,school ,children's pl
       </div>
     </article>
   );
-}
+};

@@ -168,5 +168,23 @@
     "commercial_spaces": "Spații comerciale",
     "lands": "Terenuri",
     "investments": "Investiții"
+  },
+  "mortgage": {
+    "title": "Calculator de credite",
+    "desc": "Află cât vei plăti lunar pentru creditul tău",
+    "loan_amount": "suma solicitată",
+    "loan_term": "alege termenul",
+    "from": "de la",
+    "to": "la",
+    "months": "luni",
+
+    "monthly_payment": "Plata lunară",
+    "total_payment": "Valoarea totală plătibilă",
+    "interest_type": "Tipul dobânzii",
+    "flotant": "Flotantă",
+    "interest_rate": "Rata dobânzii",
+    "efective_annual_rate": "Dobanda anuală efectivă",
+    "subtotal_desc": "Acest credit implică răspunderea ta juridică și trebuie să fie restituit. Verifică-ți capacitatea de plată înainte de a semna contractul de credit.",
+    "button_calculate": "solicita oferta"
   }
 }

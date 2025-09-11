@@ -168,5 +168,23 @@
     "commercial_spaces": "Commercial Spaces",
     "lands": "Lands",
     "investments": "Investments"
+  },
+  "mortgage": {
+    "title": "Credit Calculator",
+    "desc": "Find out how much you will pay monthly for your loan",
+    "loan_amount": "requested amount",
+    "loan_term": "choose term",
+    "from": "from",
+    "to": "to",
+    "months": "months",
+
+    "monthly_payment": "Monthly Payment",
+    "total_payment": "Total Payment",
+    "interest_type": "Interest Type",
+    "flotant": "Floating",
+    "interest_rate": "Interest Rate",
+    "efective_annual_rate": "Effective Annual Rate",
+    "subtotal_desc": "This loan implies your legal responsibility and must be repaid. Check your repayment capacity before signing the loan agreement.",
+    "button_calculate": "Request Offer"
   }
 }
