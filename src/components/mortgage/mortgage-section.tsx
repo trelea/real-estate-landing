@@ -52,8 +52,8 @@ export const MortgageSection: React.FC<Props> = ({}) => {
 
     return (
         <section className="w-full flex gap-8 py-14 sm:py-32">
-            <div className="max-w-7xl mx-auto px-4 w-full">
-                <div className="border bg-white p-20">
+            <div className="max-w-7xl mx-auto py-10 w-full">
+                <div className="lg:border lg:bg-white p-5 md:p-10 lg:p-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Left Column - Calculator */}
                         <div className="space-y-8">
@@ -194,34 +194,34 @@ export const MortgageSection: React.FC<Props> = ({}) => {
                         </div>
 
                         {/* Right Column - Results */}
-                        <div className="space-y-6 bg-gray-100 p-10">
+                        <div className="space-y-6 bg-gray-200 p-5 lg:bg-gray-100 lg:p-10">
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('monthly_payment')}</span>
-                                    <span className="text-2xl font-bold text-gray-900">
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('monthly_payment')}</span>
+                                    <span className="text-xl lg:text-2xl font-bold text-gray-900">
                                         {formatCurrency(monthlyPayment)} {currency}
                                     </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('total_payment')}</span>
-                                    <span className="text-lg font-bold text-gray-900">
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('total_payment')}</span>
+                                    <span className="lg:text-lg font-bold text-gray-900">
                                         {formatCurrency(totalPayment)} {currency}
                                     </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('interest_type')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('interest_type')}</span>
                                     <span className="font-bold text-gray-900">{t('flotant')}</span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('interest_rate')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('interest_rate')}</span>
                                     <span className="font-bold text-gray-900">{annualRate}%</span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('efective_annual_rate')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('efective_annual_rate')}</span>
                                     <span className="font-bold text-gray-900">{effectiveRate}%</span>
                                 </div>
                             </div>
