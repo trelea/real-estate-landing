@@ -84,10 +84,8 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
       <CardDescription className="m-0 p-0 py-3 px-2 flex flex-col gap-3 w-full">
         <div className="flex justify-between items-center">
           <h1 className="text-primary font-semibold text-xl">
-            {Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "EUR",
-            }).format(offert.price)}
+            {Intl.NumberFormat("ru-RU", {
+            }).format(offert.price)} €
           </h1>
           <label className="flex items-center gap-1">
             <Map className="size-3 text-primary" />

@@ -147,7 +147,7 @@
     "property_id": "ID proprietate",
     "show_contact": "Arată contact",
     "request_call": "Solicită apel",
-    "agent_imobiliar": "Agent imobiliar",
+    "agent_imobiliar": "Broker Imobiliar",
     "caracteristics_2": "Amplasare",
     "read_more": "Citește mai mult...",
     "sale": "Vânzare",
@@ -170,8 +170,23 @@
     "investments": "Investiții"
   },
   "mortgage": {
+    "section_title": "Brokerul ipotecar – soluția simplă pentru un credit sigur și rapid",
+
+    "section_subtitle": "De ce ai nevoie de un broker ipotecar?",
+    "section_subtitle_desc": "Procesul de accesare a unui credit ipotecar implică multe etape, oferte diverse și cerințe bancare care pot crea confuzie. Un broker ipotecar este expertul care te ghidează pas cu pas, te ajută să alegi cea mai bună soluție de finanțare și să pregătești dosarul corect – totul fără stres, fără pierdere de timp și fără costuri ascunse.",
+
+    "benefits_title": "Beneficiile de care dispui sunt:",
+    "benefits_1": "Consultanță gratuită și personalizată",
+    "benefits_2": "Acces direct la cele mai bune oferte de la băncile de top din Republica Moldova",
+    "benefits_3": "Asistență juridică și pregătirea completă a dosarului pentru depunerea cererii la bancă",
+    "benefits_4": "Monitorizarea examinării cererii de către instituțiile financiare",
+    "benefits_5": "Aprobare rapidă a dosarului",
+    "benefits_6": "Asistență la semnarea tuturor contractelor",
+
+    "programs_title": "Dialog Imobil te ajută să găsești cea mai bună soluție de creditare:",
+
     "title": "Calculator de credite",
-    "desc": "Află cât vei plăti lunar pentru creditul tău",
+    "desc": "Alege un Broker Ipotecar de încredere care îți apără interesele și îți găsește cele mai bune soluții de finanțare. Contactează-ne acum pentru o consultație gratuită!",
     "loan_amount": "suma solicitată",
     "loan_term": "alege termenul",
     "from": "de la",

@@ -11,7 +11,7 @@ const currencyConfig = {
     'USD': { min: 2000, max: 30000, step: 200, annualRate: 6.30, effectiveRate: 6.32 },
 };
 
-export const MortgageSection: React.FC<Props> = ({}) => {
+export const MortgageCalculator: React.FC<Props> = ({}) => {
     const t = useTranslations("mortgage");
     const [loanAmount, setLoanAmount] = useState(1000000);
     const [minLoanAmount, setMinLoanAmount] = useState(50000);
@@ -51,9 +51,9 @@ export const MortgageSection: React.FC<Props> = ({}) => {
     };
 
     return (
-        <section className="w-full flex gap-8 py-14 sm:py-32">
-            <div className="max-w-7xl mx-auto px-4 w-full">
-                <div className="border bg-white p-20">
+        <section className="w-full flex gap-8">
+            <div className="max-w-7xl mx-auto w-full mb-5">
+                <div className="border bg-white px-5 py-10 lg:p-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Left Column - Calculator */}
                         <div className="space-y-8">
@@ -194,7 +194,7 @@ export const MortgageSection: React.FC<Props> = ({}) => {
                         </div>
 
                         {/* Right Column - Results */}
-                        <div className="space-y-6 bg-gray-100 p-10">
+                        <div className="space-y-6 bg-gray-100 p-5 lg:p-10">
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-600">{t('monthly_payment')}</span>
@@ -230,7 +230,7 @@ export const MortgageSection: React.FC<Props> = ({}) => {
                                 {t('subtotal_desc')}
                             </p>
 
-                            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium cursor-pointer py-4 px-6 transition-colors duration-200">
+                            <button onClick={() => window.location.href='tel:+37360788889'} className="w-full bg-teal-500 hover:bg-teal-600 text-white font-medium cursor-pointer py-4 px-6 transition-colors duration-200">
                                 {t('button_calculate')}
                             </button>
 

@@ -89,7 +89,7 @@ export const Footer: React.FC<Props> = async ({ }) => {
       </div>
       <Separator className="w-full bg-[#1E406E] text-[#1E406E]" />
       <div className="text-base flex justify-center lg:justify-between items-center">
-        <ul className="hidden lg:flex gap-8">
+        <ul className="hidden lg:flex gap-8 translate-x-10">
           <li className="hover:cursor-pointer hover:underline">
             <Link href={"/privacy-policy"}>{t("privacy_policy")}</Link>
           </li>
