@@ -170,8 +170,23 @@
     "investments": "Investments"
   },
   "mortgage": {
+    "section_title": "Mortgage Broker - the simple solution for a safe and fast loan",
+
+    "section_subtitle": "Why do you need a mortgage broker?",
+    "section_subtitle_desc": "The process of accessing a mortgage loan involves many stages, diverse offers, and banking requirements that can create confusion. A mortgage broker is the expert who guides you step by step, helps you choose the best financing solution, and prepares the correct file - all without stress, without wasting time, and without hidden costs.",
+
+    "benefits_title": "The benefits you have are:",
+    "benefits_1": "Free and personalized consultation",
+    "benefits_2": "Direct access to the best offers from top banks in the Republic of Moldova",
+    "benefits_3": "Legal assistance and complete preparation of the file for submitting the application to the bank",
+    "benefits_4": "Monitoring the examination of the application by financial institutions",
+    "benefits_5": "Quick approval of the file",
+    "benefits_6": "Assistance in signing all contracts",
+
+    "programs_title": "Doialog Imobil helps you find the best credit solution:",
+
     "title": "Credit Calculator",
-    "desc": "Find out how much you will pay monthly for your loan",
+    "desc": "Choose a trusted Mortgage Broker who defends your interests and finds the best financing solutions for you. Contact us now for a free consultation!",
     "loan_amount": "requested amount",
     "loan_term": "choose term",
     "from": "from",

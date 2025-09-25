@@ -20,7 +20,7 @@ export default async function CommercialPage({
           table={[
             {
               label: t("offert_type"),
-              value: commercial.offert,
+              value: commercial.offert[0] === "SALE" ? t("sale") : t("rent"),
             },
             {
               label: t("category"),

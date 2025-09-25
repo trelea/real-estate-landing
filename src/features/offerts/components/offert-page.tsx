@@ -32,6 +32,14 @@ export default async function OffertPage({
   {/* @ts-ignore */}
   const [street = "", sector = "", country = ""] = offert.location[`street_${locale}`]?.split(",").map(s => s.trim()) || [];
 
+  if (table && table[0] && typeof table[0].value === "string") {
+    if (table[0].value === "SALE") {
+      table[0].value = t("sale");
+    } else if (table[0].value === "RENT") {
+      table[0].value = t("rent");
+    }
+  }
+
   return (
     <article className="flex flex-col gap-4 pb-10">
       <div className="flex flex-col gap-2">
@@ -146,12 +154,8 @@ export default async function OffertPage({
           <Card className="p-0 m-0 gap-0">
             <CardHeader className="p-0 m-0 px-4 py-6">
               <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
-                {Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: "EUR",
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(offert.price)}
+                {Intl.NumberFormat("ru-RU", {
+                }).format(offert.price)} €
               </CardTitle>
             </CardHeader>
             <CardContent className="m-0 p-0 w-full">
@@ -229,14 +233,9 @@ export default async function OffertPage({
 
           <Card className="p-0 m-0 gap-0">
             <CardHeader className="p-0 m-0 px-4 py-6">
-              <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
-                {Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: "EUR",
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(offert.price)}
-              </CardTitle>
+                <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
+                {Intl.NumberFormat("ru-RU", {}).format(offert.price)} €
+                </CardTitle>
             </CardHeader>
             <CardContent className="m-0 p-0 w-full">
               <Table className="w-full">

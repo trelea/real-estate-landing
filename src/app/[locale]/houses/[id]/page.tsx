@@ -20,7 +20,7 @@ export default async function HousePage({
           table={[
             {
               label: t("offert_type"),
-              value: house.offert,
+              value: house.offert[0] === "SALE" ? t("sale") : t("rent"),
             },
             {
               label: t("category"),

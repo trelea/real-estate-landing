@@ -1,0 +1,308 @@
+{
+  "ro": [
+    {
+      "id": 0,
+      "title": "Credit ipotecar „Standard”",
+      "content": {
+        "image": "/assets/mortgage/image1.webp",
+        "details": [
+          {
+            "title": "Avans minim",
+            "description": "Cel puțin 5% din prețul de achiziție"
+          },
+          {
+            "title": "Valoarea maximă a creditului",
+            "description": "Până la 70% din valoarea de evaluare a proprietății"
+          },
+          {
+            "title": "Perioada de rambursare",
+            "description": "Până la 30 de ani"
+          },
+          {
+            "title": "Dobândă",
+            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "title": "Programul „Prima Casă Plus”",
+      "content": {
+        "image": "/assets/mortgage/image2.webp",
+        "details": [
+          {
+            "title": "Avans minim",
+            "description": "Cel puțin 5% din prețul de achiziție"
+          },
+          {
+            "title": "Valoarea maximă a creditului",
+            "description": "Până la 70% din valoarea de evaluare a proprietății"
+          },
+          {
+            "title": "Perioada de rambursare",
+            "description": "Până la 30 de ani"
+          },
+          {
+            "title": "Dobândă",
+            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Credit ipotecar pentru „Migranți”",
+      "content": {
+        "image": "/assets/mortgage/image3.webp",
+        "details": [
+          {
+            "title": "Avans minim",
+            "description": "Cel puțin 5% din prețul de achiziție"
+          },
+          {
+            "title": "Valoarea maximă a creditului",
+            "description": "Până la 70% din valoarea de evaluare a proprietății"
+          },
+          {
+            "title": "Perioada de rambursare",
+            "description": "Până la 30 de ani"
+          },
+          {
+            "title": "Dobândă",
+            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Refinanțarea creditului ipotecar existent”",
+      "content": {
+        "image": "/assets/mortgage/image4.webp",
+        "details": [
+          {
+            "title": "Avans minim",
+            "description": "Cel puțin 5% din prețul de achiziție"
+          },
+          {
+            "title": "Valoarea maximă a creditului",
+            "description": "Până la 70% din valoarea de evaluare a proprietății"
+          },
+          {
+            "title": "Perioada de rambursare",
+            "description": "Până la 30 de ani"
+          },
+          {
+            "title": "Dobândă",
+            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+          }
+        ]
+      }
+    }
+  ],
+  "en": [
+    {
+      "id": 0,
+      "title": "Standard Mortgage Loan",
+      "content": {
+        "image": "/assets/mortgage/image1.webp",
+        "details": [
+          {
+            "title": "Minimum Down Payment",
+            "description": "At least 5% of the purchase price"
+          },
+          {
+            "title": "Maximum Loan Amount",
+            "description": "Up to 70% of the property's appraised value"
+          },
+          {
+            "title": "Repayment Period",
+            "description": "Up to 30 years"
+          },
+          {
+            "title": "Interest Rate",
+            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "title": "First Home Plus Program",
+      "content": {
+        "image": "/assets/mortgage/image2.webp",
+        "details": [
+          {
+            "title": "Minimum Down Payment",
+            "description": "At least 5% of the purchase price"
+          },
+          {
+            "title": "Maximum Loan Amount",
+            "description": "Up to 70% of the property's appraised value"
+          },
+          {
+            "title": "Repayment Period",
+            "description": "Up to 30 years"
+          },
+          {
+            "title": "Interest Rate",
+            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Home Equity Loan",
+      "content": {
+        "image": "/assets/mortgage/image3.webp",
+        "details": [
+          {
+            "title": "Minimum Down Payment",
+            "description": "At least 5% of the purchase price"
+          },
+          {
+            "title": "Maximum Loan Amount",
+            "description": "Up to 70% of the property's appraised value"
+          },
+          {
+            "title": "Repayment Period",
+            "description": "Up to 30 years"
+          },
+          {
+            "title": "Interest Rate",
+            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "First Home Program",
+      "content": {
+        "image": "/assets/mortgage/image4.webp",
+        "details": [
+          {
+            "title": "Minimum Down Payment",
+            "description": "At least 5% of the purchase price"
+          },
+          {
+            "title": "Maximum Loan Amount",
+            "description": "Up to 70% of the property's appraised value"
+          },
+          {
+            "title": "Repayment Period",
+            "description": "Up to 30 years"
+          },
+          {
+            "title": "Interest Rate",
+            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+          }
+        ]
+      }
+    }
+  ],
+  "ru": [
+    {
+      "id": 0,
+      "title": "Стандартный ипотечный кредит",
+      "content": {
+        "image": "/assets/mortgage/image1.webp",
+        "details": [
+          {
+            "title": "Минимальный первоначальный взнос",
+            "description": "Не менее 5% от покупной цены"
+          },
+          {
+            "title": "Максимальная сумма кредита",
+            "description": "До 70% от оценочной стоимости недвижимости"
+          },
+          {
+            "title": "Срок погашения",
+            "description": "До 30 лет"
+          },
+          {
+            "title": "Процентная ставка",
+            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "title": "Программа «Первый дом плюс»",
+      "content": {
+        "image": "/assets/mortgage/image2.webp",
+        "details": [
+          {
+            "title": "Минимальный первоначальный взнос",
+            "description": "Не менее 5% от покупной цены"
+          },
+          {
+            "title": "Максимальная сумма кредита",
+            "description": "До 70% от оценочной стоимости недвижимости"
+          },
+          {
+            "title": "Срок погашения",
+            "description": "До 30 лет"
+          },
+          {
+            "title": "Процентная ставка",
+            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Программа «Первый дом»",
+      "content": {
+        "image": "/assets/mortgage/image3.webp",
+        "details": [
+          {
+            "title": "Минимальный первоначальный взнос",
+            "description": "Не менее 5% от покупной цены"
+          },
+          {
+            "title": "Максимальная сумма кредита",
+            "description": "До 70% от оценочной стоимости недвижимости"
+          },
+          {
+            "title": "Срок погашения",
+            "description": "До 30 лет"
+          },
+          {
+            "title": "Процентная ставка",
+            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Кредит под залог недвижимости",
+      "content": {
+        "image": "/assets/mortgage/image4.webp",
+        "details": [
+          {
+            "title": "Минимальный первоначальный взнос",
+            "description": "Не менее 5% от покупной цены"
+          },
+          {
+            "title": "Максимальная сумма кредита",
+            "description": "До 70% от оценочной стоимости недвижимости"
+          },
+          {
+            "title": "Срок погашения",
+            "description": "До 30 лет"
+          },
+          {
+            "title": "Процентная ставка",
+            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+          }
+        ]
+      }
+    }
+  ]
+}
