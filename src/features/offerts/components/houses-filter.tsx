@@ -37,6 +37,7 @@ import { Input } from "@/components/ui/input";
 import PaginationOfferts from "@/components/pagination/pagination";
 import { useTranslations } from "next-intl";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import React, { useEffect, useState } from "react";
 
 const FilterComponent = ({
   query,
@@ -509,6 +510,51 @@ export default function HousesFilter({
     },
     { shallow: false, history: "push", throttleMs: 1000, scroll: true }
   );
+  const [localFilters, setLocalFilters] = useState({
+    offert: query.offert,
+    location_category: query.location_category,
+    location_subcategory: query.location_subcategory,
+    floors: query.floors,
+    price_from: query.price_from,
+    price_to: query.price_to,
+    price_square_from: query.price_square_from,
+    price_square_to: query.price_square_to,
+    surface_from: query.surface_from,
+    surface_to: query.surface_to,
+    floor_from: query.floor_from,
+    floor_to: query.floor_to,
+    housing_stocks: query.housing_stocks,
+    housing_conditions: query.housing_conditions,
+    features: query.features,
+  });
+
+  const updateLocalFilters = (partial: any | ((prev: any) => any)) => {
+    if (typeof partial === "function") {
+      setLocalFilters((prev: any) => ({ ...prev, ...partial(prev) }));
+    } else {
+      setLocalFilters((prev: any) => ({ ...prev, ...partial }));
+    }
+  };
+
+  useEffect(() => {
+    setLocalFilters({
+      offert: query.offert,
+      location_category: query.location_category,
+      location_subcategory: query.location_subcategory,
+      floors: query.floors,
+      price_from: query.price_from,
+      price_to: query.price_to,
+      price_square_from: query.price_square_from,
+      price_square_to: query.price_square_to,
+      surface_from: query.surface_from,
+      surface_to: query.surface_to,
+      floor_from: query.floor_from,
+      floor_to: query.floor_to,
+      housing_stocks: query.housing_stocks,
+      housing_conditions: query.housing_conditions,
+      features: query.features,
+    });
+  }, [query]);
   return (
     <div className="w-full flex gap-6 pb-10">
       <div className="w-full flex flex-col gap-6">
@@ -550,6 +596,13 @@ export default function HousesFilter({
               </SelectContent>
             </Select>
 
+            <Button
+              onClick={() => setQuery(localFilters)}
+              className="hidden xl:inline-flex"
+            >
+              Apply
+            </Button>
+
             <div className="xl:hidden">
               <Sheet>
                 <SheetTrigger asChild>
@@ -565,14 +618,22 @@ export default function HousesFilter({
                   <ScrollArea className="h-[calc(100vh-100px)]">
                     <div className="p-6">
                       <FilterComponent
-                        query={query}
-                        setQuery={setQuery}
+                        query={localFilters}
+                        setQuery={updateLocalFilters}
                         locationCategories={locationCategories}
                         housingStocks={housingStocks}
                         housingConditions={housingConditions}
                         houseFeatures={houseFeatures}
                         locale={locale}
                       />
+                      <div className="mt-4 flex gap-2">
+                        <Button
+                          className="w-full"
+                          onClick={() => setQuery(localFilters)}
+                        >
+                          Apply
+                        </Button>
+                      </div>
                     </div>
                   </ScrollArea>
                 </SheetContent>
@@ -596,36 +657,39 @@ export default function HousesFilter({
       <div className=" flex-col gap-6 w-72 hidden xl:flex">
         <div className="w-full flex justify-between items-center">
           <h1 className="text-3xl font-bold">{t("title")}</h1>
-          <Button
-            variant={"ghost"}
-            onClick={() =>
-              setQuery({
-                offert: [],
-                location_category: [],
-                location_subcategory: [],
-                floors: [],
-                price_from: null,
-                price_to: null,
-                price_square_from: null,
-                price_square_to: null,
-                surface_from: null,
-                surface_to: null,
-                floor_from: null,
-                floor_to: null,
-                housing_stocks: [],
-                housing_conditions: [],
-                features: [],
-              })
-            }
-          >
-            {t("clear")}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant={"ghost"}
+              onClick={() =>
+                updateLocalFilters({
+                  offert: [],
+                  location_category: [],
+                  location_subcategory: [],
+                  floors: [],
+                  price_from: null,
+                  price_to: null,
+                  price_square_from: null,
+                  price_square_to: null,
+                  surface_from: null,
+                  surface_to: null,
+                  floor_from: null,
+                  floor_to: null,
+                  housing_stocks: [],
+                  housing_conditions: [],
+                  features: [],
+                })
+              }
+            >
+              {t("clear")}
+            </Button>
+            <Button onClick={() => setQuery(localFilters)}>Apply</Button>
+          </div>
         </div>
         <Card className="p-0 m-0 w-72">
           <CardContent className="w-full">
             <FilterComponent
-              query={query}
-              setQuery={setQuery}
+              query={localFilters}
+              setQuery={updateLocalFilters}
               locationCategories={locationCategories}
               housingStocks={housingStocks}
               housingConditions={housingConditions}

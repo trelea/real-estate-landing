@@ -197,31 +197,31 @@ export const MortgageCalculator: React.FC<Props> = ({}) => {
                         <div className="space-y-6 bg-gray-100 p-5 lg:p-10">
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('monthly_payment')}</span>
-                                    <span className="text-2xl font-bold text-gray-900">
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('monthly_payment')}</span>
+                                    <span className="text-xl lg:text-2xl font-bold text-gray-900">
                                         {formatCurrency(monthlyPayment)} {currency}
                                     </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('total_payment')}</span>
-                                    <span className="text-lg font-bold text-gray-900">
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('total_payment')}</span>
+                                    <span className="lg:text-lg font-bold text-gray-900">
                                         {formatCurrency(totalPayment)} {currency}
                                     </span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('interest_type')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('interest_type')}</span>
                                     <span className="font-bold text-gray-900">{t('flotant')}</span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('interest_rate')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('interest_rate')}</span>
                                     <span className="font-bold text-gray-900">{annualRate}%</span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600">{t('efective_annual_rate')}</span>
+                                    <span className="text-gray-600 text-sm lg:text-base">{t('efective_annual_rate')}</span>
                                     <span className="font-bold text-gray-900">{effectiveRate}%</span>
                                 </div>
                             </div>

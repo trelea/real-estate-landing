@@ -36,6 +36,7 @@ import { parseAsInteger, useQueryStates } from "nuqs";
 import { parseAsString } from "nuqs";
 import { parseAsArrayOf } from "nuqs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import React, { useEffect, useState } from "react";
 
 export const FilterComponent = ({
   query,
@@ -334,6 +335,39 @@ export default function TerrainsFilter({
     },
     { shallow: false }
   );
+  const [localFilters, setLocalFilters] = useState({
+    offert: query.offert,
+    location_category: query.location_category,
+    location_subcategory: query.location_subcategory,
+    price_from: query.price_from,
+    price_to: query.price_to,
+    surface_from: query.surface_from,
+    surface_to: query.surface_to,
+    usabilities: query.usabilities,
+    features: query.features,
+  });
+
+  const updateLocalFilters = (partial: any | ((prev: any) => any)) => {
+    if (typeof partial === "function") {
+      setLocalFilters((prev: any) => ({ ...prev, ...partial(prev) }));
+    } else {
+      setLocalFilters((prev: any) => ({ ...prev, ...partial }));
+    }
+  };
+
+  useEffect(() => {
+    setLocalFilters({
+      offert: query.offert,
+      location_category: query.location_category,
+      location_subcategory: query.location_subcategory,
+      price_from: query.price_from,
+      price_to: query.price_to,
+      surface_from: query.surface_from,
+      surface_to: query.surface_to,
+      usabilities: query.usabilities,
+      features: query.features,
+    });
+  }, [query]);
   return (
     <div className="w-full flex gap-6 pb-10">
       <div className="w-full flex flex-col gap-6">
@@ -375,6 +409,13 @@ export default function TerrainsFilter({
               </SelectContent>
             </Select>
 
+            <Button
+              onClick={() => setQuery(localFilters)}
+              className="hidden xl:inline-flex"
+            >
+              Apply
+            </Button>
+
             <div className="xl:hidden">
               <Sheet>
                 <SheetTrigger asChild>
@@ -392,11 +433,19 @@ export default function TerrainsFilter({
                       <FilterComponent
                         features={features}
                         locationCategories={locationCategories}
-                        query={query}
-                        setQuery={setQuery}
+                        query={localFilters}
+                        setQuery={updateLocalFilters}
                         usabilities={usabilities}
                         locale={locale}
                       />
+                      <div className="mt-4 flex gap-2">
+                        <Button
+                          className="w-full"
+                          onClick={() => setQuery(localFilters)}
+                        >
+                          Apply
+                        </Button>
+                      </div>
                     </div>
                   </ScrollArea>
                 </SheetContent>
@@ -421,32 +470,35 @@ export default function TerrainsFilter({
       <div className=" flex-col gap-6 w-72 hidden xl:flex">
         <div className="w-full flex justify-between items-center">
           <h1 className="text-3xl font-bold">{t("title")}</h1>
-          <Button
-            variant={"ghost"}
-            onClick={() =>
-              setQuery({
-                offert: [],
-                location_category: [],
-                location_subcategory: [],
-                price_from: null,
-                price_to: null,
-                surface_from: null,
-                surface_to: null,
-                usabilities: [],
-                features: [],
-              })
-            }
-          >
-            {t("clear")}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant={"ghost"}
+              onClick={() =>
+                updateLocalFilters({
+                  offert: [],
+                  location_category: [],
+                  location_subcategory: [],
+                  price_from: null,
+                  price_to: null,
+                  surface_from: null,
+                  surface_to: null,
+                  usabilities: [],
+                  features: [],
+                })
+              }
+            >
+              {t("clear")}
+            </Button>
+            <Button onClick={() => setQuery(localFilters)}>Apply</Button>
+          </div>
         </div>
         <Card className="p-0 m-0 w-72">
           <CardContent className="w-full">
             <FilterComponent
               features={features}
               locationCategories={locationCategories}
-              query={query}
-              setQuery={setQuery}
+              query={localFilters}
+              setQuery={updateLocalFilters}
               usabilities={usabilities}
               locale={locale}
             />
