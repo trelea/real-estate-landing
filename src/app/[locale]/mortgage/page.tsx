@@ -27,15 +27,18 @@ const MortgagePage: React.FC<Props> = async() => {
                 </p>
               </div>
               
-              <Image
-                src="/assets/prima-casa-1.webp"
-                alt="Broker Consultation"
-                className="mt-4 rounded-lg shadow-md"
-                width={1200}
-                height={400}
-              />
+              <div className="w-full">
+                <Image
+                  src="/assets/broker.webp"
+                  alt="Broker Consultation"
+                  className="mt-4 rounded-lg shadow-md object-cover w-full h-48 sm:h-64 lg:h-[400px]"
+                  width={1200}
+                  height={400}
+                  quality={100}
+                />
+              </div>
 
-                <div className="mt-6">
+              <div className="mt-6">
                 <h2 className="text-lg lg:text-xl font-semibold mb-2">{t("benefits_title")}</h2>
                 <ul className="list-disc list-inside space-y-1 text-gray-700">
                   <li>{t("benefits_1")}</li>
@@ -55,6 +58,13 @@ const MortgagePage: React.FC<Props> = async() => {
           </div>
 
           <MortgageCalculator />
+
+          <div className="max-w-7xl w-full mt-5 mb-10 text-gray-700">
+            <h2 className="text-xl lg:text-2xl font-bold">{t("footer_title")}</h2>
+            <p className="mt-2 text-gray-700">
+              {t("footer_desc")} <a href="tel:+37360788889" className="text-blue-500 font-bold">+373 60 788889</a>
+            </p>
+          </div>
         </section>
       </div>
     </React.Fragment>

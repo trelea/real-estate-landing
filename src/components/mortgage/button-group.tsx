@@ -56,7 +56,7 @@ const PrimaCasaPrograms = () => {
                             {programs[activeProgram].content?.details.map((detail, index) => (
                                 <div key={index} className="p-4 border rounded-lg bg-gray-50">
                                     <h3 className="text-lg font-semibold mb-2">{detail.title}</h3>
-                                    <p className="text-gray-700">{detail.description}</p>
+                                    <p className="text-gray-700" style={{ whiteSpace: 'pre-line' }}>{detail.description}</p>
                                 </div>
                             ))}
                         </div>

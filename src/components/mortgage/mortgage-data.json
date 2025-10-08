@@ -7,20 +7,20 @@
         "image": "/assets/mortgage/image1.webp",
         "details": [
           {
-            "title": "Avans minim",
-            "description": "Cel puțin 5% din prețul de achiziție"
+            "title": "Despre ofertă",
+            "description": "Echipa Dialog Imobil nu doar te ajută să găsești locuința perfectă, ci și să obții finanțarea potrivită pentru ea. Prin parteneriatele noastre cu principalele bănci din Republica Moldova, îți oferim acces la cele mai bune condiții de credit ipotecar, adaptate nevoilor tale."
           },
           {
-            "title": "Valoarea maximă a creditului",
-            "description": "Până la 70% din valoarea de evaluare a proprietății"
+            "title": "Condiții de acordare",
+            "description": "• activezi pe teritoriul Republicii Moldova;\n• dispui de un salariu net lunar sau un venit confirmat (pensii, chirii, dividende, alte venituri permanente);\n• ai un loc de muncă stabil în ultimele 6 luni sau ești beneficiar de pensie;\n• ai o primă rată de cel puțin 20% din prețul total al locuinței."
           },
           {
-            "title": "Perioada de rambursare",
-            "description": "Până la 30 de ani"
+            "title": "Ce poți obține",
+            "description": "• suma creditului: până la 7 000 000 de lei;\n• termenul: până la 30 de ani;\n• finanțare de până la 80% din costul locuinței sau până la 100% dacă există un gaj suplimentar."
           },
           {
-            "title": "Dobândă",
-            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+            "title": "Acte necesare",
+            "description": "• buletin de identitate;\n• contract de muncă oficial în Republica Moldova;\n• extrasul contului salarial sau certificatul de salariu pe ultimele 6 luni;\n• raport de evaluare a bunului imobil."
           }
         ]
       }
@@ -32,20 +32,24 @@
         "image": "/assets/mortgage/image2.webp",
         "details": [
           {
-            "title": "Avans minim",
-            "description": "Cel puțin 5% din prețul de achiziție"
+            "title": "Despre ofertă",
+            "description": "„Prima Casă Plus” este un proiect guvernamental prin care poți procura o locuinţă într-un bloc vechi sau nou, precum și o casă în orice localitate din Republica Moldova."
           },
           {
-            "title": "Valoarea maximă a creditului",
-            "description": "Până la 70% din valoarea de evaluare a proprietății"
+            "title": "Criterii de eligibilitate solicitant",
+            "description": "• persoană fizică care nu are un imobil în proprietate;\n• persoană fizică ce deţine un bun imobil în proprietate, însă suprafaţa acestuia nu depăşeşte 50 mp;\n• vârstă între 20 și 50 de ani;\n• vechime de minimum 6 luni la actualul angajator;\n• se acceptă veniturile soțului/soției sau ale rudelor de gradul I."
           },
           {
-            "title": "Perioada de rambursare",
-            "description": "Până la 30 de ani"
+            "title": "Criterii de eligibilitate bun imobil",
+            "description": "• este finisat, dat în exploatare și înregistrat la Agenţia Servicii Publice;\n• nu are defecte, vicii materiale sau juridice ascunse;\n• nu este grevat cu ipotecă sau alte drepturi ale terţilor."
           },
           {
-            "title": "Dobândă",
-            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+            "title": "Ce poți obține",
+            "description": "• suma creditului: până la 2 500 000 de lei;\n• termenul: până la 30 de ani;\n• contribuția proprie: 0% din costul locuinței."
+          },
+          {
+            "title": "Acte necesare",
+            "description": "• buletin de identitate;\n• contract de muncă oficial în Republica Moldova;\n• extrasul contului salarial sau certificatul de salariu pe ultimele 6 luni;\n• raport de evaluare a bunului imobil;\n• extras din Registrul Bunurilor Imobile."
           }
         ]
       }
@@ -57,45 +61,41 @@
         "image": "/assets/mortgage/image3.webp",
         "details": [
           {
-            "title": "Avans minim",
-            "description": "Cel puțin 5% din prețul de achiziție"
+            "title": "Despre ofertă",
+            "description": "Lucrezi peste hotare și visezi la propria locuință în Moldova? Dacă ai venituri oficiale, Dialog Imobil îți oferă suport complet pentru a obține un credit ipotecar rapid și sigur. Te ajutăm să alegi cea mai bună ofertă, să pregătești documentele și să obții condiții de plată avantajoase."
           },
           {
-            "title": "Valoarea maximă a creditului",
-            "description": "Până la 70% din valoarea de evaluare a proprietății"
+            "title": "Criterii de eligibilitate",
+            "description": "• activezi oficial în străinătate;\n• dispui de un salariu net lunar;\n• ai un loc de muncă stabil în ultimele 6 luni;\n• ai o primă rată de cel puțin 20% din prețul total al locuinței."
           },
           {
-            "title": "Perioada de rambursare",
-            "description": "Până la 30 de ani"
+            "title": "Ce poți obține",
+            "description": "• suma creditului: până la 7 000 000 de lei;\n• termenul: până la 30 de ani;\n• finanțare de până la 80% din costul locuinței sau până la 100% dacă există un gaj suplimentar."
           },
           {
-            "title": "Dobândă",
-            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+            "title": "Acte necesare",
+            "description": "• contract de muncă oficial peste hotare (acceptate în limba română, rusă sau engleză; dacă sunt redactate în altă limbă, trebuie traduse);\n• extrasul contului salarial pe ultimele 6 luni;\n• raport de evaluare a bunului imobil."
           }
         ]
       }
     },
     {
       "id": 3,
-      "title": "Refinanțarea creditului ipotecar existent”",
+      "title": "Refinanțarea creditului ipotecar existent",
       "content": {
         "image": "/assets/mortgage/image4.webp",
         "details": [
           {
-            "title": "Avans minim",
-            "description": "Cel puțin 5% din prețul de achiziție"
+            "title": "Despre ofertă",
+            "description": "Ai deja un credit ipotecar și simți că ratele lunare sunt prea mari? Cu ajutorul echipei Dialog Imobil, poți obține o refinanțare avantajoasă și adaptată nevoilor tale. Te ajutăm să găsești cea mai bună ofertă, să reduci dobânda și rata lunară, să prelungești perioada de rambursare sau să obții condiții de plată mai flexibile, și să transferi creditul existent la o altă bancă cu costuri mai mici."
           },
           {
-            "title": "Valoarea maximă a creditului",
-            "description": "Până la 70% din valoarea de evaluare a proprietății"
+            "title": "Criterii de eligibilitate",
+            "description": "• vârstă între 20 și 70 de ani;\n• cetăţean al Republicii Moldova, cu reşedinţa stabilită pe teritoriul ţării;\n• ai un credit imobiliar contractat în cadrul altei instituții financiare din Republica Moldova;\n• activezi oficial pe teritoriul ţării sau în străinătate;\n• ai un loc de muncă stabil în ultimele 6 luni."
           },
           {
-            "title": "Perioada de rambursare",
-            "description": "Până la 30 de ani"
-          },
-          {
-            "title": "Dobândă",
-            "description": "Dobânda este variabilă și se calculează în funcție de indicele ROBOR"
+            "title": "Acte necesare",
+            "description": "• buletin de identitate;\n• raport de evaluare a bunului imobil;\n• contractul de muncă (dacă activezi oficial peste hotare);\n• extrasul contului salarial pe ultimele 6 luni;\n• contractul de credit cu graficul plăților;\n• contractul de ipotecă aferent creditului care urmează a fi refinanțat."
           }
         ]
       }
@@ -109,20 +109,20 @@
         "image": "/assets/mortgage/image1.webp",
         "details": [
           {
-            "title": "Minimum Down Payment",
-            "description": "At least 5% of the purchase price"
+            "title": "About the Offer",
+            "description": "The Dialog Imobil team not only helps you find the perfect home but also assists you in obtaining the right financing. Through our partnerships with the main banks in Moldova, we provide access to the best mortgage conditions tailored to your needs."
           },
           {
-            "title": "Maximum Loan Amount",
-            "description": "Up to 70% of the property's appraised value"
+            "title": "Eligibility Conditions",
+            "description": "• You must be active in the territory of the Republic of Moldova;\n• Have a confirmed net monthly income (salary, pensions, rent, dividends, other permanent income);\n• Have a stable job for the last 6 months or be a pensioner;\n• Have a down payment of at least 20% of the total property price."
           },
           {
-            "title": "Repayment Period",
-            "description": "Up to 30 years"
+            "title": "What You Can Get",
+            "description": "• Loan amount: up to 7,000,000 MDL;\n• Term: up to 30 years;\n• Financing up to 80% of the property cost or up to 100% with additional collateral."
           },
           {
-            "title": "Interest Rate",
-            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+            "title": "Required Documents",
+            "description": "• Identity card;\n• Official employment contract in Moldova;\n• Salary account statement or salary certificate for the last 6 months;\n• Property appraisal report."
           }
         ]
       }
@@ -134,70 +134,70 @@
         "image": "/assets/mortgage/image2.webp",
         "details": [
           {
-            "title": "Minimum Down Payment",
-            "description": "At least 5% of the purchase price"
+            "title": "About the Offer",
+            "description": "The 'First Home Plus' program is a government project through which you can purchase an apartment in an old or new building, as well as a house in any locality in Moldova."
           },
           {
-            "title": "Maximum Loan Amount",
-            "description": "Up to 70% of the property's appraised value"
+            "title": "Applicant Eligibility Criteria",
+            "description": "• Individual who does not own property;\n• Individual owning property of max 50 sqm;\n• Age between 20 and 50 years;\n• Minimum 6 months with current employer;\n• Spouse or close relatives' income may be considered."
           },
           {
-            "title": "Repayment Period",
-            "description": "Up to 30 years"
+            "title": "Property Eligibility Criteria",
+            "description": "• Finished, commissioned, and registered with Public Services Agency;\n• No hidden defects or legal/material issues;\n• Not encumbered with mortgage or third-party rights."
           },
           {
-            "title": "Interest Rate",
-            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+            "title": "What You Can Get",
+            "description": "• Loan amount: up to 2,500,000 MDL;\n• Term: up to 30 years;\n• Own contribution: 0% of the property cost."
+          },
+          {
+            "title": "Required Documents",
+            "description": "• Identity card;\n• Official employment contract in Moldova;\n• Salary account statement or salary certificate for the last 6 months;\n• Property appraisal report;\n• Extract from the Real Estate Registry."
           }
         ]
       }
     },
     {
       "id": 2,
-      "title": "Home Equity Loan",
+      "title": "Mortgage Loan for Migrants",
       "content": {
         "image": "/assets/mortgage/image3.webp",
         "details": [
           {
-            "title": "Minimum Down Payment",
-            "description": "At least 5% of the purchase price"
+            "title": "About the Offer",
+            "description": "Working abroad and dreaming of owning a home in Moldova? If you have official income, Dialog Imobil provides full support to obtain a fast and secure mortgage. We help you choose the best offer, prepare documents, and get advantageous payment conditions."
           },
           {
-            "title": "Maximum Loan Amount",
-            "description": "Up to 70% of the property's appraised value"
+            "title": "Eligibility Criteria",
+            "description": "• Officially employed abroad;\n• Have a net monthly income;\n• Stable job for the last 6 months;\n• Down payment of at least 20% of the total property price."
           },
           {
-            "title": "Repayment Period",
-            "description": "Up to 30 years"
+            "title": "What You Can Get",
+            "description": "• Loan amount: up to 7,000,000 MDL;\n• Term: up to 30 years;\n• Financing up to 80% of the property cost or up to 100% with additional collateral."
           },
           {
-            "title": "Interest Rate",
-            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+            "title": "Required Documents",
+            "description": "• Official employment contract abroad (in Romanian, Russian or English; if in another language, must be translated);\n• Salary statement for the last 6 months;\n• Property appraisal report."
           }
         ]
       }
     },
     {
       "id": 3,
-      "title": "First Home Program",
+      "title": "Refinancing Existing Mortgage Loan",
       "content": {
         "image": "/assets/mortgage/image4.webp",
         "details": [
           {
-            "title": "Minimum Down Payment",
-            "description": "At least 5% of the purchase price"
+            "title": "About the Offer",
+            "description": "Do you already have a mortgage and feel that the monthly payments are too high? With Dialog Imobil, you can get advantageous refinancing tailored to your needs. We help you find the best refinancing offer, reduce interest and monthly payment, extend repayment period or get flexible payment conditions, and transfer your existing loan to another bank with lower costs."
           },
           {
-            "title": "Maximum Loan Amount",
-            "description": "Up to 70% of the property's appraised value"
+            "title": "Eligibility Criteria",
+            "description": "• Age between 20 and 70 years;\n• Citizen of Moldova, with permanent residence;\n• Have a mortgage contracted with another financial institution in Moldova;\n• Active officially in Moldova or abroad;\n• Stable job for the last 6 months."
           },
           {
-            "title": "Repayment Period",
-            "description": "Up to 30 years"
-          },
-          {
-            "title": "Interest Rate",
-            "description": "The interest rate is variable and is calculated based on the LIBOR index"
+            "title": "Required Documents",
+            "description": "• Identity card;\n• Property appraisal report;\n• Employment contract (if active abroad);\n• Salary statement for the last 6 months;\n• Credit agreement with payment schedule;\n• Mortgage contract for the credit to be refinanced."
           }
         ]
       }
@@ -211,20 +211,20 @@
         "image": "/assets/mortgage/image1.webp",
         "details": [
           {
-            "title": "Минимальный первоначальный взнос",
-            "description": "Не менее 5% от покупной цены"
+            "title": "О предложении",
+            "description": "Команда Dialog Imobil не только помогает найти идеальное жилье, но и получить подходящее финансирование. Благодаря партнёрствам с основными банками Республики Молдова мы предоставляем доступ к лучшим условиям ипотечного кредита, адаптированным к вашим потребностям."
           },
           {
-            "title": "Максимальная сумма кредита",
-            "description": "До 70% от оценочной стоимости недвижимости"
+            "title": "Условия предоставления",
+            "description": "• Активность на территории Республики Молдова;\n• Подтвержденный ежемесячный доход (зарплата, пенсия, аренда, дивиденды, другие постоянные доходы);\n• Стабильная работа последние 6 месяцев или пенсионер;\n• Первоначальный взнос не менее 20% от стоимости жилья."
           },
           {
-            "title": "Срок погашения",
-            "description": "До 30 лет"
+            "title": "Что вы можете получить",
+            "description": "• Сумма кредита: до 7 000 000 MDL;\n• Срок: до 30 лет;\n• Финансирование до 80% стоимости жилья или до 100% при дополнительном залоге."
           },
           {
-            "title": "Процентная ставка",
-            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+            "title": "Необходимые документы",
+            "description": "• Удостоверение личности;\n• Официальный трудовой договор в Молдове;\n• Выписка со счета или справка о зарплате за последние 6 месяцев;\n• Отчет об оценке недвижимости."
           }
         ]
       }
@@ -236,70 +236,70 @@
         "image": "/assets/mortgage/image2.webp",
         "details": [
           {
-            "title": "Минимальный первоначальный взнос",
-            "description": "Не менее 5% от покупной цены"
+            "title": "О предложении",
+            "description": "Программа 'Первый дом плюс' — это государственный проект, с помощью которого вы можете приобрести квартиру в старом или новом доме, а также дом в любом населенном пункте Молдовы."
           },
           {
-            "title": "Максимальная сумма кредита",
-            "description": "До 70% от оценочной стоимости недвижимости"
+            "title": "Критерии для заявителя",
+            "description": "• Физическое лицо, не имеющее недвижимость;\n• Физическое лицо, имеющее недвижимость до 50 кв.м.;\n• Возраст от 20 до 50 лет;\n• Минимум 6 месяцев на текущем месте работы;\n• Доход супруга/супруги или близких родственников может учитываться."
           },
           {
-            "title": "Срок погашения",
-            "description": "До 30 лет"
+            "title": "Критерии для недвижимости",
+            "description": "• Завершена, сдана в эксплуатацию и зарегистрирована в Агентстве публичных услуг;\n• Не имеет скрытых дефектов или юридических/материальных проблем;\n• Не обременена ипотекой или правами третьих лиц."
           },
           {
-            "title": "Процентная ставка",
-            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+            "title": "Что вы можете получить",
+            "description": "• Сумма кредита: до 2 500 000 MDL;\n• Срок: до 30 лет;\n• Собственный взнос: 0% стоимости жилья."
+          },
+          {
+            "title": "Необходимые документы",
+            "description": "• Удостоверение личности;\n• Официальный трудовой договор в Молдове;\n• Выписка со счета или справка о зарплате за последние 6 месяцев;\n• Отчет об оценке недвижимости;\n• Выписка из Реестра недвижимости."
           }
         ]
       }
     },
     {
       "id": 2,
-      "title": "Программа «Первый дом»",
+      "title": "Ипотечный кредит для мигрантов",
       "content": {
         "image": "/assets/mortgage/image3.webp",
         "details": [
           {
-            "title": "Минимальный первоначальный взнос",
-            "description": "Не менее 5% от покупной цены"
+            "title": "О предложении",
+            "description": "Работаете за границей и мечтаете о собственном жилье в Молдове? Если у вас есть официальный доход, Dialog Imobil предоставляет полную поддержку для быстрого и безопасного получения ипотечного кредита. Мы помогаем выбрать лучшее предложение, подготовить документы и получить выгодные условия оплаты."
           },
           {
-            "title": "Максимальная сумма кредита",
-            "description": "До 70% от оценочной стоимости недвижимости"
+            "title": "Критерии для заявителя",
+            "description": "• Официальная работа за границей;\n• Наличие ежемесячного дохода;\n• Стабильная работа последние 6 месяцев;\n• Первоначальный взнос не менее 20% от стоимости жилья."
           },
           {
-            "title": "Срок погашения",
-            "description": "До 30 лет"
+            "title": "Что вы можете получить",
+            "description": "• Сумма кредита: до 7 000 000 MDL;\n• Срок: до 30 лет;\n• Финансирование до 80% стоимости жилья или до 100% при дополнительном залоге."
           },
           {
-            "title": "Процентная ставка",
-            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+            "title": "Необходимые документы",
+            "description": "• Официальный трудовой договор за границей (на румынском, русском или английском; если на другом языке — требуется перевод);\n• Выписка о зарплате за последние 6 месяцев;\n• Отчет об оценке недвижимости."
           }
         ]
       }
     },
     {
       "id": 3,
-      "title": "Кредит под залог недвижимости",
+      "title": "Рефинансирование существующего ипотечного кредита",
       "content": {
         "image": "/assets/mortgage/image4.webp",
         "details": [
           {
-            "title": "Минимальный первоначальный взнос",
-            "description": "Не менее 5% от покупной цены"
+            "title": "О предложении",
+            "description": "У вас уже есть ипотека и вы считаете, что ежемесячные платежи слишком высоки? С помощью Dialog Imobil вы можете получить выгодное рефинансирование, адаптированное к вашим потребностям. Мы помогаем найти лучшее предложение, снизить процент и ежемесячный платеж, продлить срок погашения или получить гибкие условия оплаты, а также перевести существующий кредит в другой банк с меньшими затратами."
           },
           {
-            "title": "Максимальная сумма кредита",
-            "description": "До 70% от оценочной стоимости недвижимости"
+            "title": "Критерии для заявителя",
+            "description": "• Возраст от 20 до 70 лет;\n• Гражданин Молдовы с постоянным проживанием;\n• Ипотечный кредит, оформленный в другом финансовом учреждении Молдовы;\n• Официальная работа в Молдове или за границей;\n• Стабильная работа последние 6 месяцев."
           },
           {
-            "title": "Срок погашения",
-            "description": "До 30 лет"
-          },
-          {
-            "title": "Процентная ставка",
-            "description": "Процентная ставка является переменной и рассчитывается на основе индекса LIBOR"
+            "title": "Необходимые документы",
+            "description": "• Удостоверение личности;\n• Отчет об оценке недвижимости;\n• Трудовой договор (если работаете за границей);\n• Выписка о зарплате за последние 6 месяцев;\n• Кредитный договор с графиком платежей;\n• Ипотечный договор по кредиту, который будет рефинансирован."
           }
         ]
       }

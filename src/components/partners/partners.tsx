@@ -16,7 +16,7 @@ export const PartnersSection: React.FC<Props> = async ({}) => {
 
       <PartnersCarousel>
         <CarouselContent className="w-full inset-shadow inset-shadow-white">
-          {["maib", "micb", "victoria-bank", "exim-bank", "bcr"].map(
+          {["maib", "micb", "victoria-bank", "exim-bank", "bcr", "fincombank"].map(
             (partner, key) => (
               <CarouselItem
                 key={key}

@@ -52,7 +52,7 @@ export default async function ApartmentPage({
             },
             {
               label: t("total_surface"),
-              value: apartment.surface.toString().concat("m²"),
+              value: apartment.surface.toString().concat(" m²"),
             },
             {
               label: t("floors"),

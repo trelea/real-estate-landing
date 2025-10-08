@@ -200,6 +200,9 @@
     "interest_rate": "Interest Rate",
     "efective_annual_rate": "Effective Annual Rate",
     "subtotal_desc": "This loan implies your legal responsibility and must be repaid. Check your repayment capacity before signing the loan agreement.",
-    "button_calculate": "Request Offer"
+    "button_calculate": "Request Offer",
+
+    "footer_title": "Choose a trusted Mortgage Broker who defends your interests and finds the best financing solutions for you.",
+    "footer_desc": "Contact us now for a free consultation!"
   }
 }
