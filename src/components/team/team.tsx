@@ -18,9 +18,9 @@ export const TeamSection: React.FC<Props> = async ({}) => {
         <h1 className="font-bold text-2xl sm:text-4xl text-foreground">
           {t("title")}
         </h1>
-        <p className="text-balance text-muted-foreground text-sm sm:text-base">
+        {/* <p className="text-balance text-muted-foreground text-sm sm:text-base">
           {t("desc")}
-        </p>
+        </p> */}
       </div>
 
       <TeamCarousel className="w-full">

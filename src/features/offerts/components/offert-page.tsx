@@ -31,7 +31,7 @@ export default async function OffertPage({
 
   {/* @ts-ignore */}
   const [street = "", sector = "", country = ""] = offert.location[`street_${locale}`]?.split(",").map(s => s.trim()) || [];
-
+  
   if (table && table[0] && typeof table[0].value === "string") {
     if (table[0].value === "SALE") {
       table[0].value = t("sale");
@@ -45,7 +45,7 @@ export default async function OffertPage({
       <div className="flex flex-col gap-2">
         <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">
           {/* @ts-ignore */}
-          {street} {sector && `, sect. ${sector}`} {country && `, mun. ${country}`}
+          {sector && `${sector}, `} {street}
         </h1>
         {/* <div className="flex gap-4 items-center h-4">
           <span className="text-xs md:text-sm text-gray-500">

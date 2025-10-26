@@ -29,6 +29,9 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
     )
     .at(0)?.url;
 
+  {/* @ts-ignore */}
+  const [street = "", sector = "", country = ""] = offert.location[`street_${locale}`]?.split(",").map(s => s.trim()) || [];
+
   return (
     <Card className="m-0 p-0 shadow w-full h-fit gap-0 rounded-2xl relative">
       <Link
@@ -94,9 +97,9 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
         </div>
         <p className="text-balance font-semibold text-base text-foreground">
           {/* @ts-ignore */}
-          {offert.location[`street_${locale}`].slice(0, 30)}
+          {(sector + ", " + street).slice(0, 40)}
           {/* @ts-ignore */}
-          {offert.location[`street_${locale}`].length > 25 && "..."}
+          {(sector + ", " + street).length > 40 && "..."}
         </p>
 
         <ul className="flex items-center font-medium text-xs gap-4">

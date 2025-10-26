@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "Despre noi",
-    "desc": "Dialog Imobil este o agenție imobiliară cu experiență în Republica Moldova, dedicată să ofere clienților servicii complete și personalizate în domeniul vânzării, cumpărării și închirierii proprietăților. Ne concentrăm pe profesionalism, transparență și sprijin constant pentru a te ajuta să iei cele mai bune decizii imobiliare.",
+    "desc": "Dialog Imobil este o agenție profesională de imobiliare din Republica Moldova, specializată în consultanță și asistență completă în tranzacțiile de cumpărare, vânzare și închiriere a imobilelor rezidențiale și comerciale. Oferim soluții complexe și personalizate, lucrând atât cu clienți individuali, cât și cu investitori. \n\n Abordarea noastră se bazează pe transparență, expertiză și suport continuu în toate etapele procesului. Analizăm atent nevoile și obiectivele clienților, selectând cele mai potrivite proprietăți în funcție de buget, locație și potențial investițional. \n\nActivăm în Chișinău și pe întreg teritoriul țării, dar oferim și consultanță în tranzacțiile cu imobile din străinătate. Misiunea noastră este să facem procesul de alegere și perfectare a unei proprietăți simplu, sigur și profitabil pentru dumneavoastră.",
     "one": "Satisfacție clientilor",
     "two": "Ani de experiență",
     "three": "Obiecte vândute"
@@ -67,8 +67,8 @@
       },
       "btn": "Trimite"
     },
-    "title": "Aveți nevoie de o consultare?",
-    "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "title": "Aveti nevoie de consultanță?",
+    "desc": "Doriti să luati o decizie corectă atunci când cumpărați sau vindeti un imobil? Beneficiați de consultanța gratuită a expertului nostru – va ajutăm să evaluați proprietatea, să comparați ofertele și să alegeti cea mai avantajoasă soluție de pe piață. Lăsați o cerere chiar acum — și deja astăzi veți primi răspunsuri profesionale de la echipa DialogImobil.",
     "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Luni - Vineri"
   },
@@ -92,7 +92,7 @@
     "placeings": "Amplasamente",
     "usabilities": "Utilizări",
     "found": "Găsit",
-    "apartments": "apartamente",
+    "apartments": "Apartamente",
     "sort_by": "Sortare după",
     "default": "Implicit",
     "low_to_high": "De la mic la mare",
@@ -120,7 +120,7 @@
   },
   "common": {
     "square_meter": "m²",
-    "rooms": "camere",
+    "rooms": "Camere",
     "on_map": "Pe harta",
     "previous": "Anterior",
     "next": "Următor",
@@ -154,7 +154,7 @@
     "rent": "Chirie"
   },
   "footer": {
-    "description": "Agenție imobiliară de încredere în Republica Moldova, oferind servicii complete de vânzare, cumpărare și închiriere imobile.",
+    "description": "DialogImobil — cunoaștem piața, simțim clienții și înțelegem exact ce căutați.",
     "about_us": "Despre Noi",
     "real_estate_news": "Știri imobiliare",
     "privacy_policy": "Politica de confidențialitate",

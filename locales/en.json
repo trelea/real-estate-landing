@@ -30,7 +30,7 @@
   },
   "about": {
     "title": "About Us",
-    "desc": "Dialog Imobil is an experienced real estate agency in the Republic of Moldova, dedicated to providing clients with comprehensive and personalized services in buying, selling, and renting properties. We focus on professionalism, transparency, and continuous support to help you make the best real estate decisions.",
+    "desc": "Dialog Imobil is a professional real estate agency in the Republic of Moldova, specializing in providing full support for property purchase, sale, and rental transactions in both residential and commercial sectors. We deliver comprehensive and personalized solutions for private clients as well as investors.\n\nOur approach is based on transparency, market expertise, and continuous support throughout every stage of the transaction. We carefully analyze clients’ goals and select the most suitable properties, considering budget, location, and investment potential.\n\nWe operate in Chișinău and across the country, and also assist with international real estate transactions. Our mission is to make the process of choosing and closing a property deal simple, secure, and financially beneficial for you.",
     "one": "Client Satisfaction",
     "two": "Years of Experience",
     "three": "Properties Sold"
@@ -68,7 +68,7 @@
       "btn": "Send"
     },
     "title": "Need a consultation?",
-    "desc": "Morbi eu mi ut urna luctus fringilla et vitae erat. Vivamus venenatis ut lectus sed suscipit. In sagittis eleifend urna, in mattis est gravida eu. Integer eu mollis lectus, in convallis ante. Nam semper dui libero, ut dapibus ipsum interdum sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "desc": "Want to make the right decision when buying or selling real estate? Get a free consultation from our expert — we’ll help you evaluate your property, compare offers, and choose the best deal on the market. Submit your request now — and get professional answers from the DialogImobil team today.",
     "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Monday - Friday"
   },
@@ -92,7 +92,7 @@
     "placeings": "Placements",
     "usabilities": "Usabilities",
     "found": "Found",
-    "apartments": "apartments",
+    "apartments": "Apartments",
     "sort_by": "Sort by",
     "default": "Default",
     "low_to_high": "Low to High",
@@ -120,7 +120,7 @@
   },
   "common": {
     "square_meter": "m²",
-    "rooms": "rooms",
+    "rooms": "Rooms",
     "on_map": "On map",
     "previous": "Previous",
     "next": "Next",
@@ -154,7 +154,7 @@
     "rent": "Rent"
   },
   "footer": {
-    "description": "Trusted real estate agency in the Republic of Moldova, providing comprehensive services for buying, selling, and renting properties.",
+    "description": "DialogImobil — we know the market, we understand our clients, and know exactly what you’re looking for.",
     "about_us": "About Us",
     "real_estate_news": "Real Estate News",
     "privacy_policy": "Privacy Policy",
