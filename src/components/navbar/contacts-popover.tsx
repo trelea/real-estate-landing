@@ -35,22 +35,22 @@ export const ContactsPopover: React.FC = () => {
         >
           <div className="flex flex-col gap-4">
             <DropdownMenuItem className="p-0 m-0 h-fit w-fit shadow-none border-none bg-transparent hover:bg-transparent focus:bg-transparent focus-visible:bg-transparent">
-              <SocialIcon url="https://instagram.com" />
+              <SocialIcon url="https://www.instagram.com/dialogimobil/" />
             </DropdownMenuItem>
 
             <DropdownMenuItem className="p-0 m-0 h-fit w-fit shadow-none border-none bg-transparent hover:bg-transparent focus:bg-transparent focus-visible:bg-transparent">
-              <SocialIcon url="https://whatsapp.com" />
+              <SocialIcon url="https://wa.me/qr/RNGI5TVDOWIBO1" />
             </DropdownMenuItem>
 
             <DropdownMenuItem className="p-0 m-0 h-fit w-fit shadow-none border-none bg-transparent hover:bg-transparent focus:bg-transparent focus-visible:bg-transparent">
-              <SocialIcon url="https://facebook.com" />
+              <SocialIcon url="https://www.facebook.com/dialogimobil/"/>
             </DropdownMenuItem>
 
             <DropdownMenuItem className="p-0 m-0 h-fit w-fit shadow-none border-none bg-transparent hover:bg-transparent focus:bg-transparent focus-visible:bg-transparent">
-              <SocialIcon url="https://telegram.org" />
+              <SocialIcon url="https://t.me/veaceslav_dialog" />
             </DropdownMenuItem>
 
-            <SocialIcon />
+            {/* <SocialIcon /> */}
           </div>
         </DropdownMenuContent>
       </div>

@@ -53,7 +53,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
             <Image
               src={"/assets/logo-blue.png"}
               alt="Dialog Imobil blue logo"
-              width={120}
+              width={150}
               height={42}
             />
           </Link>

@@ -28,7 +28,11 @@ export const AboutUsSection = async () => {
             {t("title")}
           </CardTitle>
           <CardDescription className="m-0 p-0 text-balance mt-4 sm:mt-6 text-sm sm:text-base">
-            {t("desc")}
+            {(t("desc") || "").split("\n\n").map((para, idx) => (
+              <p key={idx} className="m-0 mb-2 p-0">
+                {para}
+              </p>
+            ))}
           </CardDescription>
         </CardHeader>
         {/* <CardContent className="m-0 p-0 mt-8 sm:mt-14 xl:flex xl:items-end w-full h-full">
