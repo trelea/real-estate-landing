@@ -34,7 +34,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
-      <Script
+      {/* <Script
         dangerouslySetInnerHTML={{
           __html: `
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -48,7 +48,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 `,
         }}
-      />
+      /> */}
 
       <body className={onest.className}>
         <NuqsAdapter>

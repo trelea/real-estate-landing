@@ -14,7 +14,7 @@ export const ContactsPopover: React.FC = () => {
   return (
     <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
       {/* md:p-9 md:mb-16 */}
-      <div className="fixed z-40 bottom-[90px] right-[32px]">
+      <div className="fixed z-40 bottom-[20px] right-[32px]">
         <DropdownMenuTrigger className="m-0 p-0 h-fit w-fit aspect-square relative">
           {!open ? (
             <div className="rounded-full bg-[#003989] p-4 shadow shadow-[[#003989]/50 relative">
