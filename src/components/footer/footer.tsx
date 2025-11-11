@@ -2,11 +2,12 @@ import React from "react";
 import { Separator } from "../ui/separator";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { getServices } from "@/features/services/api";
 import { getLocale } from "next-intl/server";
 import { ContentType } from "@/types";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { SocialIcon } from "react-social-icons";
 
 interface Props {}
 
@@ -68,19 +69,19 @@ export const Footer: React.FC<Props> = async ({ }) => {
           <nav className="flex flex-col gap-7">
             <h1 className="font-bold text-xl">{t("social_media")}</h1>
             <ul className="text-base flex items-center gap-4">
-              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-2">
-                <Link href={"#"}>
-                  <Facebook />
+              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-1">
+                <Link href={"https://www.facebook.com/dialogimobil/"}>
+                  <FaFacebook size={25}/>
                 </Link>
               </li>
-              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-2">
-                <Link href={"#"}>
-                  <Linkedin />
+              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-1">
+                <Link href={"https://wa.me/qr/RNGI5TVDOWIBO1"}>
+                  <FaWhatsapp size={25}/>
                 </Link>
               </li>
-              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-2">
-                <Link href={"#"}>
-                  <Instagram />
+              <li className="bg-white size-10 rounded-full text-[#163259] flex justify-center items-center p-1">
+                <Link href={"https://www.instagram.com/dialogimobil/"}>
+                  <FaInstagram size={25}/>
                 </Link>
               </li>
             </ul>
@@ -100,7 +101,7 @@ export const Footer: React.FC<Props> = async ({ }) => {
           </li>
         </ul>
 
-        <span className="font-medium text-sm sm:text-base">
+        <span className="font-medium text-sm sm:text-base me-10">
           © 2025 Dialog Imobil | {t("all_rights_reserved")}
         </span>
       </div>

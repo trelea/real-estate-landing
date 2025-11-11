@@ -665,7 +665,7 @@ export default function ApartmentsFilter({
               onClick={() => setQuery(localFilters)}
               className="hidden xl:inline-flex"
             >
-              Apply
+              {t("apply")}
             </Button>
 
             <div className="xl:hidden">
@@ -696,7 +696,7 @@ export default function ApartmentsFilter({
                           className="w-full"
                           onClick={() => setQuery(localFilters)}
                         >
-                          Apply
+                          {t("apply")}
                         </Button>
                       </div>
                     </div>
@@ -755,7 +755,7 @@ export default function ApartmentsFilter({
             >
               {t("clear")}
             </Button>
-            <Button onClick={() => setQuery(localFilters)}>Apply</Button>
+            <Button onClick={() => setQuery(localFilters)}>{t("apply")}</Button>
           </div>
         </div>
         <Card className="p-0 m-0 w-72">

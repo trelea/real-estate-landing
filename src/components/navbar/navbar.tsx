@@ -55,6 +55,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
               alt="Dialog Imobil blue logo"
               width={150}
               height={42}
+              className="max-w-[100px] sm:max-w-[150px]"
             />
           </Link>
         </div>
@@ -84,7 +85,7 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
                   },
                   {
                     label: t("investments"),
-                    href: { pathname: "" },
+                    href: { pathname: "https://dialoginvest.md/" },
                   },
                 ]}
               />
@@ -122,8 +123,8 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
           </ul>
         </div>
         {/* locale switcher and contact */}
-        <div className="space-x-4 flex h-fit justify-end shrink w-fit items-center">
-          <Button className="hidden sm:block text-sm rounded-lg w-fit h-fit py-2.5 px-4">
+        <div className="space-x-2 sm:space-x-4 flex h-fit justify-end shrink w-fit items-center">
+          <Button className="block text-xs w-[73px] sm:text-sm rounded-lg sm:w-fit h-fit py-2.5 px-2 sm:px-4">
             <Link href={"tel:+37360788889"}>
               {t("consult_expert")}
             </Link>

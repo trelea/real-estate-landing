@@ -75,6 +75,7 @@
   "filters": {
     "title": "Filters",
     "clear": "Clear",
+    "apply": "Apply",
     "offert": "Offert",
     "location": "Location",
     "rooms": "Rooms",

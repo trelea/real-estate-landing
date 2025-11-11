@@ -76,7 +76,7 @@ const FilterComponent = ({
                 })
               }
             />
-            <span>Sale</span>
+            <span>{t("sale")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -89,7 +89,7 @@ const FilterComponent = ({
                 })
               }
             />
-            <span>Rent</span>
+            <span>{t("rent")}</span>
           </div>
         </AccordionContent>
       </AccordionItem>
@@ -113,18 +113,14 @@ const FilterComponent = ({
                               ...(query.location_category ?? []),
                               category.id,
                             ],
-                            location_subcategory: [
-                              ...(query.location_subcategory ?? []),
-                              ...category.subcategories.map(
-                                (subcategory) => subcategory.id
-                              ),
-                            ],
+                            // Removed automatic subcategory selection
                           });
                         } else {
                           setQuery({
                             location_category: query.location_category?.filter(
                               (id: any) => id !== category.id
                             ),
+                            // Also remove all subcategories of this category when unchecking
                             location_subcategory:
                               query.location_subcategory?.filter(
                                 (id: any) =>
@@ -154,12 +150,12 @@ const FilterComponent = ({
                           setQuery({
                             location_subcategory: checked
                               ? [
-                                  ...(query.location_subcategory ?? []),
-                                  subcategory.id,
-                                ]
+                                ...(query.location_subcategory ?? []),
+                                subcategory.id,
+                              ]
                               : query.location_subcategory?.filter(
-                                  (id: any) => id !== subcategory.id
-                                ),
+                                (id: any) => id !== subcategory.id
+                              ),
                           })
                         }
                       />
@@ -190,7 +186,7 @@ const FilterComponent = ({
                 })
               }
             />
-            <span>1 floor</span>
+            <span>{t("1_floor")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -203,7 +199,7 @@ const FilterComponent = ({
                 })
               }
             />
-            <span>2 floors</span>
+            <span>{t("2_floors")}</span>
           </div>
           <div className="flex items-center gap-2">
             <Checkbox
@@ -216,7 +212,7 @@ const FilterComponent = ({
                 })
               }
             />
-            <span>3+ floors</span>
+            <span>{t("3_floors")}</span>
           </div>
         </AccordionContent>
       </AccordionItem>
@@ -228,10 +224,10 @@ const FilterComponent = ({
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.price_from ?? ""}
                 onChange={(e) =>
                   // if 0 then set to null
@@ -245,10 +241,10 @@ const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.price_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -271,10 +267,10 @@ const FilterComponent = ({
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.price_square_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -287,10 +283,10 @@ const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.price_square_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -313,10 +309,10 @@ const FilterComponent = ({
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.surface_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -329,10 +325,10 @@ const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.surface_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -355,10 +351,10 @@ const FilterComponent = ({
         <AccordionContent className="flex flex-col gap-1">
           <div className="flex items-center gap-2 w-full justify-between">
             <div>
-              <span>From</span>
+              <span>{t("from")}</span>
               <Input
                 type="number"
-                placeholder="From"
+                placeholder={t("from")}
                 value={query.floor_from ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -371,10 +367,10 @@ const FilterComponent = ({
               />
             </div>
             <div>
-              <span>To</span>
+              <span>{t("to")}</span>
               <Input
                 type="number"
-                placeholder="To"
+                placeholder={t("to")}
                 value={query.floor_to ?? ""}
                 onChange={(e) =>
                   setQuery({
@@ -404,8 +400,8 @@ const FilterComponent = ({
                     housing_stocks: checked
                       ? [...(query.housing_stocks ?? []), stock.id]
                       : query.housing_stocks?.filter(
-                          (s: any) => s !== stock.id
-                        ),
+                        (s: any) => s !== stock.id
+                      ),
                   })
                 }
               />
@@ -430,8 +426,8 @@ const FilterComponent = ({
                     housing_conditions: checked
                       ? [...(query.housing_conditions ?? []), condition.id]
                       : query.housing_conditions?.filter(
-                          (c: any) => c !== condition.id
-                        ),
+                        (c: any) => c !== condition.id
+                      ),
                   })
                 }
               />
@@ -600,7 +596,7 @@ export default function HousesFilter({
               onClick={() => setQuery(localFilters)}
               className="hidden xl:inline-flex"
             >
-              Apply
+              {t("apply")}
             </Button>
 
             <div className="xl:hidden">
@@ -631,7 +627,7 @@ export default function HousesFilter({
                           className="w-full"
                           onClick={() => setQuery(localFilters)}
                         >
-                          Apply
+                          {t("apply")}
                         </Button>
                       </div>
                     </div>
@@ -682,7 +678,7 @@ export default function HousesFilter({
             >
               {t("clear")}
             </Button>
-            <Button onClick={() => setQuery(localFilters)}>Apply</Button>
+            <Button onClick={() => setQuery(localFilters)}>{t("apply")}</Button>
           </div>
         </div>
         <Card className="p-0 m-0 w-72">

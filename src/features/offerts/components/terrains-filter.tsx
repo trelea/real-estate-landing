@@ -110,18 +110,14 @@ export const FilterComponent = ({
                               ...(query.location_category ?? []),
                               category.id,
                             ],
-                            location_subcategory: [
-                              ...(query.location_subcategory ?? []),
-                              ...category.subcategories.map(
-                                (subcategory) => subcategory.id
-                              ),
-                            ],
+                            // Removed automatic subcategory selection
                           });
                         } else {
                           setQuery({
                             location_category: query.location_category?.filter(
                               (id: any) => id !== category.id
                             ),
+                            // Also remove all subcategories of this category when unchecking
                             location_subcategory:
                               query.location_subcategory?.filter(
                                 (id: any) =>
@@ -151,12 +147,12 @@ export const FilterComponent = ({
                           setQuery({
                             location_subcategory: checked
                               ? [
-                                  ...(query.location_subcategory ?? []),
-                                  subcategory.id,
-                                ]
+                                ...(query.location_subcategory ?? []),
+                                subcategory.id,
+                              ]
                               : query.location_subcategory?.filter(
-                                  (id: any) => id !== subcategory.id
-                                ),
+                                (id: any) => id !== subcategory.id
+                              ),
                           })
                         }
                       />
@@ -413,7 +409,7 @@ export default function TerrainsFilter({
               onClick={() => setQuery(localFilters)}
               className="hidden xl:inline-flex"
             >
-              Apply
+              {t("apply")}
             </Button>
 
             <div className="xl:hidden">
@@ -443,7 +439,7 @@ export default function TerrainsFilter({
                           className="w-full"
                           onClick={() => setQuery(localFilters)}
                         >
-                          Apply
+                          {t("apply")}
                         </Button>
                       </div>
                     </div>
@@ -489,7 +485,7 @@ export default function TerrainsFilter({
             >
               {t("clear")}
             </Button>
-            <Button onClick={() => setQuery(localFilters)}>Apply</Button>
+            <Button onClick={() => setQuery(localFilters)}>{t("apply")}</Button>
           </div>
         </div>
         <Card className="p-0 m-0 w-72">

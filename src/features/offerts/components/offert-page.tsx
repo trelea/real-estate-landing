@@ -17,6 +17,7 @@ import { Link } from "@/i18n/navigation";
 import OffertMap from "./offert-map";
 import { getTranslations } from "next-intl/server";
 import OffertPageContact from "./offert-page-contact";
+import CollapsibleSection from "@/components/ui/collapse";
 
 export default async function OffertPage({
   offert,
@@ -29,9 +30,9 @@ export default async function OffertPage({
 }) {
   const t = await getTranslations("common");
 
-  {/* @ts-ignore */}
+  {/* @ts-ignore */ }
   const [street = "", sector = "", country = ""] = offert.location[`street_${locale}`]?.split(",").map(s => s.trim()) || [];
-  
+
   if (table && table[0] && typeof table[0].value === "string") {
     if (table[0].value === "SALE") {
       table[0].value = t("sale");
@@ -60,7 +61,7 @@ export default async function OffertPage({
       </div>
 
       <div className="w-full h-full flex flex-col xl:flex-row gap-4">
-        <div className="w-full xl:w-2/3 h-full flex flex-col gap-6">
+        <div className="hidden xl:flex w-full xl:w-2/3 h-full flex-col gap-6">
           {/* 1. Carousel - always first */}
           <OffertCarousel media={offert.media} />
 
@@ -107,7 +108,7 @@ export default async function OffertPage({
             </div>
           )}
         </div>
-        
+
         {/* Desktop sidebar - hidden on mobile/tablet */}
         <div className="hidden xl:flex w-full xl:w-1/3 h-full flex-col gap-4">
           <OffertPageContact offert={offert} />
@@ -190,8 +191,15 @@ export default async function OffertPage({
           </Card>
         </div>
 
-        {/* Mobile contact cards and map - show only on mobile/tablet */}
+        {/* Mobile layout - show only on mobile/tablet */}
         <div className="xl:hidden flex flex-col gap-4">
+          {/* 1. Poze */}
+          <OffertCarousel media={offert.media} />
+
+          {/* 2. Agent */}
+          <OffertPageContact offert={offert} />
+
+          {/* 3. Contact */}
           <Card className="h-full w-full m-0 p-4 py-6">
             <CardHeader className="flex items-center gap-6 m-0 p-0">
               <CardTitle className="text-sm md:text-base font-semibold">
@@ -231,11 +239,12 @@ export default async function OffertPage({
             </CardHeader>
           </Card>
 
+          {/* 4. Informații obiect */}
           <Card className="p-0 m-0 gap-0">
             <CardHeader className="p-0 m-0 px-4 py-6">
-                <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
+              <CardTitle className="p-0 m-0 font-bold text-xl md:text-2xl text-primary">
                 {Intl.NumberFormat("ru-RU", {}).format(offert.price)} €
-                </CardTitle>
+              </CardTitle>
             </CardHeader>
             <CardContent className="m-0 p-0 w-full">
               <Table className="w-full">
@@ -258,6 +267,38 @@ export default async function OffertPage({
             </CardContent>
           </Card>
 
+          {/* 5. Descriere (collapsible) */}
+          {offert.desc_ro && (
+            <CollapsibleSection title={t("description")}>
+              <OffertDesc
+                // @ts-ignore
+                desc={offert[`desc_${locale}`]}
+                maxLength={500}
+              />
+            </CollapsibleSection>
+          )}
+
+          {/* 6. Caracteristici (collapsible) */}
+          {offert.features.length > 0 && (
+            <CollapsibleSection title={t("caracteristics")}>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {offert.features.map((feature) => (
+                  <li key={feature.id}>
+                    <div className="flex items-center gap-2">
+                      <CircleCheckBig className="w-6 h-6 stroke-primary" />
+                      <span className="text-base font-medium">
+                        {/* @ts-ignore */}
+                        {feature[locale]}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </CollapsibleSection>
+          )}
+
+
+          {/* 7. Hartă */}
           <Card className="m-0 p-2">
             <CardContent className="m-0 p-0">
               <OffertMap
@@ -268,6 +309,7 @@ export default async function OffertPage({
             </CardContent>
           </Card>
         </div>
+
       </div>
     </article>
   );

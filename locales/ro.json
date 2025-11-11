@@ -67,14 +67,15 @@
       },
       "btn": "Trimite"
     },
-    "title": "Aveti nevoie de consultanță?",
-    "desc": "Doriti să luati o decizie corectă atunci când cumpărați sau vindeti un imobil? Beneficiați de consultanța gratuită a expertului nostru – va ajutăm să evaluați proprietatea, să comparați ofertele și să alegeti cea mai avantajoasă soluție de pe piață. Lăsați o cerere chiar acum — și deja astăzi veți primi răspunsuri profesionale de la echipa DialogImobil.",
+    "title": "Aveți nevoie de consultanță?",
+    "desc": "Doriți să luați o decizie corectă atunci când cumpărați sau vindeți un imobil? Beneficiați de consultanța gratuită a expertului nostru – vă ajutăm să evaluați proprietatea, să comparați ofertele și să alegeți cea mai avantajoasă soluție de pe piață. Lăsați o cerere chiar acum — și deja astăzi veți primi răspunsuri profesionale de la echipa Dialog Imobil.",
     "address": "mun. Chișinău, str. Cojocarilor 20",
     "days": "Luni - Vineri"
   },
   "filters": {
     "title": "Filtre",
     "clear": "Curăță",
+    "apply": "Aplică",
     "offert": "Ofertă",
     "location": "Locație",
     "rooms": "Camere",
