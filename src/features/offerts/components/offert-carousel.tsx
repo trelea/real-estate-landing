@@ -50,7 +50,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               height={1000}
               className="rounded-2xl h-full w-full object-contain bg-transparent"
             />
-            <div className="absolute bottom-55 sm:bottom-40 md:bottom-20 lg:bottom-0 left-0 w-full flex justify-center items-center pb-4 md:pb-10 lg:pb-20">
+            <div className="absolute bottom-55 sm:bottom-40 md:bottom-20 lg:bottom-0 left-0 w-full flex justify-center items-center pb-10 md:pb-10 lg:pb-20">
               <Image
                 src={"/assets/logo-white.png"}
                 alt="logo"
