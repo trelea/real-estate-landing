@@ -76,4 +76,9 @@ This will test:
 
 ## Security Note
 
-⚠️ **Warning**: DES is considered cryptographically weak by modern standards. This implementation is for educational purposes only. For production applications, use stronger encryption algorithms like AES-256.
+⚠️ **Warning**: DES is considered cryptographically weak by modern standards. This implementation is for educational purposes only. 
+
+For production applications, use stronger encryption algorithms such as:
+- **AES-256-GCM**: Authenticated encryption providing both confidentiality and integrity
+- **ChaCha20-Poly1305**: Modern stream cipher with authentication
+- **AES-256-CBC** with HMAC: For backward compatibility with proper authentication

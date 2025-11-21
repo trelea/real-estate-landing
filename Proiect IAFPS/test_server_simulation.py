@@ -54,6 +54,8 @@ def simulate_client(nickname, message, delay=0):
                 msg = client.recv(1024).decode('utf-8')
                 if msg:
                     print(f"[TEST] {nickname} received broadcast: {msg}")
+                else:
+                    break
         except socket.timeout:
             pass
         
