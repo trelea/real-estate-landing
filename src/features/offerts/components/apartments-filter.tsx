@@ -572,6 +572,7 @@ export default function ApartmentsFilter({
       scroll: true,
     }
   );
+  const [sheetOpen, setSheetOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState({
     offert: query.offert,
     location_category: query.location_category,
@@ -669,7 +670,7 @@ export default function ApartmentsFilter({
             </Button>
 
             <div className="xl:hidden">
-              <Sheet>
+              <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
                 <SheetTrigger asChild>
                   <Button className="gap-2">
                     <SlidersHorizontal className="w-4 h-4" />
@@ -681,7 +682,7 @@ export default function ApartmentsFilter({
                     <SheetTitle>{t("title")}</SheetTitle>
                   </SheetHeader>
                   <ScrollArea className="h-[calc(100vh-120px)]">
-                    <div className="p-6">
+                    <div className="p-6 pt-0">
                       <FilterComponent
                         locale={locale}
                         query={localFilters}
@@ -694,7 +695,10 @@ export default function ApartmentsFilter({
                       <div className="mt-4 mb-10 flex gap-2">
                         <Button
                           className="w-full"
-                          onClick={() => setQuery(localFilters)}
+                          onClick={() => {
+                            setQuery(localFilters);
+                            setSheetOpen(false);
+                          }}
                         >
                           {t("apply")}
                         </Button>

@@ -28,7 +28,7 @@ export const NewsCard: React.FC<Props> = async ({
         alt={content.title_ro}
         width={500}
         height={228}
-        className={`h-56 w-full shadow rounded-xl ${
+        className={`h-56 w-full shadow rounded-xl aspect-video ${
           thumbnail ? "object-cover" : "p-20 object-contain"
         }`}
       />
