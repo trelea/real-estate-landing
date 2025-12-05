@@ -41,8 +41,8 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
             </div>
           </div>
         </DialogTrigger>
-        <DialogContent className="bg-transparent shadow-none border-none p-0 m-0 h-fit sm:h-[80%] min-w-[80%] flex justify-center items-center">
-          <div className="h-fit w-full flex justify-center border-none items-center bg-transparent shadow-none rounded-2xl relative">
+        <DialogContent className="bg-transparent shadow-none border-none p-0 m-0 h-[80%] min-w-[80%] flex justify-center items-center">
+          <div className="h-fit sm:h-full w-full flex justify-center border-none items-center bg-transparent shadow-none rounded-2xl relative">
             <Image
               src={media[currentIndex].url}
               alt={media[currentIndex].url}
@@ -50,7 +50,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               height={1000}
               className="rounded-2xl h-full w-full object-contain bg-transparent"
             />
-            <div className="absolute bottom-55 sm:bottom-40 md:bottom-20 lg:bottom-0 left-0 w-full flex justify-center items-center pb-10 md:pb-10 lg:pb-20">
+            <div className="absolute bottom-0 sm:bottom-40 md:bottom-20 lg:bottom-0 left-0 w-full flex justify-center items-center pb-10 md:pb-10 lg:pb-20">
               <Image
                 src={"/assets/logo-white.png"}
                 alt="logo"
@@ -144,7 +144,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute -top-[400%] sm:-top-[280%] md:-top-[270%] lg:-top-[275%] right-0 flex w-full justify-between gap-2">
+        <div className="absolute -top-[230%] sm:-top-[280%] md:-top-[270%] lg:-top-[275%] right-0 flex w-full justify-between gap-2">
           <Button
             variant="outline"
             size="icon"

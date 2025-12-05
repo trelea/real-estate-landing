@@ -124,11 +124,12 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
         </div>
         {/* locale switcher and contact */}
         <div className="space-x-2 sm:space-x-4 flex h-fit justify-end shrink w-fit items-center">
-          <Button className="block text-xs w-[73px] sm:text-sm rounded-lg sm:w-fit h-fit py-2.5 px-2 sm:px-4">
+            <Button className="block text-xs sm:text-sm rounded-lg sm:w-fit h-fit py-2.5 px-2 sm:px-4">
             <Link href={"tel:+37360788889"}>
-              {t("consult_expert")}
+              <span className="block sm:hidden">{t("consult_expert").split(" ")[0]}</span>
+              <span className="hidden sm:inline">{t("consult_expert")}</span>
             </Link>
-          </Button>
+            </Button>
 
           <div className="pl-4 sm:border-l">
             <LocaleSelect />
