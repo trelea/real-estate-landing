@@ -41,8 +41,8 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
             </div>
           </div>
         </DialogTrigger>
-        <DialogContent className="bg-transparent shadow-none border-none p-0 m-0 h-[80%] min-w-[80%] flex justify-center items-center">
-          <div className="h-full w-full flex justify-center border-none items-center bg-transparent shadow-none rounded-2xl relative">
+        <DialogContent className="bg-transparent shadow-none border-none p-0 m-0 h-fit sm:h-[80%] min-w-[80%] flex justify-center items-center">
+          <div className="h-fit w-full flex justify-center border-none items-center bg-transparent shadow-none rounded-2xl relative">
             <Image
               src={media[currentIndex].url}
               alt={media[currentIndex].url}

@@ -680,7 +680,7 @@ export default function ApartmentsFilter({
                   <SheetHeader>
                     <SheetTitle>{t("title")}</SheetTitle>
                   </SheetHeader>
-                  <ScrollArea className="h-[calc(100vh-100px)]">
+                  <ScrollArea className="h-[calc(100vh-120px)]">
                     <div className="p-6">
                       <FilterComponent
                         locale={locale}
@@ -691,7 +691,7 @@ export default function ApartmentsFilter({
                         housingConditions={housingConditions}
                         apartmentFeatures={apartmentFeatures}
                       />
-                      <div className="mt-4 flex gap-2">
+                      <div className="mt-4 mb-10 flex gap-2">
                         <Button
                           className="w-full"
                           onClick={() => setQuery(localFilters)}
