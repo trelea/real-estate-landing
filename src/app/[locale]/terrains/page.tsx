@@ -67,9 +67,10 @@ export default async function Terrains({
     limit: 3,
   });
   const { data: terrainsOfferts, meta } = await getTerrainsOfferts({
-    limit: 15,
+    limit: 100, // TREBUIE DE REZOLVAT !!!
     ...(parsedParams as unknown as Record<string, any>),
   });
+  
   const locationCategories = await getLocationCategories();
   const usabilities = await getTerrainUsabilities();
   const features = await getTerrainFeatures();
