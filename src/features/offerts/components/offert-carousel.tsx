@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Media } from "../types";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -16,10 +16,48 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 export default function OffertCarousel({ media }: { media: Media[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [api, setApi] = useState<CarouselApi>();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      api?.scrollTo(currentIndex - 1);
+    } else {
+      setCurrentIndex(media.length - 1);
+      api?.scrollTo(media.length - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < media.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      api?.scrollTo(currentIndex + 1);
+    } else {
+      setCurrentIndex(0);
+      api?.scrollTo(0);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isDialogOpen) return;
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        handlePrevious();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isDialogOpen, currentIndex, api, media.length]);
 
   return (
     <div className="w-full h-full">
-      <Dialog>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
           <div className="w-full h-full bg-transparent rounded-lg overflow-hidden transition-all duration-300 mb-4 relative">
             <Image
@@ -64,15 +102,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => {
-                  if (currentIndex > 0) {
-                    setCurrentIndex(currentIndex - 1);
-                    api?.scrollTo(currentIndex - 1);
-                  } else {
-                    setCurrentIndex(media.length - 1);
-                    api?.scrollTo(media.length - 1);
-                  }
-                }}
+                onClick={handlePrevious}
                 className="bg-white rounded-full ml-2"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -80,15 +110,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => {
-                  if (currentIndex < media.length - 1) {
-                    setCurrentIndex(currentIndex + 1);
-                    api?.scrollTo(currentIndex + 1);
-                  } else {
-                    setCurrentIndex(0);
-                    api?.scrollTo(0);
-                  }
-                }}
+                onClick={handleNext}
                 className="bg-white rounded-full mr-2"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -148,15 +170,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
           <Button
             variant="outline"
             size="icon"
-            onClick={() => {
-              if (currentIndex > 0) {
-                setCurrentIndex(currentIndex - 1);
-                api?.scrollTo(currentIndex - 1);
-              } else {
-                setCurrentIndex(media.length - 1);
-                api?.scrollTo(media.length - 1);
-              }
-            }}
+            onClick={handlePrevious}
             className="bg-white rounded-full ml-2"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -164,15 +178,7 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
           <Button
             variant="outline"
             size="icon"
-            onClick={() => {
-              if (currentIndex < media.length - 1) {
-                setCurrentIndex(currentIndex + 1);
-                api?.scrollTo(currentIndex + 1);
-              } else {
-                setCurrentIndex(0);
-                api?.scrollTo(0);
-              }
-            }}
+            onClick={handleNext}
             className="bg-white rounded-full mr-2"
           >
             <ChevronRight className="w-4 h-4" />
