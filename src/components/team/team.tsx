@@ -30,7 +30,6 @@ export const TeamSection: React.FC<Props> = async ({}) => {
               key={_}
               className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 w-full h-full"
             >
-              {/* @ts-ignore */}
               <MemberCard member={member.user.profile} />
             </CarouselItem>
           ))}

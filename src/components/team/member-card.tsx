@@ -4,13 +4,13 @@ import Image from "next/image";
 import { getLocale } from "next-intl/server";
 
 interface Props {
-  member: { name: string; surname: string; job_function: string; role: string; thumbnail?: string };
+  member: { name: string; surname: string; job_function?: string; role?: string; thumbnail?: string };
 }
 
 export const MemberCard: React.FC<Props> = async ({ member }) => {
   const locale = await getLocale();
 
-  const user_job_functions = member.job_function.split('/').map((job) => job.trim());
+  const user_job_functions = member.job_function?.split('/').map((job) => job.trim()) ?? [];
   const job_ro = user_job_functions.at(0);
   const job_ru = user_job_functions.at(1);
   const job_en = user_job_functions.at(2);
