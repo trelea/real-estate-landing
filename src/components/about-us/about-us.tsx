@@ -20,6 +20,7 @@ export const AboutUsSection = async () => {
         width={1000}
         height={1000}
         loading="lazy"
+        sizes="45vw"
         className="hidden xl:block flex-1 object-contain shadow-lg rounded-3xl max-h-[500px]"
       />
       <Card className="p-6 sm:p-0 m-0 shadow border/75 rounded-2xl sm:border-none sm:shadow-none xl:flex-1 bg-background/[0.5%] sm:bg-transparent">

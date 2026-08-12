@@ -33,6 +33,7 @@ const MortgagePage: React.FC<Props> = async() => {
                 className="mt-4 rounded-lg shadow-md"
                 width={1200}
                 height={400}
+                sizes="(max-width: 1023px) 100vw, 800px"
               />
 
                 <div className="mt-6">

@@ -20,6 +20,7 @@ export const MemberCard: React.FC<Props> = async ({ member }) => {
       <Image
         src={member.thumbnail || "/assets/logo-blue.png"}
         fill
+        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
         alt=""
         className={`rounded-2xl h-full w-full ${
           member.thumbnail ? "p-0 object-cover" : "p-20 object-contain"

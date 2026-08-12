@@ -47,6 +47,10 @@ export const LandingHeroCard: React.FC<Props> = ({
           fill
           loading="lazy"
           quality={80}
+          // `fill` with no `sizes` defaults to 100vw, so each of these seven
+          // category cards was fetching a full-viewport-width variant for a
+          // slot that is at most half the viewport.
+          sizes="(max-width: 1023px) 50vw, 20vw"
         />
       </CardContent>
     </Card>
