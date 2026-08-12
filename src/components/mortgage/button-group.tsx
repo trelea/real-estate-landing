@@ -51,6 +51,7 @@ const PrimaCasaPrograms = () => {
                                 alt={programs[activeProgram].title}
                                 width={800}
                                 height={400}
+                                sizes="(max-width: 1023px) 100vw, 700px"
                                 className="w-full h-auto mb-4 rounded"
                             />
                             {programs[activeProgram].content?.details.map((detail, index) => (

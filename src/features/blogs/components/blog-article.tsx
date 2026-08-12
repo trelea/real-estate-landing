@@ -27,6 +27,7 @@ export const BlogArticle: React.FC<Props> = ({ blog, locale }) => {
         height={500}
         quality={80}
         loading="lazy"
+        sizes="(max-width: 1023px) 100vw, 66vw"
         className={`w-full h-full max-h-[500px] object-center min-h-56 shadow-lg rounded-2xl border ${
           blog.thumbnail
             ? "object-cover"

@@ -28,6 +28,7 @@ export const NewsCard: React.FC<Props> = async ({
         alt={content.title_ro}
         width={500}
         height={228}
+        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
         className={`h-56 w-full shadow rounded-xl aspect-video ${
           thumbnail ? "object-cover" : "p-20 object-contain"
         }`}

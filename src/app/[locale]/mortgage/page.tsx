@@ -35,6 +35,7 @@ const MortgagePage: React.FC<Props> = async() => {
                   width={1200}
                   height={400}
                   quality={100}
+                  sizes="(max-width: 1023px) 100vw, 800px"
                 />
               </div>
 

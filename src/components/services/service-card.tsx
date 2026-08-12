@@ -75,6 +75,7 @@ export const ServiceCard: React.FC<Props> = ({
           alt={img?.alt as string}
           height={500}
           width={500}
+          sizes="(max-width: 1279px) 100vw, 280px"
           className="w-full xl:max-w-[280px] h-[200px] sm:h-[230px] xl:h-[320px] object-cover rounded-xl shadow"
         />
       )}

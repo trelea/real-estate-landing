@@ -44,6 +44,7 @@ export const BlogCard: React.FC<Props> = async ({ blog, locale }) => {
             width={500}
             height={500}
             quality={80}
+            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
             className={`w-full h-60 object-center rounded-lg shadow border/50  ${
               !blog.thumbnail ? "object-contain p-20" : "object-cover"
             }`}

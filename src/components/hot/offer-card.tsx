@@ -66,6 +66,11 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
           width={500}
           alt="Dialog"
           loading="lazy"
+          // Widest layout this card appears in: 1 col < 640px, 2 cols < 1024px,
+          // 3 cols above (offerts-grid). Without this, Next falls back to a
+          // 1x/2x srcset and every retina device downloads the w=1080 variant
+          // for a ~275px slot.
+          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
           className={`h-[190px] shadow rounded-t-2xl border-b ${
             offert.media?.at(0)?.url
               ? "object-cover object-center"
@@ -77,8 +82,11 @@ export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
           <Image
             src={"/assets/logo-white.png"}
             alt="logo"
-            width={1000}
-            height={1000}
+            // Intrinsic size of the asset. It was declared as 1000x1000, which
+            // made Next request a w=2048 variant for a 128px-wide overlay.
+            width={284}
+            height={100}
+            sizes="128px"
             className="w-20 lg:w-32"
           />
         </div>
