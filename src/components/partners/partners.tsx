@@ -27,6 +27,7 @@ export const PartnersSection: React.FC<Props> = async ({}) => {
                   alt={partner}
                   width={500}
                   height={500}
+                  sizes="(max-width: 639px) 50vw, (max-width: 1279px) 33vw, 25vw"
                   className="h-full w-full object-center object-contain p-4 sm:p-10 lg:p-16 grayscale hover:grayscale-0 transition duration-500 hover:scale-125"
                 />
               </CarouselItem>

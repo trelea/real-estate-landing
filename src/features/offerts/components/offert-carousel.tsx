@@ -27,6 +27,8 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               alt={media[currentIndex].url}
               width={1000}
               height={1000}
+              priority
+              sizes="(max-width: 1279px) 95vw, 65vw"
               className="w-full lg:h-[500px] object-cover rounded-md  transition-all duration-300"
             />
 
@@ -34,8 +36,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               <Image
                 src={"/assets/logo-white.png"}
                 alt="logo"
-                width={1000}
-                height={1000}
+                width={284}
+                height={100}
+                sizes="160px"
                 className="w-20 lg:w-40 h-auto"
               />
             </div>
@@ -48,14 +51,16 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
               alt={media[currentIndex].url}
               width={1000}
               height={1000}
+              sizes="85vw"
               className="rounded-2xl h-full w-full object-contain bg-transparent"
             />
             <div className="absolute bottom-0 left-0 w-full flex justify-center items-center pb-4 md:pb-10 lg:pb-20">
               <Image
                 src={"/assets/logo-white.png"}
                 alt="logo"
-                width={1000}
-                height={1000}
+                width={284}
+                height={100}
+                sizes="384px"
                 className="w-20 md:w-40 lg:w-60 xl:w-80 2xl:w-96 h-auto"
               />
             </div>
@@ -128,6 +133,10 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
                   alt={media.url}
                   width={1000}
                   height={1000}
+                  // These render in ~148px-wide slots (basis-1/5). Declared at
+                  // 1000px with no `sizes`, every retina device was pulling the
+                  // w=2048 variant for each one.
+                  sizes="(max-width: 639px) 20vw, (max-width: 1279px) 16vw, 11vw"
                   className="w-full h-full object-cover rounded-md hover:scale-105 transition-all duration-300"
                 />
 
@@ -135,8 +144,9 @@ export default function OffertCarousel({ media }: { media: Media[] }) {
                   <Image
                     src={"/assets/logo-white.png"}
                     alt="logo"
-                    width={1000}
-                    height={1000}
+                    width={284}
+                    height={100}
+                    sizes="80px"
                     className="w-20 h-auto"
                   />
                 </div>

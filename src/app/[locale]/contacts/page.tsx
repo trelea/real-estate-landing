@@ -11,6 +11,8 @@ const Contacts: React.FC = () => {
             src={"/assets/contacts-banner.png"}
             alt="Contacts Banner"
             fill
+            sizes="100vw"
+            priority
             objectFit="cover"
             objectPosition="center"
             quality={75}

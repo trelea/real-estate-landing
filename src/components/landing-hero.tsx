@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import React from "react";
 import { LandingHeroCard } from "./landing-hero-card";
 import { getTranslations } from "next-intl/server";
@@ -7,35 +7,57 @@ interface Props {}
 
 export const LandingHero: React.FC<Props> = async ({}) => {
   const t = await getTranslations("banner");
+
+  // This is the LCP element. It is rendered as a single <picture> rather than
+  // three breakpoint-switched <Image>s on purpose: with three of them, making
+  // the banner eager would download all three (CSS `hidden` does not stop an
+  // eager <img> from loading), while keeping them lazy delayed the LCP paint.
+  // <source media> lets the browser pick exactly one candidate and fetch it
+  // immediately at high priority.
+  const banner = (src: string, sizes: string) =>
+    getImageProps({
+      src,
+      alt: "Hero Banner Image",
+      fill: true,
+      // The banner is rendered at `brightness-50` behind headline text, so it
+      // is decorative. q65 is indistinguishable here and costs ~40% fewer
+      // bytes than q80 on the LCP element.
+      quality: 65,
+      sizes,
+    }).props;
+
+  const phone = banner("/assets/phone-hero-banner.png", "100vw");
+  const tablet = banner("/assets/tablet-hero-banner.png", "100vw");
+  // `sizes` is a CSS-pixel hint that the browser multiplies by DPR, so "100vw"
+  // made every retina desktop pick the 3840w candidate (273KB). The fixed
+  // 960px cap resolves to the 1920w candidate at DPR2 (~112KB) and trades a
+  // little sharpness on a darkened backdrop for less time-to-LCP.
+  const desktop = banner(
+    "/assets/desktop-hero-banner.png",
+    "(max-width: 1023px) 100vw, 960px",
+  );
+
   return (
     <section className="relative pt-10 sm:pt-12 h-fit w-full">
-      {/* PHONE VERSION IMAGE */}
-      <Image
-        src={"/assets/phone-hero-banner.png"}
-        alt="Hero Banner Image"
-        className="absolute brightness-50 sm:hidden"
-        fill
-        quality={80}
-        loading="lazy"
-      />
-      {/* TABLET VERSION IMAGE */}
-      <Image
-        src={"/assets/tablet-hero-banner.png"}
-        alt="Hero Banner Image"
-        className="hidden sm:block absolute brightness-50 lg:hidden"
-        fill
-        quality={80}
-        loading="lazy"
-      />
-      {/* DESTOP VERSION IMAGE */}
-      <Image
-        src={"/assets/desktop-hero-banner.png"}
-        alt="Hero Banner Image"
-        className="hidden lg:block absolute brightness-50"
-        fill
-        quality={80}
-        loading="lazy"
-      />
+      <picture>
+        <source
+          media="(max-width: 639px)"
+          srcSet={phone.srcSet}
+          sizes={phone.sizes}
+        />
+        <source
+          media="(max-width: 1023px)"
+          srcSet={tablet.srcSet}
+          sizes={tablet.sizes}
+        />
+        <img
+          {...desktop}
+          className="absolute brightness-50"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
       <div className="w-full px-6 sm:px-11 lg:px-20 flex justify-center items-center">
         <div className="relative h-full z-10 py-10 sm:py-14 flex flex-col justify-between gap-8 sm:gap-12 w-full max-w-7xl">
           <div className="flex justify-center">
