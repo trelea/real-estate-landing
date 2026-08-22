@@ -2,6 +2,7 @@ import { HotSection } from "@/components/hot/hot";
 import { getApartment } from "@/features/offerts/api";
 import OffertPage from "@/features/offerts/components/offert-page";
 import { getTranslations } from "next-intl/server";
+import { formatLocation } from "@/utils/location";
 
 export default async function ApartmentPage({
   params,
@@ -31,15 +32,7 @@ export default async function ApartmentPage({
             },
             {
               label: t("location"),
-              value: (
-                <>
-                  {/* @ts-ignore */}
-                  {apartment.location.location_category[locale]}
-                  {", "}
-                  {/* @ts-ignore */}
-                  {apartment.location.location_subcategory[locale]}
-                </>
-              ),
+              value: formatLocation(apartment.location, locale),
             },
             {
               label: t("address"),

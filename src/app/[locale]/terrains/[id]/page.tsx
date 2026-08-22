@@ -2,6 +2,7 @@ import { HotSection } from "@/components/hot/hot";
 import { getTerrain } from "@/features/offerts/api";
 import OffertPage from "@/features/offerts/components/offert-page";
 import { getTranslations } from "next-intl/server";
+import { formatLocation } from "@/utils/location";
 
 export default async function TerrainPage({
   params,
@@ -32,15 +33,7 @@ export default async function TerrainPage({
             },
             {
               label: t("location"),
-              value: (
-                <>
-                  {/* @ts-ignore */}
-                  {terrain.location.location_category[locale]}
-                  {", "}
-                  {/* @ts-ignore */}
-                  {terrain.location.location_subcategory[locale]}
-                </>
-              ),
+              value: formatLocation(terrain.location, locale),
             },
             {
               label: t("address"),
