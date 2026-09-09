@@ -1,6 +1,6 @@
 import { axiosInstance } from "@/services/axios-instance";
 import { AxiosResponse } from "axios";
-import { Apartment, Commercial, House, Terrain } from "../types";
+import { Apartment, Commercial, Garage, House, Terrain } from "../types";
 
 export const getApartmentsOfferts = async ({
   limit,
@@ -209,6 +209,7 @@ export const getHotOfferts = async ({ limit }: { limit: number }) => {
           | (House & { type: "houses" })
           | (Commercial & { type: "commercials" })
           | (Terrain & { type: "terrains" })
+          | (Garage & { type: "garages" })
         )[]
       >
     >("/offerts/hot", {
@@ -242,5 +243,52 @@ export const getCommercial = async ({ id }: { id: number }) => {
 export const getTerrain = async ({ id }: { id: number }) => {
   return (
     await axiosInstance.get<unknown, AxiosResponse<Terrain>>(`/terrains/${id}`)
+  ).data;
+};
+
+export const getGaragesOfferts = async ({
+  limit,
+  page,
+  sort,
+  ...filter
+}: { limit: number } & Partial<{
+  page: number;
+  sort: "price_asc" | "price_desc" | "area_asc" | "area_desc";
+  offert: ("SALE" | "RENT")[];
+  location_category: number[];
+  location_subcategory: number[];
+  price_from: number;
+  price_to: number;
+  surface_from: number;
+  surface_to: number;
+  features: number[];
+}>) => {
+  return (
+    await axiosInstance.get<
+      unknown,
+      AxiosResponse<{
+        data: Garage[];
+        meta: { page: number; limit: number; total: number; last_page: number };
+      }>
+    >("/offerts/garages", {
+      params: { limit, page, sort, filter: JSON.stringify(filter) },
+    })
+  ).data;
+};
+
+export const getGaragesHotOfferts = async ({ limit }: { limit: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<Garage[]>>(
+      "/offerts/garages/hot",
+      {
+        params: { limit },
+      }
+    )
+  ).data;
+};
+
+export const getGarage = async ({ id }: { id: number }) => {
+  return (
+    await axiosInstance.get<unknown, AxiosResponse<Garage>>(`/garages/${id}`)
   ).data;
 };

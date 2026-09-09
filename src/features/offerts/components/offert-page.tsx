@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { Apartment, Commercial, House, Terrain } from "../types";
+import { Apartment, Commercial, Garage, House, Terrain } from "../types";
 import { CircleCheckBig, Eye, MapPinHouse } from "lucide-react";
 import OffertCarousel from "./offert-carousel";
 import OffertDesc from "./offert-desc";
@@ -24,7 +24,7 @@ export default async function OffertPage({
   table,
   locale,
 }: {
-  offert: Apartment | House | Commercial | Terrain;
+  offert: Apartment | House | Commercial | Terrain | Garage;
   table?: { label: string; value: React.ReactNode }[];
   locale: string;
 }) {

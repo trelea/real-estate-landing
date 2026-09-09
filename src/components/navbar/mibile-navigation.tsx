@@ -111,6 +111,15 @@ export const MobileNavigation: React.FC<Props> = ({
                     </li>
                     <li>
                       <Link 
+                        href="/garages" 
+                        className="hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
+                        {t("garages")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
                         href="https://dialoginvest.md/" 
                         className="hover:text-primary"
                         onClick={handleLinkClick}

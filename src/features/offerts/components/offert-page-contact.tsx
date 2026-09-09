@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { Apartment, Commercial, House, Terrain } from "../types";
+import { Apartment, Commercial, Garage, House, Terrain } from "../types";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 export default function OffertPageContact({
   offert,
 }: {
-  offert: Apartment | House | Commercial | Terrain;
+  offert: Apartment | House | Commercial | Terrain | Garage;
 }) {
   const t = useTranslations("common");
   const [showContact, setShowContact] = useState(false);

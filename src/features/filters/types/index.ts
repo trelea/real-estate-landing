@@ -44,3 +44,7 @@ export type TerrainUtility = {
 export type TerrainFeature = {
   id: number;
 } & MultiLanguageType;
+
+export type GarageFeature = {
+  id: number;
+} & MultiLanguageType;

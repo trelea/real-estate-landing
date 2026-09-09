@@ -7,16 +7,19 @@ import {
   Commercial,
   House,
   Terrain,
+  Garage,
 } from "@/features/offerts/types";
 import { Link } from "@/i18n/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 
 interface Props {
-  offert: (Apartment | House | Commercial | Terrain) &
+  offert: (Apartment | House | Commercial | Terrain | Garage) &
     Partial<{
       type: "APARTMENT" | "HOUSE" | "COMMERCIAL" | "TERRAIN";
     }>;
-  type?: Partial<"apartments" | "houses" | "commercials" | "terrains">;
+  type?: Partial<
+    "apartments" | "houses" | "commercials" | "terrains" | "garages"
+  >;
 }
 export const OfferCard: React.FC<Props> = async ({ offert, type }) => {
   const locale = await getLocale();

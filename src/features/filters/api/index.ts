@@ -11,6 +11,7 @@ import {
   LocationCategory,
   TerrainFeature,
   TerrainUtility,
+  GarageFeature,
 } from "../types";
 
 export const getLocationCategories = async () =>
@@ -128,6 +129,19 @@ export const getTerrainFeatures = async () =>
   (
     await axiosInstance.get<unknown, AxiosResponse<{ data: TerrainFeature[] }>>(
       "/terrains/features",
+      {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      }
+    )
+  ).data.data;
+
+export const getGarageFeatures = async () =>
+  (
+    await axiosInstance.get<unknown, AxiosResponse<{ data: GarageFeature[] }>>(
+      "/garages/features",
       {
         params: {
           page: 1,

@@ -84,6 +84,10 @@ const Navbar: React.FC<Props> = async ({ locale }) => {
                     href: { pathname: "/terrains" },
                   },
                   {
+                    label: t("garages"),
+                    href: { pathname: "/garages" },
+                  },
+                  {
                     label: t("investments"),
                     href: { pathname: "https://dialoginvest.md/" },
                   },

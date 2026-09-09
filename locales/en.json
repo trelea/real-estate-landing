@@ -8,6 +8,7 @@
     "houses": "Houses",
     "commercial_spaces": "Commercial Spaces",
     "lands": "Lands",
+    "garages": "Garages",
     "investments": "Investments",
     "services": "Services",
     "mortgage": "Mortgage",
@@ -102,6 +103,7 @@
     "commercials": "Commercials",
     "houses": "Houses",
     "terrains": "Terrains",
+    "garages": "Garages",
     "lands": "Lands",
     "investments": "Investments",
     "sale": "Sale",
@@ -141,6 +143,7 @@
     "lands": "Lands",
     "investments": "Investments",
     "terrains": "Terrains",
+    "garages": "Garages",
     "terrain_destinations": "Terrain Destinations",
     "caracteristics": "Caracteristics",
     "description": "Description",
@@ -152,7 +155,8 @@
     "caracteristics_2": "Location",
     "read_more": "Read more...",
     "sale": "Sale",
-    "rent": "Rent"
+    "rent": "Rent",
+    "area": "Area"
   },
   "footer": {
     "description": "DialogImobil — we know the market, we understand our clients, and know exactly what you’re looking for.",
@@ -172,10 +176,8 @@
   },
   "mortgage": {
     "section_title": "Mortgage Broker - the simple solution for a safe and fast loan",
-
     "section_subtitle": "Why do you need a mortgage broker?",
     "section_subtitle_desc": "The process of accessing a mortgage loan involves many stages, diverse offers, and banking requirements that can create confusion. A mortgage broker is the expert who guides you step by step, helps you choose the best financing solution, and prepares the correct file - all without stress, without wasting time, and without hidden costs.",
-
     "benefits_title": "The benefits you have are:",
     "benefits_1": "Free and personalized consultation",
     "benefits_2": "Direct access to the best offers from top banks in the Republic of Moldova",
@@ -183,9 +185,7 @@
     "benefits_4": "Monitoring the examination of the application by financial institutions",
     "benefits_5": "Quick approval of the file",
     "benefits_6": "Assistance in signing all contracts",
-
     "programs_title": "Doialog Imobil helps you find the best credit solution:",
-
     "title": "Credit Calculator",
     "desc": "Choose a trusted Mortgage Broker who defends your interests and finds the best financing solutions for you. Contact us now for a free consultation!",
     "loan_amount": "requested amount",
@@ -193,7 +193,6 @@
     "from": "from",
     "to": "to",
     "months": "months",
-
     "monthly_payment": "Monthly Payment",
     "total_payment": "Total Payment",
     "interest_type": "Interest Type",
@@ -202,7 +201,6 @@
     "efective_annual_rate": "Effective Annual Rate",
     "subtotal_desc": "This loan implies your legal responsibility and must be repaid. Check your repayment capacity before signing the loan agreement.",
     "button_calculate": "Request Offer",
-
     "footer_title": "Choose a trusted Mortgage Broker who defends your interests and finds the best financing solutions for you.",
     "footer_desc": "Contact us now for a free consultation!"
   }

@@ -7,6 +7,7 @@ import {
   HouseFeature,
   TerrainFeature,
   TerrainUtility,
+  GarageFeature,
   HousingCondition,
   MultiLanguageType,
 } from "@/features/filters/types";
@@ -160,6 +161,25 @@ export interface Terrain {
   area: number;
   usability: TerrainUtility[];
   features: TerrainFeature[];
+  media: Media[];
+  views: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Garage {
+  id: number;
+  offert: ("SALE" | "RENT")[];
+  user: User;
+  price: number;
+  hot: boolean;
+  status: boolean | "PUBLIC" | "PRIVATE";
+  desc_ro: string;
+  desc_ru: string;
+  desc_en: string;
+  location: Location;
+  area: number;
+  features: GarageFeature[];
   media: Media[];
   views: number;
   created_at: string;
